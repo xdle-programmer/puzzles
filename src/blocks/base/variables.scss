@@ -1,0 +1,17 @@
+$gradient: 'linear-gradient(190.09deg, #D18C4E 3.61%, #FAC075 51.88%, #D18C4E 100.99%)';
+
+@mixin font-ibm {
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+@mixin font-cuprum {
+  font-family: 'Cuprum', sans-serif;
+}
+
+@mixin text-gradient {
+  background: #{$gradient};
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: var(--gold-color);
+}
+

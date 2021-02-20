@@ -1,0 +1,25 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  padding: 50px 0;
+  z-index: 800;
+
+  @include tablet-big-screen {
+    padding: 25px 0;
+  }
+
+  &--scroll {
+    background: rgba(138, 196, 255, .1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 5px 30px 0 rgba(0, 0, 0, .1);
+    padding: 25px 0;
+  }
+
+  $scroll: '.header__top--scroll';
+}
