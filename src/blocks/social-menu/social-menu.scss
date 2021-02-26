@@ -1,0 +1,20 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+.social-menu {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    transition: all .25s ease-out;
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+}

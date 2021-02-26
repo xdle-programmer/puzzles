@@ -1,1 +1,68 @@
-header.header Хэдер
+.mobile-menu
+
+header.header
+    .layout.header__layout
+
+        include ../burger-menu/burger-menu
+
+        .header__logo
+            a(href="#").logo
+                img(src="images/logo.svg" alt="").logo__image
+
+        .header__main
+            .header__main-top
+                ul.header__menu
+                    li.header__menu-list
+                        a(href="#").header__menu-link
+                            img(src="src/blocks/header/assets/img/action-icon.svg").header__menu-icon.header__menu-icon--left
+                            | Акции
+                    li.header__menu-list
+                        a(href="#").header__menu-link Где купить
+                    li.header__menu-list
+                        a(href="#").header__menu-link О компании
+                    li.header__menu-list
+                        a(href="#").header__menu-link Отзывы
+                    li.header__menu-list
+                        a(href="#").header__menu-link Корпоративные продукты
+                    li.header__menu-list
+                        a(href="#").header__menu-link Как купить
+                        ul.header__menu-submenu
+                            li.header__menu-list
+                                a(href="#").header__menu-link Как оформить заказ
+                            li.header__menu-list
+                                a(href="#").header__menu-link Доставка и оплата
+                            li.header__menu-list
+                                a(href="#").header__menu-link Гарантии и обмен
+                            li.header__menu-list
+                                a(href="#").header__menu-link Стать партнёром
+
+                .header__social
+                    include ../social-menu/social-menu
+
+                .header__contact
+                     a(href="tel:88000000000").header__contact-phone 8 800 000 00 00
+                     a(href="#").header__contact-city Москва
+
+            .header__main-footer
+                include ../catalog/catalog
+                include ../catalog/catalog-wrapper
+
+                form.header__search
+                    input(type="text" placeholder="Поиск").header__search-input
+                    button.header__search-button.
+                        <svg id="search" viewBox="0 0 20 20"> <path fill="#ffffff" clip-rule="evenodd" d="M14.676 13.1344C17.1274 9.92933 16.8874 5.32581 13.9561 2.39449C10.7635 -0.798164 5.58715 -0.798164 2.39449 2.39449C-0.798164 5.58715 -0.798164 10.7635 2.39449 13.9561C5.32581 16.8874 9.92933 17.1274 13.1344 14.676L18.4585 20L20 18.4585L14.676 13.1344ZM12.4146 3.93604C14.7558 6.27732 14.7558 10.0733 12.4146 12.4146C10.0733 14.7558 6.27732 14.7558 3.93604 12.4146C1.59476 10.0733 1.59476 6.27732 3.93604 3.93604C6.27732 1.59476 10.0733 1.59476 12.4146 3.93604Z"></path> </svg>
+
+                .header__option-user
+                    a(href="#").header__option-link
+                        img(src="src/blocks/header/assets/img/user.svg")
+                    //a(href="#").header__option-link.header__option-link--favorites
+                    //    img(src="src/blocks/header/assets/img/favorites.svg")
+                    a(href="#").header__option-link.header__option-link--cart
+                        img(src="src/blocks/header/assets/img/cart.svg")
+
+                .header__contact-mobile
+                    a(href="tel:88000000000").header__contact-phone.header__contact-phone--mobile 8 800 000 00 00
+
+
+
+

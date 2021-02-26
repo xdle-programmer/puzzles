@@ -1,0 +1,35 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+// Используем переменные в variables.scss
+
+@font-face {
+  font-family: 'HeroNew-Regular';
+  font-weight: normal;
+  font-style: normal;
+  src: url("assets/fonts/HeroNew-Regular/HeroNew-Regular.eot");
+  src: url("assets/fonts/HeroNew-Regular/HeroNew-Regular.eot?#iefix")format("embedded-opentype"),
+  url("assets/fonts/HeroNew-Regular/HeroNew-Regular.woff") format("woff"),
+  url("assets/fonts/HeroNew-Regular/HeroNew-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'HeroNew-Medium';
+  font-weight: normal;
+  font-style: normal;
+  src: url("assets/fonts/HeroNew-Medium/HeroNew-Medium.eot");
+  src: url("assets/fonts/HeroNew-Medium/HeroNew-Medium.eot?#iefix")format("embedded-opentype"),
+  url("assets/fonts/HeroNew-Medium/HeroNew-Medium.woff") format("woff"),
+  url("assets/fonts/HeroNew-Medium/HeroNew-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'HeroNew-SemiBold';
+  font-weight: normal;
+  font-style: normal;
+  src: url("assets/fonts/HeroNew-SemiBold/HeroNew-SemiBold.eot");
+  src: url("assets/fonts/HeroNew-SemiBold/HeroNew-SemiBold.eot?#iefix")format("embedded-opentype"),
+  url("assets/fonts/HeroNew-SemiBold/HeroNew-SemiBold.woff") format("woff"),
+  url("assets/fonts/HeroNew-SemiBold/HeroNew-SemiBold.ttf") format("truetype");
+}

@@ -1,11 +1,26 @@
 $gradient: 'linear-gradient(190.09deg, #D18C4E 3.61%, #FAC075 51.88%, #D18C4E 100.99%)';
 
-@mixin font-ibm {
-  font-family: 'IBM Plex Sans', sans-serif;
+$fr: "HeroNew-Regular", sans-serif;
+$fm: "HeroNew-Medium", sans-serif;
+$fsb: "HeroNew-Medium", sans-serif;
+
+@mixin fr {
+  font-family: $fr;
+}
+
+@mixin fm {
+  font-family: $fm;
 }
 
 @mixin font-cuprum {
   font-family: 'Cuprum', sans-serif;
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content}
+  &:-moz-placeholder           {@content}
+  &::-moz-placeholder          {@content}
+  &:-ms-input-placeholder      {@content}
 }
 
 @mixin text-gradient {
