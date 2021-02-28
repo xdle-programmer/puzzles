@@ -39,12 +39,24 @@
 
   &__layout {
     display: flex;
+
+    @include table-large-screen {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
   }
 
   &__content {
     width: 50%;
     padding-top: 84px;
     padding-bottom: 82px;
+
+    @include table-large-screen {
+      width: 100%;
+      max-width: 600px;
+      padding-top: 10px;
+      padding-bottom: 50px;
+    }
   }
 
   &__category {
@@ -61,15 +73,26 @@
     text-decoration: none;
     max-width: 100%;
     margin-bottom: 37px;
-    font: 48px/1 $fm;
+    font-family: $fm;
+    @include font-size(24px, 48px, 768px, 1800px);
+    //@include line-height(42px, 64px, 480px, 1800px);
     letter-spacing: -.03em;
     color: #fff;
+
+    @include table-large-screen {
+      margin-bottom: 14px;
+    }
   }
 
   &__description {
     max-width: 100%;
     font: 17px/1.2 $fm;
     color: #fff;
+    @include mobile-big-screen {
+      font-size: 13px;
+      line-height: 1.3;
+      letter-spacing: -.03em;
+    }
   }
 
   &__image-block {
@@ -81,6 +104,12 @@
     max-width: calc(((100% + 30px) / 12 * 7) - 30px);
     min-width: calc(((100% + 30px) / 12 * 5) - 30px);
     flex-shrink: 0;
+
+    @include table-large-screen {
+      width: 100%;
+      max-width: 600px;
+      margin: 0;
+    }
   }
 
   &__image {
@@ -97,6 +126,10 @@
   left: 0;
   width: 100%;
   z-index: 10;
+
+  @include table-large-screen {
+    bottom: 15px;
+  }
 
   &-layout {
 

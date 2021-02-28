@@ -1,5 +1,3 @@
-.mobile-menu
-
 header.header
     .layout.header__layout
 
@@ -44,8 +42,8 @@ header.header
                      a(href="#").header__contact-city Москва
 
             .header__main-footer
+                include ../catalog/catalog-button
                 include ../catalog/catalog
-                include ../catalog/catalog-wrapper
 
                 form.header__search
                     input(type="text" placeholder="Поиск").header__search-input
@@ -63,6 +61,6 @@ header.header
                 .header__contact-mobile
                     a(href="tel:88000000000").header__contact-phone.header__contact-phone--mobile 8 800 000 00 00
 
-
+    include ../mobile-menu/mobile-menu
 
 

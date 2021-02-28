@@ -155,9 +155,18 @@
     font: 15px/1.4 $fm;
     color: #fff;
     background-color: transparent;
+
     @include placeholder {
       font: 15px/1.4 $fm;
       color: #fff;
+    }
+
+    &--blue {
+      border-color: rgba(1, 86, 132, .3);
+      color: #015684;
+      @include placeholder {
+        color: rgba(1,86,132,.3) !important;
+      }
     }
   }
 

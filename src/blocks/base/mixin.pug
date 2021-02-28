@@ -1,0 +1,9 @@
+mixin item(title, url)
+    li
+        a(href=url, class=active == title ? 'active' : '')= title
+
+mixin iconSvg(w, h, wp, id)
+    svg(width=w height=h viewBox=wp class=id)
+        use(xlink:href="/images/icons/sprites.svg#"+id)
+// Use icon
+// +iconSvg('14', '14', '0 0 14 14', 'icon-top')
