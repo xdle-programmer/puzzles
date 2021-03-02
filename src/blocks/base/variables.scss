@@ -2,7 +2,7 @@ $gradient: 'linear-gradient(190.09deg, #D18C4E 3.61%, #FAC075 51.88%, #D18C4E 10
 
 $fr: "HeroNew-Regular", sans-serif;
 $fm: "HeroNew-Medium", sans-serif;
-$fsb: "HeroNew-Medium", sans-serif;
+$fsb: 'HeroNew-SemiBold', sans-serif;
 
 @mixin fr {
   font-family: $fr;
@@ -10,6 +10,10 @@ $fsb: "HeroNew-Medium", sans-serif;
 
 @mixin fm {
   font-family: $fm;
+}
+
+@mixin fsb {
+  font-family: $fsb;
 }
 
 

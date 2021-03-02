@@ -1,0 +1,12 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+.rating {
+  &__item {
+
+  }
+  &__item-star {
+    fill: #c4c4c4;
+  }
+}

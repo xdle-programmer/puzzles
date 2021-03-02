@@ -1,0 +1,37 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 10px 21px;
+  color: #fff;
+  text-align: center;
+  font: 13px/18px $fm;
+  background: #6b70eb;
+  border-radius: 5px;
+  letter-spacing: -.03em;
+  cursor: pointer;
+  @include trn(.2s);
+
+  &--add-card {
+    min-height: 26px;
+    padding: 4px 17px;;
+  }
+}
+
+.links {
+  text-decoration: none;
+  color: #6b70eb;
+  font: 13px/18px $fsb;
+  letter-spacing: -.03em;
+  border-bottom: 1px dashed transparent;
+  white-space: nowrap;
+  @include trn(.2s);
+  &:hover {
+    border-color: #6b70eb;
+  }
+}

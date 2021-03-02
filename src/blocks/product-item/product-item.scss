@@ -1,0 +1,165 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+$buttonProductWrapper: '.product-item__button';
+$productImage: '.product-item__image';
+
+.product-item {
+  position: relative;
+  max-width: 285px;
+
+  &:hover {
+    #{$buttonProductWrapper} {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &:hover {
+    #{$productImage} {
+      box-shadow: 0 4px 4px rgba(0, 0, 0, .2);
+    }
+  }
+
+  &__image-wrapper {
+    position: relative;
+    display: flex;
+  }
+
+  &__favorite {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 0;
+    fill: transparent;
+    stroke: #fff;
+    stroke-width: 2;
+    @include trn(.2s);
+
+    &:hover {
+      fill: rgba(255,255,255,.5);
+    }
+  }
+
+  &__label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+  }
+
+  &__label-item {
+    position: relative;
+    display: inline-flex;
+    padding: 1px 6px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    font: 12px/17px $fr;
+    letter-spacing: -.03em;
+    color: #fff;
+
+    &--action {
+      background: #84c200;
+    }
+
+    &--discond {
+      background: red;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__image {
+    position: relative;
+    min-height: 100px;
+    overflow: hidden;
+    @include brr(10px);
+    @include trn(.2s);
+  }
+
+  &__information {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 10px;
+  }
+
+  &__name {
+    display: inline-block;
+    width: 100%;
+    margin-top: 3px;
+    margin-bottom: 5px;
+    font: 13px/18px $fr;
+    color: #666;
+    letter-spacing: -.03em;
+  }
+
+  &__price-wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__price {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font: 15px/21px $fsb;
+    letter-spacing: -.03em;
+    color: #000;
+  }
+
+  &__price-current {
+    display: flex;
+    font: 15px/21px $fsb;
+    letter-spacing: -.03em;
+  }
+
+  &__price-currency {
+    margin-left: 2px;
+  }
+
+  &__price-old {
+    color: #999;
+    font-size: 14px;
+    text-decoration: line-through;
+    margin-left: 6px;
+  }
+
+  &__review {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__rating {
+    display: flex;
+  }
+
+  &__rating-star {
+    padding-right: 3px;
+  }
+
+  &__rating-count {
+    margin-left: 3px;
+    color: #c4c4c4;
+    font-size: 12px;
+  }
+
+  &__button {
+    margin-top: 11px;
+    opacity: 0;
+    visibility: hidden;
+    @include trn(.2s);
+
+    .button {
+      margin-right: 8px;
+    }
+  }
+
+}
