@@ -1,0 +1,34 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+.tabs {
+  &__list {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__list-item {
+    min-width: 70px;
+    padding: 8px 17px 5px;
+    margin: 0 3px;
+    color: #1b1b1b;
+    font: 20px/1.2 $fm;
+    white-space: nowrap;
+    border-bottom: 3px solid transparent;
+    letter-spacing: -.03em;
+    text-align: center;
+    cursor: pointer;
+    @include trn(.25s);
+    &:hover {
+      border-color: rgba(109,154,24,.5);
+    }
+    &--active {
+      border-color: #6d9a18;
+    }
+  }
+
+  &__list-button {
+
+  }
+}

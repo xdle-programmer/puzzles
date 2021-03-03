@@ -7,3 +7,56 @@ mixin iconSvg(w, h, wp, id)
         use(xlink:href="/images/icons/sprites.svg#"+id)
 // Use icon
 // +iconSvg('14', '14', '0 0 14 14', 'icon-top')
+
+mixin productItem(image, action, discount, favoriteStatus, title, rating)
+    .product-item
+        a.product-item__image-wrapper(href="#")
+            img.product-item__image(src= image)
+            .product-item__label
+                .product-item__label-item.product-item__label-item--action= action
+                .product-item__label-item.product-item__label-item--discount= discount
+        if favoriteStatus == true
+            a(href="#favorite").product-item__favorite.product-item__favorite--active
+                +iconSvg('22', '22', '0 0 22 22', 'icon-favorite')
+        else
+            a(href="#favorite").product-item__favorite
+                +iconSvg('22', '22', '0 0 22 22', 'icon-favorite')
+        a.product-item__information(href="#")
+            .product-item__name= title
+            .product-item__price-wrapper
+                .product-item__price
+                    .product-item__price-current
+                        | 45 040
+                        .product-item__price-currency ₽
+                    .product-item__price-old 56 340
+                .product-item__review
+                    if rating == true
+                        .product-item__rating.product-item__rating--active
+                            span.product-item__rating-star
+                                +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
+                            span.product-item__rating-star
+                                +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
+                            span.product-item__rating-star
+                                +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
+                            span.product-item__rating-star
+                                +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
+                            span.product-item__rating-star
+                                +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
+                        .product-item__rating-count 22
+                    else
+                        .product-item__rating
+                            span.product-item__rating-star
+                                +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
+                            span.product-item__rating-star
+                                +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
+                            span.product-item__rating-star
+                                +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
+                            span.product-item__rating-star
+                                +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
+                            span.product-item__rating-star
+                                +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
+                        .product-item__rating-count 0
+
+        .product-item__button
+            a(href="#").button.button--add-card В корзину
+            a(href="#").links.links--buy-click Купить в 1 клик

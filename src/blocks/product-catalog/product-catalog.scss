@@ -1,0 +1,20 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+.product-catalog {
+  padding: 65px 0 90px;
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  &__tabs-list {
+    margin-bottom: 40px;
+  }
+
+  &__col {
+
+  }
+}

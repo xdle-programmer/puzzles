@@ -1,0 +1,36 @@
+// Exemple
+
+.product-catalog__col
+    .product-item
+        a.product-item__image-wrapper(href="#")
+            img.product-item__image(src="src/blocks/product-item/assets/img/product-item1.jpg")
+            .product-item__label
+                .product-item__label-item.product-item__label-item--action Акция
+                .product-item__label-item.product-item__label-item--discount -20%
+        a(href="#favorite").product-item__favorite
+            +iconSvg('22', '22', '0 0 22 22', 'icon-favorite')
+        a.product-item__information(href="#")
+            .product-item__name Коллекция №1
+            .product-item__price-wrapper
+                .product-item__price
+                    .product-item__price-current
+                        | 45 040
+                        .product-item__price-currency ₽
+                    .product-item__price-old 56 340
+                .product-item__review
+                    .product-item__rating
+                        span.product-item__rating-star
+                            +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
+                        span.product-item__rating-star
+                            +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
+                        span.product-item__rating-star
+                            +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
+                        span.product-item__rating-star
+                            +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
+                        span.product-item__rating-star
+                            +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
+                    .product-item__rating-count 0
+
+        .product-item__button
+            a(href="#").button.button--add-card В корзину
+            a(href="#").links.links--buy-click Купить в 1 клик

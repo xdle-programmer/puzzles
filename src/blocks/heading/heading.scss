@@ -1,0 +1,31 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+.heading {
+  margin-bottom: 30px;
+
+  &--center {
+    text-align: center;
+  }
+
+  &--right {
+    text-align: right;
+  }
+
+  &__title {
+    font: 30px/42px $fm;
+    letter-spacing: -.03em;
+    margin: 14px 0;
+
+    &--border {
+      display: inline-block;
+      border-bottom: 1px solid #c4c4c4;
+    }
+  }
+
+  &__desc {
+    font: 13px/18px $fm;
+    color: #1b1b1b;
+  }
+}
