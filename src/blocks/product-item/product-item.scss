@@ -4,11 +4,13 @@
 
 $buttonProductWrapper: '.product-item__button';
 $productImage: '.product-item__image';
+$sliderWrapper: '.product-item__slider-wrapper';
 $ratingStar: '.rating__item-star';
 
 .product-item {
   position: relative;
   max-width: 285px;
+  margin: 0 auto;
 
   &:hover {
     #{$buttonProductWrapper} {
@@ -21,14 +23,18 @@ $ratingStar: '.rating__item-star';
     #{$productImage} {
       box-shadow: 0 4px 4px rgba(0, 0, 0, .2);
     }
+    #{$sliderWrapper} {
+      box-shadow: 0 4px 4px rgba(0, 0, 0, .2);
+    }
   }
 
   &__slider-wrapper {
+    position: relative;
     display: block;
     min-height: 100px;
     overflow: hidden;
     border-radius: 10px;
-    //@include trn(.25s)
+    @include trn(.25s)
   }
 
   &__slider {
@@ -41,6 +47,72 @@ $ratingStar: '.rating__item-star';
 
   &__slider-image {
     max-width: 100%;
+  }
+
+  &__slider-navigate {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    @include tt(0, -50%);
+    padding: 0 10px;
+    outline: none;
+  }
+
+  &__slider-navitem {
+    position: absolute;
+    top: 50%;
+    width: 30px;
+    height: 30px;
+    margin-top: -15px;
+    transition: all .3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(0,0,0,.5);
+    cursor: pointer;
+    outline: none;
+    fill: #FFFFFF;
+
+    &--next {
+      right: 10px;
+      transform: scale(-1);
+    }
+
+    &--prev {
+      left: 10px;
+    }
+
+    svg {
+      width: 8px;
+      height: 14px;
+    }
+
+  }
+
+  .tns-nav {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+    button {
+      width: 7px;
+      height: 7px;
+      @include trn(.2s);
+      position: relative;
+      margin: 5px 7px;
+      border: 1px solid #fff;
+      background-color: transparent;
+      border-radius: 50%;
+      &.tns-nav-active {
+        background: #FFFFFF;
+      }
+    }
   }
 
   &__image-wrapper {
@@ -103,6 +175,7 @@ $ratingStar: '.rating__item-star';
   &__image {
     position: relative;
     min-height: 100px;
+    max-width: 100%;
     overflow: hidden;
     @include brr(10px);
     @include trn(.2s);
