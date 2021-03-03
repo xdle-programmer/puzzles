@@ -1,11 +1,13 @@
-const tabs = (tabList, tabListItems, tabContentItems, activeClassItem) => {
-    const   tabListContainer = document.querySelector(tabList),
-            tabItems = document.querySelectorAll(tabListItems),
-            tabContents = document.querySelectorAll(tabContentItems);
+const tabs = (tabList, tabListItems, tabContentItems, activeClassItem, activeTabClassItem) => {
+    const tabListContainer = document.querySelector(tabList),
+        tabItems = document.querySelectorAll(tabListItems),
+        tabContents = document.querySelectorAll(tabContentItems);
 
     function hideTabContent() {
         tabContents.forEach(item => {
-            item.style.display = "none";
+            // item.style.display = "none";
+            item.classList.remove(activeTabClassItem);
+            item.querySelector('.tabs__main-item-wrapper').classList.remove('tabs__main-item-wrapper--active');
         });
 
         tabItems.forEach(item => {
@@ -14,16 +16,23 @@ const tabs = (tabList, tabListItems, tabContentItems, activeClassItem) => {
     }
 
     function showTabContent(index = 0) {
-        tabContents[index].style.display = "block";
+        // tabContents[index].style.display = "block";
         tabItems[index].classList.add(activeClassItem);
-        let opacity = 0.01;
-        let timer = setInterval(function() {
-            if(opacity >= 1) {
-                clearInterval(timer);
-            }
-            tabContents[index].style.opacity = opacity;
-            opacity += opacity * 0.1;
-        }, 5);
+        tabContents[index].classList.add(activeTabClassItem);
+
+        setTimeout(() => {
+            tabContents[index].querySelector('.tabs__main-item-wrapper').classList.add('tabs__main-item-wrapper--active');
+        })
+
+
+        // let opacity = 0.01;
+        // let timer = setInterval(function () {
+        //     if (opacity >= 1) {
+        //         clearInterval(timer);
+        //     }
+        //     tabContents[index].style.opacity = opacity;
+        //     opacity += opacity * 0.1;
+        // }, 5);
     }
 
     hideTabContent();
@@ -31,10 +40,20 @@ const tabs = (tabList, tabListItems, tabContentItems, activeClassItem) => {
 
     tabListContainer.addEventListener('click', e => {
         const target = e.target;
+
         let removeDot = tabListItems.replace(/\./, "");
-        if (target.classList.contains(removeDot) || target.parentNode.classList.contains(removeDot)) {
+
+        let $wrapper = false;
+
+        if (target.classList.contains(removeDot)) {
+            $wrapper = target;
+        } else if (target.closest(tabListItems) !== null) {
+            $wrapper = target.closest(tabListItems);
+        }
+
+        if ($wrapper && !$wrapper.classList.contains(activeClassItem)) {
             tabItems.forEach((item, i) => {
-                if(target == item) {
+                if ($wrapper == item) {
                     hideTabContent();
                     showTabContent(i);
                 }
@@ -42,6 +61,6 @@ const tabs = (tabList, tabListItems, tabContentItems, activeClassItem) => {
         }
     });
 
-}
+};
 
-tabs('.tabs__list', '.tabs__list-item', '.tabs__main-item', 'tabs__list-item--active');
+tabs('.tabs__list', '.tabs__list-item', '.tabs__main-item', 'tabs__list-item--active', 'tabs__main-item--active');

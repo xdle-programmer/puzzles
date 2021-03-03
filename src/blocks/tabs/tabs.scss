@@ -21,9 +21,11 @@
     text-align: center;
     cursor: pointer;
     @include trn(.25s);
+
     &:hover {
-      border-color: rgba(109,154,24,.5);
+      border-color: rgba(109, 154, 24, .5);
     }
+
     &--active {
       border-color: #6d9a18;
     }
@@ -31,5 +33,40 @@
 
   &__list-button {
 
+  }
+
+  &__list-item-test-1 {
+    width: 100px;
+    height: 100px;
+    background: #4DC7A0;
+    @include flex-row-center;
+  }
+
+  &__list-item-test-2 {
+    width: 50px;
+    height: 50px;
+    background: yellowgreen;
+  }
+
+  $active-tab:'.tabs__main-item--active';
+
+  &__main-item {
+    display: none;
+
+    &--active {
+      display: block;
+    }
+  }
+
+  &__main-item-wrapper {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 1s linear;
+
+    &--active {
+    //#{$active-tab} & {
+      opacity: 1;
+      visibility: visible;
+    }
   }
 }
