@@ -1,66 +1,95 @@
-const tabs = (tabList, tabListItems, tabContentItems, activeClassItem, activeTabClassItem) => {
-    const tabListContainer = document.querySelector(tabList),
-        tabItems = document.querySelectorAll(tabListItems),
-        tabContents = document.querySelectorAll(tabContentItems);
+function toggleTabs(options) {
 
-    function hideTabContent() {
-        tabContents.forEach(item => {
-            // item.style.display = "none";
-            item.classList.remove(activeTabClassItem);
-            item.querySelector('.tabs__main-item-wrapper').classList.remove('tabs__main-item-wrapper--active');
-        });
+    /* Example options
+    {
+        toggleButtonsWrapperClass:'className',
+        $toggleButtonsWrapper:node,
+        toggleButtonClass:'className',
+        $toggleButtons:HTMLCollections,
+        toggleButtonActiveClass:'className',
 
-        tabItems.forEach(item => {
-            item.classList.remove(activeClassItem);
-        });
+        toggleItemsWrapperClass:'className',
+        $toggleItemsWrapper:node,
+        toggleItemsClass:'className',
+        $toggleItems:HTMLCollections,
+        toggleItemActiveClass:'className',
+        toggleItemActiveEffectClass: 'className'
+    }
+     */
+
+    let toggleButtonsWrapperClass = options && options.toggleButtonsWrapperClass ? options.toggleButtonsWrapperClass : 'tabs__toggle-buttons';
+    let $toggleButtonsWrapper = options && options.$toggleButtonsWrapper ? options.$toggleButtonsWrapper : document.getElementsByClassName(toggleButtonsWrapperClass)[0];
+    let toggleButtonClass = options && options.toggleButtonClass ? options.toggleButtonClass : 'tabs__toggle-button';
+    let $toggleButtons = options && options.$toggleButtons ? options.$toggleButtons : $toggleButtonsWrapper.getElementsByClassName(toggleButtonClass);
+    let toggleButtonActiveClass = options && options.toggleButtonActiveClass ? options.toggleButtonActiveClass : 'tabs__toggle-button--active';
+
+    let toggleItemsWrapperClass = options && options.toggleItemsWrapperClass ? options.toggleItemsWrapperClass : 'tabs__toggle-items';
+    let $toggleItemsWrapper = options && options.$toggleItemsWrapper ? options.$toggleItemsWrapper : document.getElementsByClassName(toggleItemsWrapperClass)[0];
+    let toggleItemClass = options && options.toggleItemClass ? options.toggleItemClass : 'tabs__toggle-item';
+    let $toggleItems = options && options.$toggleItems ? options.$toggleItems : $toggleItemsWrapper.getElementsByClassName(toggleItemClass);
+    let toggleItemActiveClass = options && options.toggleItemActiveClass ? options.toggleItemActiveClass : 'tabs__toggle-item--active';
+    let toggleItemActiveEffectClass = options && options.toggleItemActiveEffectClass ? options.toggleItemActiveEffectClass : 'tabs__toggle-item--active-effect';
+
+    this.showItem = (index) => {
+        showItem(index);
+    };
+
+    function hideItems() {
+        for (let i = 0; i < $toggleItems.length; i++) {
+            $toggleButtons[i].classList.remove(toggleButtonActiveClass);
+            $toggleItems[i].classList.remove(toggleItemActiveClass, toggleItemActiveEffectClass);
+        }
     }
 
-    function showTabContent(index = 0) {
-        // tabContents[index].style.display = "block";
-        tabItems[index].classList.add(activeClassItem);
-        tabContents[index].classList.add(activeTabClassItem);
+    function showItem(index) {
 
-        setTimeout(() => {
-            tabContents[index].querySelector('.tabs__main-item-wrapper').classList.add('tabs__main-item-wrapper--active');
-        })
+        hideItems();
+        $toggleButtons[index].classList.add(toggleButtonActiveClass);
+        $toggleItems[index].classList.add(toggleItemActiveClass);
 
+        let checkDisplay = setInterval(() => {
+            let computedStyle = window.getComputedStyle($toggleItems[index], null);
+            let displayState = computedStyle.getPropertyValue('display') !== 'none';
+            console.log(displayState);
 
-        // let opacity = 0.01;
-        // let timer = setInterval(function () {
-        //     if (opacity >= 1) {
-        //         clearInterval(timer);
-        //     }
-        //     tabContents[index].style.opacity = opacity;
-        //     opacity += opacity * 0.1;
-        // }, 5);
+            if (displayState) {
+                $toggleItems[index].classList.add(toggleItemActiveEffectClass);
+                clearInterval(checkDisplay);
+            }
+        }, 1);
     }
 
-    hideTabContent();
-    showTabContent();
+    showItem(0);
 
-    tabListContainer.addEventListener('click', e => {
-        const target = e.target;
+    $toggleButtonsWrapper.addEventListener('click', (e) => {
+        const $target = e.target;
 
-        let removeDot = tabListItems.replace(/\./, "");
+        let $clickButton = false;
 
-        let $wrapper = false;
-
-        if (target.classList.contains(removeDot)) {
-            $wrapper = target;
-        } else if (target.closest(tabListItems) !== null) {
-            $wrapper = target.closest(tabListItems);
+        if ($target.classList.contains(toggleButtonClass)) {
+            $clickButton = $target;
+        } else if ($target.closest('.' + toggleButtonClass) !== null) {
+            $clickButton = $target.closest('.' + toggleButtonClass);
         }
 
-        if ($wrapper && !$wrapper.classList.contains(activeClassItem)) {
-            tabItems.forEach((item, i) => {
-                if ($wrapper == item) {
-                    hideTabContent();
-                    showTabContent(i);
+        if ($clickButton && !$clickButton.classList.contains(toggleButtonActiveClass)) {
+
+            for (let i = 0; i < $toggleButtons.length; i++) {
+                if ($toggleButtons[i] === $clickButton) {
+                    showItem(i);
                 }
-            });
+            }
         }
+
+
     });
 
-};
+}
 
-tabs('.tabs__list', '.tabs__list-item', '.tabs__main-item', 'tabs__list-item--active', 'tabs__main-item--active');
+window.firstTabs = new toggleTabs();
+
+window.secondTabs = new toggleTabs({
+    $toggleButtonsWrapper: document.getElementById('rrrr'),
+    toggleItemsWrapperClass: 'tabs__main-23423'
+});
+
