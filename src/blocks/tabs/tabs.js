@@ -32,7 +32,7 @@ const tabs = (tabList, tabListItems, tabContentItems, activeClassItem) => {
     tabListContainer.addEventListener('click', e => {
         const target = e.target;
         let removeDot = tabListItems.replace(/\./, "");
-        if (target.classList.contains(removeDot) || target.parentNode.classList.contains(removeDot)) {
+        if (target && target.classList.contains(removeDot) || target.parentNode.classList.contains(removeDot)) {
             tabItems.forEach((item, i) => {
                 if(target == item) {
                     hideTabContent();
