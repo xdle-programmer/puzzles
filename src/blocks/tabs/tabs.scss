@@ -3,33 +3,105 @@
 @import "../../blocks/base/media-queries";
 
 .tabs {
-  &__list {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+
+  //&__list {
+  //  display: flex;
+  //  justify-content: center;
+  //  flex-wrap: wrap;
+  //}
+  //
+  //&__list-item {
+  //  min-width: 70px;
+  //  padding: 8px 17px 5px;
+  //  margin: 0 3px;
+  //  color: #1b1b1b;
+  //  font: 20px/1.2 $fm;
+  //  white-space: nowrap;
+  //  border-bottom: 3px solid transparent;
+  //  letter-spacing: -.03em;
+  //  text-align: center;
+  //  cursor: pointer;
+  //  @include trn(.25s);
+  //
+  //  &:hover {
+  //    border-color: rgba(109, 154, 24, .5);
+  //  }
+  //
+  //  &--active {
+  //    border-color: #6d9a18;
+  //  }
+  //}
+  //
+  //&__list-button {
+  //
+  //}
+  //
+  //&__list-item-test-1 {
+  //  width: 100px;
+  //  height: 100px;
+  //  background: #4DC7A0;
+  //  @include flex-row-center;
+  //}
+  //
+  //&__list-item-test-2 {
+  //  width: 50px;
+  //  height: 50px;
+  //  background: yellowgreen;
+  //}
+  //
+  //$active-tab:'.tabs__main-item--active';
+  //
+  //&__main-item {
+  //  display: none;
+  //
+  //  &--active {
+  //    display: block;
+  //  }
+  //}
+  //
+  //&__main-item-wrapper {
+  //  opacity: 0;
+  //  visibility: hidden;
+  //  transition: all 1s linear;
+  //
+  //  &--active {
+  //  //#{$active-tab} & {
+  //    opacity: 1;
+  //    visibility: visible;
+  //  }
+  //}
+
+  &__toggle-buttons {
+
   }
 
-  &__list-item {
-    min-width: 70px;
-    padding: 8px 17px 5px;
-    margin: 0 3px;
-    color: #1b1b1b;
-    font: 20px/1.2 $fm;
-    white-space: nowrap;
-    border-bottom: 3px solid transparent;
-    letter-spacing: -.03em;
-    text-align: center;
-    cursor: pointer;
-    @include trn(.25s);
-    &:hover {
-      border-color: rgba(109,154,24,.5);
-    }
+  &__toggle-button {
+
     &--active {
-      border-color: #6d9a18;
+
     }
   }
 
-  &__list-button {
+  &__toggle-items {
 
+  }
+
+  &__toggle-item {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-100%);
+    transition: all .5s linear;
+    transform-origin: top;
+
+    &--active {
+      display: block;
+    }
+
+    &--active-effect {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(0);
+    }
   }
 }

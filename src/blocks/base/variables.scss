@@ -18,10 +18,18 @@ $fsb: 'HeroNew-SemiBold', sans-serif;
 
 
 @mixin placeholder {
-  &::-webkit-input-placeholder {@content}
-  &:-moz-placeholder           {@content}
-  &::-moz-placeholder          {@content}
-  &:-ms-input-placeholder      {@content}
+  &::-webkit-input-placeholder {
+    @content
+  }
+  &:-moz-placeholder {
+    @content
+  }
+  &::-moz-placeholder {
+    @content
+  }
+  &:-ms-input-placeholder {
+    @content
+  }
 }
 
 @mixin text-gradient {
@@ -48,20 +56,13 @@ $fsb: 'HeroNew-SemiBold', sans-serif;
   transform: translate($Xposition, $Yposition);
 }
 
-@mixin placeholder {
-  &::-webkit-input-placeholder {@content}
-  &:-moz-placeholder           {@content}
-  &::-moz-placeholder          {@content}
-  &:-ms-input-placeholder      {@content}
-}
-
 
 // ==============================
 // Font size mixin
 // ==============================
 
 //  default font scale bounding
-$font-lock-min:  400px !default;
+$font-lock-min: 400px !default;
 $font-lock-max: 1000px !default;
 
 //  font-size
@@ -70,8 +71,10 @@ $font-lock-max: 1000px !default;
   $max: null,                   // optional maximum font size
   $lock-min: $font-lock-min,  // optional minimum viewport width
   $lock-max: $font-lock-max   // optional maximum viewport width
-){
-  & { font-size: $min; }
+) {
+  & {
+    font-size: $min;
+  }
   @if $max {
     @media (min-width: $lock-min) {
       & {
@@ -83,8 +86,10 @@ $font-lock-max: 1000px !default;
         );
       }
     }
-    @media (min-width: $lock-max){
-      & { font-size: $max; }
+    @media (min-width: $lock-max) {
+      & {
+        font-size: $max;
+      }
     }
   }
 }
@@ -98,7 +103,9 @@ $font-lock-max: 1000px !default;
   $lock-max: $font-lock-max   // optional maximum viewport width
 ) {
 
-  & { line-height: $min; }
+  & {
+    line-height: $min;
+  }
   @if $max {
     @media (min-width: $lock-min) {
       & {
@@ -110,15 +117,17 @@ $font-lock-max: 1000px !default;
         );
       }
     }
-    @media (min-width: $lock-max){
-      & { line-height: $max; }
+    @media (min-width: $lock-max) {
+      & {
+        line-height: $max;
+      }
     }
   }
 
 }
 
 //  strip units helper function
-@function num($input){
+@function num($input) {
   @return $input/($input * 0 + 1);
 }
 
