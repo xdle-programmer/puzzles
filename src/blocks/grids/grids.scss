@@ -1,0 +1,49 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+.grids {
+  position: relative;
+  background: #006ff6;
+  outline: 1px solid #2ee6ff;
+
+
+  &__item {
+    position: absolute;
+    &:nth-child(odd) {
+      .content-box {
+        background: #8ea7ff;
+      }
+    }
+  }
+}
+
+.content-box {
+  position: relative;
+  width: 100%;
+  //max-width: 320px;
+  background: #afc3ff;
+  border: 1px solid red;
+  //&:nth-child(odd) {
+  //  background: #8ea7ff;
+  //}
+  &--el1 {
+    height: 200px;
+  }
+
+  &--el2 {
+    height: 220px;
+  }
+
+  &--el3 {
+    height: 240px;
+  }
+
+  &--el4 {
+    height: 260px;
+  }
+
+  &--el5 {
+    height: 280px;
+  }
+}

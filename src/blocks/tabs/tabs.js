@@ -89,7 +89,7 @@ function toggleTabs(options) {
 window.firstTabs = new toggleTabs();
 
 window.secondTabs = new toggleTabs({
-    $toggleButtonsWrapper: document.getElementById('rrrr'),
-    toggleItemsWrapperClass: 'tabs__main-23423'
+    $toggleButtonsWrapper: document.querySelector('.tabs__toggle-buttons--el-2'),
+    toggleItemsWrapperClass: 'tabs__toggle-items--el-2'
 });
 

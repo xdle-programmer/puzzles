@@ -8,8 +8,8 @@ mixin iconSvg(w, h, wp, id)
 // Use icon
 // +iconSvg('14', '14', '0 0 14 14', 'icon-top')
 
-mixin productItem(image, action, discount, favoriteStatus, title, rating)
-    .product-item
+mixin productItem(addClass, image, action, discount, favoriteStatus, title, rating)
+    .product-item(class=addClass)
         a.product-item__image-wrapper(href="#")
             img.product-item__image(src= image)
             .product-item__label
@@ -61,8 +61,8 @@ mixin productItem(image, action, discount, favoriteStatus, title, rating)
             a(href="#").button.button--add-card В корзину
             a(href="#").links.links--buy-click Купить в 1 клик
 
-mixin productItemSlider()
-    .product-item
+mixin productItemSlider(addClass)
+    .product-item(class=addClass)
         .product-item__slider-wrapper
             a(href="#").product-item__slider
                 .product-item__slider-element

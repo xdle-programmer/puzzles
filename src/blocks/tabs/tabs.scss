@@ -2,96 +2,89 @@
 @import "../../blocks/base/variables";
 @import "../../blocks/base/media-queries";
 
+$tabsLink: '.tabs__toggle-button--tab-link';
+$tabsItem: '.tabs__toggle-button--tab-item';
+
 .tabs {
 
-  //&__list {
-  //  display: flex;
-  //  justify-content: center;
-  //  flex-wrap: wrap;
-  //}
-  //
-  //&__list-item {
-  //  min-width: 70px;
-  //  padding: 8px 17px 5px;
-  //  margin: 0 3px;
-  //  color: #1b1b1b;
-  //  font: 20px/1.2 $fm;
-  //  white-space: nowrap;
-  //  border-bottom: 3px solid transparent;
-  //  letter-spacing: -.03em;
-  //  text-align: center;
-  //  cursor: pointer;
-  //  @include trn(.25s);
-  //
-  //  &:hover {
-  //    border-color: rgba(109, 154, 24, .5);
-  //  }
-  //
-  //  &--active {
-  //    border-color: #6d9a18;
-  //  }
-  //}
-  //
-  //&__list-button {
-  //
-  //}
-  //
-  //&__list-item-test-1 {
-  //  width: 100px;
-  //  height: 100px;
-  //  background: #4DC7A0;
-  //  @include flex-row-center;
-  //}
-  //
-  //&__list-item-test-2 {
-  //  width: 50px;
-  //  height: 50px;
-  //  background: yellowgreen;
-  //}
-  //
-  //$active-tab:'.tabs__main-item--active';
-  //
-  //&__main-item {
-  //  display: none;
-  //
-  //  &--active {
-  //    display: block;
-  //  }
-  //}
-  //
-  //&__main-item-wrapper {
-  //  opacity: 0;
-  //  visibility: hidden;
-  //  transition: all 1s linear;
-  //
-  //  &--active {
-  //  //#{$active-tab} & {
-  //    opacity: 1;
-  //    visibility: visible;
-  //  }
-  //}
-
   &__toggle-buttons {
+
+    &--el-1 {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    &--el-2 {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
 
   }
 
   &__toggle-button {
+    cursor: pointer;
+    @include trn(.25s);
+    user-select: none;
+
+    &#{$tabsLink} {
+      padding: 8px 17px 5px;
+      margin: 0 3px;
+      color: #1b1b1b;
+      font: 20px/1.2 $fm;
+      white-space: nowrap;
+      border-bottom: 3px solid transparent;
+      letter-spacing: -.03em;
+      text-align: center;
+
+      &:hover {
+        border-color: rgba(109, 154, 24, .5);
+      }
+    }
+
+    &#{$tabsItem} {
+      padding: 10px 9px;
+      margin: 0 5px;
+      font: 13px/1 $fm;
+      letter-spacing: -.03em;
+      white-space: nowrap;
+      border: 1px solid rgba(255,255,255,.5);
+      border-radius: 40px;
+      color: #fff;
+
+      &:hover {
+        background-color: rgba(255,255,255,.5);
+        color: #1b1b1b;
+      }
+    }
 
     &--active {
+      &#{$tabsLink} {
+        border-color: #6d9a18;
+      }
 
+      &#{$tabsItem} {
+        background: #fff;
+        color: #1b1b1b;
+      }
     }
   }
 
   &__toggle-items {
-
+    perspective: 2000px;
   }
 
   &__toggle-item {
     display: none;
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-100%);
-    transition: all .5s linear;
+    transform: rotateX(-20deg) translateZ(0px);
+    transform-style: preserve-3d;
+    //transform: translateY(-100%);
+    transition: all .28s linear;
     transform-origin: top;
 
     &--active {

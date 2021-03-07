@@ -3,7 +3,18 @@
 @import "../../blocks/base/media-queries";
 
 .product-catalog {
-  padding: 65px 0 90px;
+
+  &--default-offset {
+    padding: 65px 0 90px;
+  }
+
+  &--small-offset {
+    padding: 35px 0;
+  }
+
+  &--background-red {
+    background: #e33151;
+  }
 
   &__wrapper {
     display: grid;
@@ -19,7 +30,13 @@
     margin-bottom: 40px;
   }
 
-  &__col {
+  &__buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
 
+    & .button {
+      margin: 7.5px;
+    }
   }
 }

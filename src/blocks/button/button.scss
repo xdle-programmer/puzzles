@@ -17,6 +17,10 @@
   cursor: pointer;
   @include trn(.2s);
 
+  &:hover {
+    background: #484dcd;
+  }
+
   &--add-card {
     min-height: 26px;
     padding: 4px 17px;;

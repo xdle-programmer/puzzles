@@ -5,12 +5,48 @@
 $buttonProductWrapper: '.product-item__button';
 $productImage: '.product-item__image';
 $sliderWrapper: '.product-item__slider-wrapper';
+
 $ratingStar: '.rating__item-star';
+
+$productName: '.product-item__name';
+
+$priceCurrent: '.product-item__price-current';
+$priceOld: '.product-item__price-old';
 
 .product-item {
   position: relative;
   max-width: 285px;
   margin: 0 auto;
+
+  &--style-white {
+    #{$productName},
+    #{$priceCurrent},
+    #{$priceOld} {
+      color: #fff;
+    }
+
+    #{$ratingStar} {
+      fill: #fff;
+    }
+
+    .button {
+      color: #fff;
+      background-color: transparent;
+      border: 1px solid #fff;
+
+      &:hover {
+        background: #FFFFFF;
+        color: #1b1b1b;
+      }
+    }
+
+    .links {
+      color: #fff;
+      &:hover {
+        border-color: #FFFFFF;
+      }
+    }
+  }
 
   &:hover {
     #{$buttonProductWrapper} {
@@ -23,6 +59,7 @@ $ratingStar: '.rating__item-star';
     #{$productImage} {
       box-shadow: 0 4px 4px rgba(0, 0, 0, .2);
     }
+
     #{$sliderWrapper} {
       box-shadow: 0 4px 4px rgba(0, 0, 0, .2);
     }
@@ -71,7 +108,7 @@ $ratingStar: '.rating__item-star';
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background: rgba(0,0,0,.5);
+    background: rgba(0, 0, 0, .5);
     cursor: pointer;
     outline: none;
     fill: #FFFFFF;
@@ -100,6 +137,7 @@ $ratingStar: '.rating__item-star';
     display: flex;
     justify-content: center;
     margin-bottom: 16px;
+
     button {
       width: 7px;
       height: 7px;
@@ -109,6 +147,7 @@ $ratingStar: '.rating__item-star';
       border: 1px solid #fff;
       background-color: transparent;
       border-radius: 50%;
+
       &.tns-nav-active {
         background: #FFFFFF;
       }
@@ -135,7 +174,7 @@ $ratingStar: '.rating__item-star';
     }
 
     &:hover {
-      fill: rgba(255,255,255,.5);
+      fill: rgba(255, 255, 255, .5);
     }
   }
 

@@ -4,6 +4,10 @@
 
 .heading {
   margin-bottom: 30px;
+  
+  &--color-white {
+    color: #fff;
+  }
 
   &--center {
     text-align: center;

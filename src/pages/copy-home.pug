@@ -1,0 +1,314 @@
+extends ../templates/main
+
+block variables
+    - var title = 'Puzzle'
+
+block content
+    main.main
+        include ../blocks/slider-main/slider-main
+        .product-catalog
+            .layout
+                .heading.heading--center
+                    h2.heading__title.heading__title--border Авторские коллекции пазлов
+                    p.heading__desc Создана специально для дошкольников и младших школьников, маленьких любознательных и пытливых искателей.
+
+
+                //include ../blocks/tabs/tabs
+
+                .tabs
+                    .tabs__toggle-buttons.product-catalog__tab-wrapper
+                        .product-catalog__tab-item.tabs__toggle-button.tabs__toggle-button--active Коллекция N1
+                        .product-catalog__tab-item.tabs__toggle-button Коллекция N2
+                        .product-catalog__tab-item.tabs__toggle-button Коллекция N3
+                    .tabs__toggle-items
+                        .tabs__toggle-item.tabs__toggle-item--active
+                            .product-catalog__wrapper
+                                .product-catalog__col
+                                    +productItemSlider()
+                                .product-catalog__col
+                                    +productItem("src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+                                .product-catalog__col
+                                    +productItemSlider()
+                                .product-catalog__col
+                                    +productItem("src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+                                .product-catalog__col
+                                    +productItemSlider()
+                                .product-catalog__col
+                                    +productItem("src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+                                .product-catalog__col
+                                    +productItemSlider()
+                                .product-catalog__col
+                                    +productItem("src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+                        .tabs__toggle-item
+                            .product-catalog__wrapper
+                                .product-catalog__col
+                                    +productItem("src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+                                .product-catalog__col
+                                    +productItem("src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+                                .product-catalog__col
+                                    +productItem("src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+                                .product-catalog__col
+                                    +productItem("src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+                        .tabs__toggle-item
+                            .product-catalog__wrapper
+                                .product-catalog__col
+                                    +productItemSlider()
+                                .product-catalog__col
+                                    +productItemSlider()
+                                .product-catalog__col
+                                    +productItemSlider()
+                                .product-catalog__col
+                                    +productItemSlider()
+
+
+                //.tabs
+                //    .tabs__list.product-catalog__tabs-list
+                //        .tabs__list-item.tabs__list-item--active Коллекция N1
+                //        .tabs__list-item Коллекция N2
+                //        .tabs__list-item Коллекция N3
+                //            .tabs__list-item-test-1
+                //                .tabs__list-item-test-2
+                //
+                //    .tabs__main
+                //        .tabs__main-item
+                //            .tabs__main-item-wrapper
+                //                | 1111
+                //                .product-catalog__wrapper
+                //
+                //                    .product-catalog__col
+                //                        +productItemSlider()
+                //                    .product-catalog__col
+                //                        .product-item
+                //                            .product-item__slider-wrapper
+                //                                a(href="#").product-item__slider
+                //                                    .product-item__slider-element
+                //                                        img.product-item__slider-image(src="src/blocks/product-item/assets/img/product-slide1/product-item1.jpg")
+                //                                    .product-item__slider-element
+                //                                        img.product-item__slider-image(src="src/blocks/product-item/assets/img/product-slide1/product-item2.jpg")
+                //                                    .product-item__slider-element
+                //                                        img.product-item__slider-image(src="src/blocks/product-item/assets/img/product-slide1/product-item3.jpg")
+                //                                    .product-item__slider-element
+                //                                        img.product-item__slider-image(src="src/blocks/product-item/assets/img/product-slide1/product-item4.jpg")
+                //                                    .product-item__slider-element
+                //                                        img.product-item__slider-image(src="src/blocks/product-item/assets/img/product-slide1/product-item5.jpg")
+                //                                .product-item__slider-navigate
+                //                                    li(data-controls="prev" aria-controls="customize" tabindex="-1").product-item__slider-navitem.product-item__slider-navitem--prev.
+                //                                        <svg id="arrow" viewBox="0 0 8 14"><path d="M6.976.696a.6.6 0 1 1 .848.849l-5.94 5.94a.6.6 0 0 1-.848-.849l5.94-5.94z"></path><path d="M1.036 7.485a.6.6 0 0 1 .849-.849l5.94 5.94a.6.6 0 0 1-.85.848l-5.939-5.94z"></path></svg>
+                //                                    li(data-controls="next" aria-controls="customize" tabindex="-1").product-item__slider-navitem.product-item__slider-navitem--next.
+                //                                        <svg id="arrow" viewBox="0 0 8 14"><path d="M6.976.696a.6.6 0 1 1 .848.849l-5.94 5.94a.6.6 0 0 1-.848-.849l5.94-5.94z"></path><path d="M1.036 7.485a.6.6 0 0 1 .849-.849l5.94 5.94a.6.6 0 0 1-.85.848l-5.939-5.94z"></path></svg>
+                //
+                //                                .product-item__label
+                //                                    .product-item__label-item.product-item__label-item--action Акция
+                //                                    .product-item__label-item.product-item__label-item--discount -20%
+                //
+                //                            a(href="#favorite").product-item__favorite
+                //                                +iconSvg('22', '22', '0 0 22 22', 'icon-favorite')
+                //                            a.product-item__information(href="#")
+                //                                .product-item__name Коллекция №1
+                //                                .product-item__price-wrapper
+                //                                    .product-item__price
+                //                                        .product-item__price-current
+                //                                            | 45 040
+                //                                            .product-item__price-currency ₽
+                //                                        .product-item__price-old 56 340
+                //                                    .product-item__review
+                //                                        .product-item__rating
+                //                                            span.product-item__rating-star
+                //                                                +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
+                //                                            span.product-item__rating-star
+                //                                                +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
+                //                                            span.product-item__rating-star
+                //                                                +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
+                //                                            span.product-item__rating-star
+                //                                                +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
+                //                                            span.product-item__rating-star
+                //                                                +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
+                //                                        .product-item__rating-count 0
+                //
+                //                            .product-item__button
+                //                                a(href="#").button.button--add-card В корзину
+                //                                a(href="#").links.links--buy-click Купить в 1 клик
+                //
+                //                    .product-catalog__col
+                //                        +productItem("src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №22", true)
+                //                    .product-catalog__col
+                //                        +productItem("src/blocks/product-item/assets/img/product-slide1/product-item1.jpg", "Акция", "-30%", false, "Коллекция №23", false)
+                //
+                //        .tabs__main-item
+                //            .tabs__main-item-wrapper
+                //                | 2222
+                //                .product-catalog__wrapper
+                //                    .product-catalog__col
+                //                        +productItem("src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №24", true)
+                //
+                //        .tabs__main-item
+                //            .tabs__main-item-wrapper
+                //                | 3333
+                //                .product-catalog__wrapper
+                //                .product-catalog__col
+                //                    +productItem("src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+
+
+                    //.product-catalog__col
+                    //    .product-item
+                    //        a.product-item__image-wrapper(href="#")
+                    //            img.product-item__image(src="src/blocks/product-item/assets/img/product-item1.jpg")
+                    //            .product-item__label
+                    //                .product-item__label-item.product-item__label-item--action Акция
+                    //                .product-item__label-item.product-item__label-item--discount -20%
+                    //        a(href="#favorite").product-item__favorite
+                    //            +iconSvg('22', '22', '0 0 22 22', 'icon-favorite')
+                    //        a.product-item__information(href="#")
+                    //            .product-item__name Коллекция №1
+                    //            .product-item__price-wrapper
+                    //                .product-item__price
+                    //                    .product-item__price-current
+                    //                        | 45 040
+                    //                        .product-item__price-currency ₽
+                    //                    .product-item__price-old 56 340
+                    //                .product-item__review
+                    //                    .product-item__rating
+                    //                        span.product-item__rating-star
+                    //                            +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
+                    //                        span.product-item__rating-star
+                    //                            +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
+                    //                        span.product-item__rating-star
+                    //                            +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
+                    //                        span.product-item__rating-star
+                    //                            +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
+                    //                        span.product-item__rating-star
+                    //                            +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
+                    //                    .product-item__rating-count 0
+                    //
+                    //        .product-item__button
+                    //            a(href="#").button.button--add-card В корзину
+                    //            a(href="#").links.links--buy-click Купить в 1 клик
+
+
+
+
+                .tabs
+                    .tabs__toggle-buttons.product-catalog__tabs-list
+                        .tabs__list-item.tabs__list-item--active Коллекция N1
+                        .tabs__list-item Коллекция N2
+                        .tabs__list-item Коллекция N3
+                            .tabs__list-item-test-1
+                                .tabs__list-item-test-2
+
+                    .tabs__main
+                        .tabs__main-item
+                            .tabs__main-item-wrapper
+                                | 1111
+                                .product-catalog__wrapper
+
+                                    .product-catalog__col
+                                        +productItemSlider()
+                                    .product-catalog__col
+                                        .product-item
+                                            .product-item__slider-wrapper
+                                                a(href="#").product-item__slider
+                                                    .product-item__slider-element
+                                                        img.product-item__slider-image(src="src/blocks/product-item/assets/img/product-slide1/product-item1.jpg")
+                                                    .product-item__slider-element
+                                                        img.product-item__slider-image(src="src/blocks/product-item/assets/img/product-slide1/product-item2.jpg")
+                                                    .product-item__slider-element
+                                                        img.product-item__slider-image(src="src/blocks/product-item/assets/img/product-slide1/product-item3.jpg")
+                                                    .product-item__slider-element
+                                                        img.product-item__slider-image(src="src/blocks/product-item/assets/img/product-slide1/product-item4.jpg")
+                                                    .product-item__slider-element
+                                                        img.product-item__slider-image(src="src/blocks/product-item/assets/img/product-slide1/product-item5.jpg")
+                                                .product-item__slider-navigate
+                                                    li(data-controls="prev" aria-controls="customize" tabindex="-1").product-item__slider-navitem.product-item__slider-navitem--prev.
+                                                        <svg id="arrow" viewBox="0 0 8 14"><path d="M6.976.696a.6.6 0 1 1 .848.849l-5.94 5.94a.6.6 0 0 1-.848-.849l5.94-5.94z"></path><path d="M1.036 7.485a.6.6 0 0 1 .849-.849l5.94 5.94a.6.6 0 0 1-.85.848l-5.939-5.94z"></path></svg>
+                                                    li(data-controls="next" aria-controls="customize" tabindex="-1").product-item__slider-navitem.product-item__slider-navitem--next.
+                                                        <svg id="arrow" viewBox="0 0 8 14"><path d="M6.976.696a.6.6 0 1 1 .848.849l-5.94 5.94a.6.6 0 0 1-.848-.849l5.94-5.94z"></path><path d="M1.036 7.485a.6.6 0 0 1 .849-.849l5.94 5.94a.6.6 0 0 1-.85.848l-5.939-5.94z"></path></svg>
+
+                                                .product-item__label
+                                                    .product-item__label-item.product-item__label-item--action Акция
+                                                    .product-item__label-item.product-item__label-item--discount -20%
+
+                                            a(href="#favorite").product-item__favorite
+                                                +iconSvg('22', '22', '0 0 22 22', 'icon-favorite')
+                                            a.product-item__information(href="#")
+                                                .product-item__name Коллекция №1
+                                                .product-item__price-wrapper
+                                                    .product-item__price
+                                                        .product-item__price-current
+                                                            | 45 040
+                                                            .product-item__price-currency ₽
+                                                        .product-item__price-old 56 340
+                                                    .product-item__review
+                                                        .product-item__rating
+                                                            span.product-item__rating-star
+                                                                +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
+                                                            span.product-item__rating-star
+                                                                +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
+                                                            span.product-item__rating-star
+                                                                +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
+                                                            span.product-item__rating-star
+                                                                +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
+                                                            span.product-item__rating-star
+                                                                +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
+                                                        .product-item__rating-count 0
+
+                                            .product-item__button
+                                                a(href="#").button.button--add-card В корзину
+                                                a(href="#").links.links--buy-click Купить в 1 клик
+
+                                    .product-catalog__col
+                                        +productItem("src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №22", true)
+                                    .product-catalog__col
+                                        +productItem("src/blocks/product-item/assets/img/product-slide1/product-item1.jpg", "Акция", "-30%", false, "Коллекция №23", false)
+
+                        .tabs__main-item
+                            .tabs__main-item-wrapper
+                                | 2222
+                                .product-catalog__wrapper
+                                    .product-catalog__col
+                                        +productItem("src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №24", true)
+
+                        .tabs__main-item
+                            .tabs__main-item-wrapper
+                                | 3333
+                                .product-catalog__wrapper
+                                .product-catalog__col
+                                    +productItem("src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+
+
+                    .product-catalog__col
+                        .product-item
+                            a.product-item__image-wrapper(href="#")
+                                img.product-item__image(src="src/blocks/product-item/assets/img/product-item1.jpg")
+                                .product-item__label
+                                    .product-item__label-item.product-item__label-item--action Акция
+                                    .product-item__label-item.product-item__label-item--discount -20%
+                            a(href="#favorite").product-item__favorite
+                                +iconSvg('22', '22', '0 0 22 22', 'icon-favorite')
+                            a.product-item__information(href="#")
+                                .product-item__name Коллекция №1
+                                .product-item__price-wrapper
+                                    .product-item__price
+                                        .product-item__price-current
+                                            | 45 040
+                                            .product-item__price-currency ₽
+                                        .product-item__price-old 56 340
+                                    .product-item__review
+                                        .product-item__rating
+                                            span.product-item__rating-star
+                                                +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
+                                            span.product-item__rating-star
+                                                +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
+                                            span.product-item__rating-star
+                                                +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
+                                            span.product-item__rating-star
+                                                +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
+                                            span.product-item__rating-star
+                                                +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
+                                        .product-item__rating-count 0
+
+                            .product-item__button
+                                a(href="#").button.button--add-card В корзину
+                                a(href="#").links.links--buy-click Купить в 1 клик
+
+
+        include ../blocks/product-item/product-item
