@@ -50,7 +50,6 @@ function toggleTabs(options) {
         let checkDisplay = setInterval(() => {
             let computedStyle = window.getComputedStyle($toggleItems[index], null);
             let displayState = computedStyle.getPropertyValue('display') !== 'none';
-            console.log(displayState);
 
             if (displayState) {
                 $toggleItems[index].classList.add(toggleItemActiveEffectClass);

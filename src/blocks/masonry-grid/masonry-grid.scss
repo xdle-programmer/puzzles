@@ -2,14 +2,16 @@
 @import "../../blocks/base/variables";
 @import "../../blocks/base/media-queries";
 
-.grids {
+.masonry-grid {
   position: relative;
-  background: #006ff6;
-  outline: 1px solid #2ee6ff;
+  width: 100%;
+
+  height: 10000px;
 
 
   &__item {
     position: absolute;
+
     &:nth-child(odd) {
       .content-box {
         background: #8ea7ff;
@@ -24,8 +26,11 @@
   //max-width: 320px;
   background: #afc3ff;
   border: 1px solid red;
+  min-height: 200px;
   //&:nth-child(odd) {
   //  background: #8ea7ff;
+
+
   //}
   &--el1 {
     height: 200px;
