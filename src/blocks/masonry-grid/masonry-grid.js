@@ -42,13 +42,16 @@ function masonryGrid(options) {
     let $wrapper = options && options.wrapper ? options.wrapper : document.getElementsByClassName(wrapperClass)[0];
     let itemClass = options && options.itemClass ? options.itemClass : 'masonry-grid__item';
     let $items = options && options.items ? options.items : $wrapper.getElementsByClassName(itemClass);
+    let itemsArray = Array.from($items);
     let columnsCount = getItemOptions().currentColumnCount;
     let rowGap = getItemOptions().currentRowGap;
     let columnGap = getItemOptions().currentColumnGap;
+    let changeItemsQueue = [];
 
     this.changeItem = function (item) {
-        setColumnItemsPosition(item);
+        changeItemsQueue.push(item);
     };
+
 
     function getItemOptions() {
         let currentColumnCount;
@@ -141,35 +144,32 @@ function masonryGrid(options) {
 
     setAllItemsPosition();
 
-    function setColumnItemsPosition(item) {
-        // console.log(item);
+    function setQueueItemsPositions() {
+        if (changeItemsQueue.length > 0) {
+            let item = changeItemsQueue[0];
+            let itemIndex = itemsArray.indexOf(item);
+            changeItemsQueue.shift();
 
-        let promise = new Promise(function(resolve, reject) {
+            let fullRows = ((itemIndex + 1) / columnsCount) - (itemIndex + 1) % columnsCount;
+            let currentColumn = (itemIndex + 1) % columnsCount - 1;
+
+            if (currentColumn === -1) {
+                currentColumn = columnsCount - 1;
+            }
+
+            for (let index = currentColumn; index < itemsArray.length; index += columnsCount) {
+                // console.log(itemsArray[index]);
+            }
+
+            setQueueItemsPositions();
+        } else {
             setTimeout(() => {
-                resolve(item);
-            }, 1000);
-        });
-
-        promise
-        .then(
-            (data) => {
-                // console.log(data)
-                return data;
-            },
-            (error) => {console.log("Error: " + error.message)},
-        )
-        .then((dataInfo) => {
-            // for(let key in dataInfo) {
-            //     console.log(key)
-            // }
-            console.log(dataInfo)
-            setAllItemsPosition();
-        })
+                setQueueItemsPositions();
+            }, 100);
+        }
     }
 
-    // 4. Пишем метод для пересчета колонки при изменении (прописываем блокер для пересчета)
-
-
+    setQueueItemsPositions();
 
     // 5. Вешаем событие на ресайз для пересчета
 
