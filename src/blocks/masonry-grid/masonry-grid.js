@@ -142,8 +142,29 @@ function masonryGrid(options) {
     setAllItemsPosition();
 
     function setColumnItemsPosition(item) {
-        console.log(item);
+        // console.log(item);
 
+        let promise = new Promise(function(resolve, reject) {
+            setTimeout(() => {
+                resolve(item);
+            }, 1000);
+        });
+
+        promise
+        .then(
+            (data) => {
+                // console.log(data)
+                return data;
+            },
+            (error) => {console.log("Error: " + error.message)},
+        )
+        .then((dataInfo) => {
+            // for(let key in dataInfo) {
+            //     console.log(key)
+            // }
+            console.log(dataInfo)
+            setAllItemsPosition();
+        })
     }
 
     // 4. Пишем метод для пересчета колонки при изменении (прописываем блокер для пересчета)
