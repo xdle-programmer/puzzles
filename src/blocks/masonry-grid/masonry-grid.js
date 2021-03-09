@@ -99,7 +99,7 @@ function masonryGrid(options) {
         let leftPositions = [0];
         let columnsHeight = [0];
 
-        if (onlyVertical && onlyVertical == true) {
+        if (onlyVertical && onlyVertical === true) {
             setLeft = false;
         }
 
@@ -147,6 +147,9 @@ function masonryGrid(options) {
     }
 
     // 4. Пишем метод для пересчета колонки при изменении (прописываем блокер для пересчета)
+
+
+
     // 5. Вешаем событие на ресайз для пересчета
 
 
