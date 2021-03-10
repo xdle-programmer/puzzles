@@ -1,25 +1,3 @@
-// Эмулятор
-function emulationLoad() {
-    let $items = document.querySelectorAll('.content-box');
-
-    function getRandomInt(min, max) {
-        min = Math.ceil(min);
-        max = Math.floor(max);
-        return Math.floor(Math.random() * (max - min)) + min; //Максимум не включается, минимум включается
-    }
-
-    for (let $item of $items) {
-        setTimeout(() => {
-            let modifier = 'content-box--el' + getRandomInt(1, 5);
-            $item.classList.add(modifier);
-
-            window.masonryMainPage.changeItem($item.closest('.masonry-grid__item'));
-        }, getRandomInt(0, 20) * 200);
-    }
-}
-
-emulationLoad();
-
 function masonryGrid(options) {
 
     /* Example options
@@ -41,17 +19,21 @@ function masonryGrid(options) {
     let wrapperClass = options && options.wrapperClass ? options.wrapperClass : 'masonry-grid';
     let $wrapper = options && options.wrapper ? options.wrapper : document.getElementsByClassName(wrapperClass)[0];
     let itemClass = options && options.itemClass ? options.itemClass : 'masonry-grid__item';
-    let $items = options && options.items ? options.items : $wrapper.getElementsByClassName(itemClass);
+    let $items = Array.from(options && options.items ? options.items : $wrapper.getElementsByClassName(itemClass));
     let itemsArray = Array.from($items);
     let columnsCount = getItemOptions().currentColumnCount;
     let rowGap = getItemOptions().currentRowGap;
     let columnGap = getItemOptions().currentColumnGap;
     let changeItemsQueue = [];
+    let columnsHeight = [];
 
-    this.changeItem = function (item) {
+    this.changeItem = (item) => {
         changeItemsQueue.push(item);
     };
 
+    this.refresh = () => {
+        setAllItemsPosition();
+    };
 
     function getItemOptions() {
         let currentColumnCount;
@@ -94,22 +76,24 @@ function masonryGrid(options) {
         };
     }
 
-    function setAllItemsPosition(onlyVertical) {
-        let setLeft = true;
+    function setAllItemsPosition() {
+        setLeftPosition();
+
+        for (let index = 0; index < columnsCount; index++) {
+            columnsHeight.push(0);
+            setColumnPosition(index);
+        }
+    }
+
+    function setLeftPosition() {
         let wrapperWidth = $wrapper.offsetWidth;
         let rowGapSum = rowGap * (columnsCount - 1);
         let itemWidth = (wrapperWidth - rowGapSum) / columnsCount;
-        let leftPositions = [0];
-        let columnsHeight = [0];
+        let leftPositions = [];
 
-        if (onlyVertical && onlyVertical === true) {
-            setLeft = false;
-        }
-
-        for (let i = 1; i < columnsCount; i++) {
+        for (let i = 0; i < columnsCount; i++) {
             let left = (itemWidth + rowGap) * i;
             leftPositions.push(left);
-            columnsHeight.push(0);
         }
 
         let currentColumn = 0;
@@ -121,18 +105,28 @@ function masonryGrid(options) {
                 currentRow++;
             }
 
-            $items[i].style.transform = 'translateY(' + columnsHeight[currentColumn] + 'px)';
+            $items[i].style.left = leftPositions[currentColumn] + 'px';
+            $items[i].style.width = itemWidth + 'px';
 
-            if (setLeft) {
-                $items[i].style.left = leftPositions[currentColumn] + 'px';
-                $items[i].style.width = itemWidth + 'px';
-            }
+            currentColumn++;
+        }
+    }
 
+    function setColumnPosition(numberColumn) {
+        let currentColumn = 0;
+        columnsHeight[numberColumn] = 0;
+
+        for (let i = numberColumn; i < $items.length; i += columnsCount) {
+            $items[i].style.transform = 'translateY(' + columnsHeight[numberColumn] + 'px)';
             let itemTop = $items[i].offsetHeight + columnGap;
-            columnsHeight[currentColumn] += itemTop;
+            columnsHeight[numberColumn] += itemTop;
             currentColumn++;
         }
 
+        setWrapperHeight();
+    }
+
+    function setWrapperHeight() {
         let wrapperHeight = Math.max(null, ...columnsHeight) + "px";
 
         if ($items.length > columnsCount) {
@@ -142,24 +136,19 @@ function masonryGrid(options) {
         $wrapper.style.height = wrapperHeight;
     }
 
-    setAllItemsPosition();
-
     function setQueueItemsPositions() {
         if (changeItemsQueue.length > 0) {
             let item = changeItemsQueue[0];
             let itemIndex = itemsArray.indexOf(item);
             changeItemsQueue.shift();
 
-            let fullRows = ((itemIndex + 1) / columnsCount) - (itemIndex + 1) % columnsCount;
             let currentColumn = (itemIndex + 1) % columnsCount - 1;
 
             if (currentColumn === -1) {
                 currentColumn = columnsCount - 1;
             }
 
-            for (let index = currentColumn; index < itemsArray.length; index += columnsCount) {
-                // console.log(itemsArray[index]);
-            }
+            setColumnPosition(currentColumn);
 
             setQueueItemsPositions();
         } else {
@@ -169,14 +158,78 @@ function masonryGrid(options) {
         }
     }
 
+    setAllItemsPosition();
+
     setQueueItemsPositions();
 
-    // 5. Вешаем событие на ресайз для пересчета
+    window.addEventListener('resize', () => {
+        columnsCount = getItemOptions().currentColumnCount;
+        rowGap = getItemOptions().currentRowGap;
+        columnGap = getItemOptions().currentColumnGap;
 
-
+        setAllItemsPosition();
+    });
 }
 
-window.masonryMainPage = new masonryGrid({
+
+window.masonryMainPage0 = new masonryGrid({
+    columnsCount: 4,
+    rowGap: 40,
+    columnGap: 50,
+    responsive: [
+        {
+            maxWidth: 1400,
+            columnsCount: 3,
+            rowGap: 30,
+            columnGap: 40
+        }, {
+            maxWidth: 1000,
+            columnsCount: 2,
+            rowGap: 20,
+            columnGap: 10
+        }]
+});
+window.masonryMainPage1 = new masonryGrid({
+    columnsCount: 4,
+    wrapper: document.getElementById('id1'),
+    rowGap: 40,
+    columnGap: 50,
+    responsive: [
+        {
+            maxWidth: 1400,
+            columnsCount: 3,
+            rowGap: 30,
+            columnGap: 40
+        }, {
+            maxWidth: 1000,
+            columnsCount: 2,
+            rowGap: 20,
+            columnGap: 10
+        }]
+});
+window.masonryMainPage2 = new masonryGrid({
+    columnsCount: 4,
+    wrapper: document.getElementById('id2'),
+    rowGap: 40,
+    columnGap: 50,
+    responsive: [
+        {
+            maxWidth: 1400,
+            columnsCount: 3,
+            rowGap: 30,
+            columnGap: 40
+        }, {
+            maxWidth: 1000,
+            columnsCount: 2,
+            rowGap: 20,
+            columnGap: 10
+        }]
+});
+window.masonryMainPage3 = new masonryGrid({
+    columnsCount: 4,
+    wrapper: document.getElementById('id3'),
+    rowGap: 40,
+    columnGap: 50,
     responsive: [
         {
             maxWidth: 1400,
