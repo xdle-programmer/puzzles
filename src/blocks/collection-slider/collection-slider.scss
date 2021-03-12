@@ -1,0 +1,50 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+@import "~tiny-slider/src/tiny-slider";
+
+$collectionSliderWrapper: '.collection-slider__wrapper';
+
+.collection-slider {
+
+  &--full {
+    .tns-ovh {
+      overflow: inherit;
+    }
+  }
+
+  &__navigation {
+    position: relative;
+  }
+
+  &__navigation-button {
+    position: absolute;
+    bottom: 115px;
+    @include flex-row-center();
+    width: 60px;
+    height: 60px;
+    background: #fff;
+    margin: 0;
+    border: none;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, .1);
+    @include trn(.2s);
+    @include brr(50%);
+    cursor: pointer;
+
+    &--next {
+      right: 0;
+
+      svg {
+        transform: scale(-1);
+        margin-left: 3px;
+      }
+    }
+
+    svg {
+      width: 12px;
+      height: 22px;
+    }
+  }
+
+}

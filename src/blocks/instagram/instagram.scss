@@ -1,0 +1,107 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+.instagram {
+  overflow: hidden;
+
+  &--default-offset {
+    padding: 90px 0 196px;
+  }
+
+  &__logo {
+    &--center {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &__gallery {
+    display: flex;
+    justify-content: center;
+    margin: 65px -15px 0;
+    perspective: 630px;
+    @include trn(.2s);
+    @include laptop-big-screen {
+      perspective: 500px;
+    }
+    @include table-large-screen {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+    @include mobile-big-screen {
+      margin: 24px 0 0;
+    }
+
+    &-item {
+      //width: calc(100% / 7);
+      width: calc((100% / 12 * 2) - 30px);
+      margin: 0 15px;
+      background-position: center;
+      background-size: cover;
+      flex-shrink: 0;
+      font-size: 0;
+      @include trn(.2s);
+
+      @include table-large-screen {
+        display: block;
+        width: calc((100% / 12 * 4) - 30px);
+        transform: none !important;
+        margin-bottom: 30px;
+      }
+
+      @include mobile-big-screen {
+        margin: 0 1px 1px 0;
+        width: calc((100% / 12 * 4) - 1px);
+      }
+
+      &:before {
+        content: '';
+        display: inline-block;
+        padding-top: 100%;
+      }
+
+      &:hover {
+        transform: translateY(-10px);
+      }
+
+      &:nth-child(1) {
+        transform-origin: right center;
+        transform: rotateY(107deg) translateX(95%) scale(1.6, 1.3);
+
+        &:hover {
+          transform: rotateY(107deg) translateY(-10px) translateX(95%) scale(1.6, 1.3);
+        }
+      }
+
+      &:nth-child(2) {
+        transform-origin: right center;
+        transform: rotateY(85deg);
+
+        &:hover {
+          transform: rotateY(85deg) translateY(-10px);
+        }
+      }
+
+      &:nth-child(6) {
+        transform-origin: left center;
+        transform: rotateY(-85deg);
+        z-index: 1;
+
+        &:hover {
+          transform: rotateY(-85deg) translateY(-10px);
+        }
+      }
+
+      &:nth-child(7) {
+        transform-origin: left center;
+        transform: rotateY(-107deg) translateX(-95%) scale(1.6, 1.3);
+
+        &:hover {
+          transform: rotateY(-107deg) translateY(-10px) translateX(-95%) scale(1.6, 1.3);
+        }
+      }
+
+    }
+  }
+}

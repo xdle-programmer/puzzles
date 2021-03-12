@@ -219,3 +219,87 @@ block content
                 //        .tabs__toggle-item Content 2
                 //        .tabs__toggle-item Content 3
 
+
+        .product-catalog.product-catalog--small-offset.product-catalog--background-black.product-catalog--overflow-hide
+            .layout.layout--large
+
+                .heading.heading--color-brown.heading--center
+                    h2.heading__title.heading__title--border Коллекция «Эрмитаж»
+                    p.heading__desc Премиальная коллекция DAVICI «Эрмитаж» создана по мотивам шедевров живописи Государственного Эрмитажа. #[br]В ней представлены известные экспонаты музея - шедевры Да Винчи, Рембрандта, Ван Гога, Гогена, Кандинского, Снейдерса, Микеланджело, Караваджо, Ренуара, Малевича.
+
+                .collection-slider.collection-slider--full
+                    .collection-slider__init
+                        .collection-slider__item
+                            +productItem("product-item--style-white", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+                        .collection-slider__item
+                            +productItemSlider("product-item--style-white")
+                        .collection-slider__item
+                            +productItem("product-item--style-white", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+                        .collection-slider__item
+                            +productItemSlider("product-item--style-white")
+                        .collection-slider__item
+                            +productItemSlider("product-item--style-white")
+                        .collection-slider__item
+                            +productItem("product-item--style-white", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+                        .collection-slider__item
+                            +productItemSlider("product-item--style-white")
+                    .collection-slider__navigation
+                        button.collection-slider__navigation-button.collection-slider__navigation-button--prev.
+                            <svg id="arrow" viewBox="0 0 8 14"><path d="M6.976.696a.6.6 0 1 1 .848.849l-5.94 5.94a.6.6 0 0 1-.848-.849l5.94-5.94z"></path><path d="M1.036 7.485a.6.6 0 0 1 .849-.849l5.94 5.94a.6.6 0 0 1-.85.848l-5.939-5.94z"></path></svg>
+                        button.collection-slider__navigation-button.collection-slider__navigation-button--next.
+                            <svg id="arrow" viewBox="0 0 8 14"><path d="M6.976.696a.6.6 0 1 1 .848.849l-5.94 5.94a.6.6 0 0 1-.848-.849l5.94-5.94z"></path><path d="M1.036 7.485a.6.6 0 0 1 .849-.849l5.94 5.94a.6.6 0 0 1-.85.848l-5.939-5.94z"></path></svg>
+
+                .collection-slider
+                    .collection-slider__init
+                        .collection-slider__item
+                            +productItemSlider("product-item--style-white")
+                        .collection-slider__item
+                            +productItem("product-item--style-white", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+                        .collection-slider__item
+                            +productItemSlider("product-item--style-white")
+                        .collection-slider__item
+                            +productItemSlider("product-item--style-white")
+                        .collection-slider__item
+                            +productItem("product-item--style-white", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+                        .collection-slider__item
+                            +productItemSlider("product-item--style-white")
+                        .collection-slider__item
+                            +productItem("product-item--style-white", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+
+                    .collection-slider__navigation
+                        button.collection-slider__navigation-button.collection-slider__navigation-button--prev.
+                            <svg id="arrow" viewBox="0 0 8 14"><path d="M6.976.696a.6.6 0 1 1 .848.849l-5.94 5.94a.6.6 0 0 1-.848-.849l5.94-5.94z"></path><path d="M1.036 7.485a.6.6 0 0 1 .849-.849l5.94 5.94a.6.6 0 0 1-.85.848l-5.939-5.94z"></path></svg>
+                        button.collection-slider__navigation-button.collection-slider__navigation-button--next.
+                            <svg id="arrow" viewBox="0 0 8 14"><path d="M6.976.696a.6.6 0 1 1 .848.849l-5.94 5.94a.6.6 0 0 1-.848-.849l5.94-5.94z"></path><path d="M1.036 7.485a.6.6 0 0 1 .849-.849l5.94 5.94a.6.6 0 0 1-.85.848l-5.939-5.94z"></path></svg>
+
+        .product-catalog.product-catalog--default-offset.product-catalog--overflow-hide
+            .layout
+                .heading.heading--center
+                    h2.heading__title.heading__title--border Коллекция "Знаки Зодиака"
+                    p.heading__desc Рекордный по количеству реализованных идей проект DAVICI. Уникальный по масштабу: более 150 вовлеченных в одноименный конкурс художников-графиков. У каждого знака зодиака свой автор. У каждой схемы – непредсказуемое, стилистически разное и креативное исполнение.
+
+                .collection-slider.collection-slider--full
+                    .collection-slider__init
+                        .collection-slider__item
+                            +productItemSlider()
+                        .collection-slider__item
+                            +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+                        .collection-slider__item
+                            +productItemSlider()
+                        .collection-slider__item
+                            +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+                        .collection-slider__item
+                            +productItemSlider()
+                        .collection-slider__item
+                            +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+                        .collection-slider__item
+                            +productItemSlider()
+                        .collection-slider__item
+                            +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+                    .collection-slider__navigation
+                        button.collection-slider__navigation-button.collection-slider__navigation-button--prev.
+                            <svg id="arrow" viewBox="0 0 8 14"><path d="M6.976.696a.6.6 0 1 1 .848.849l-5.94 5.94a.6.6 0 0 1-.848-.849l5.94-5.94z"></path><path d="M1.036 7.485a.6.6 0 0 1 .849-.849l5.94 5.94a.6.6 0 0 1-.85.848l-5.939-5.94z"></path></svg>
+                        button.collection-slider__navigation-button.collection-slider__navigation-button--next.
+                            <svg id="arrow" viewBox="0 0 8 14"><path d="M6.976.696a.6.6 0 1 1 .848.849l-5.94 5.94a.6.6 0 0 1-.848-.849l5.94-5.94z"></path><path d="M1.036 7.485a.6.6 0 0 1 .849-.849l5.94 5.94a.6.6 0 0 1-.85.848l-5.939-5.94z"></path></svg>
+
+        include ../blocks/instagram/instagram

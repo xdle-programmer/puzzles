@@ -4,10 +4,21 @@
 
 .layout {
   max-width: 1260px;
-  width: 100%;
+  width: calc(100% - 30px);
   @include margin-auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  //padding-left: 15px;
+  //padding-right: 15px;
+}
+
+.layout--large {
+  max-width: 1260px;
+  width: calc(100% - 30px);
+  //width: 100%;
+  @include margin-auto;
+  //padding-left: 15px;
+  //padding-right: 15px;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 .layout-small {

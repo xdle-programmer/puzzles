@@ -2,12 +2,11 @@
 @import "../../blocks/base/variables";
 @import "../../blocks/base/media-queries";
 
+$headingTitle: '.heading__title';
+$headingDesc: '.heading__desc';
+
 .heading {
   margin-bottom: 30px;
-  
-  &--color-white {
-    color: #fff;
-  }
 
   &--center {
     text-align: center;
@@ -17,7 +16,7 @@
     text-align: right;
   }
 
-  &__title {
+  #{$headingTitle} {
     font: 30px/42px $fm;
     letter-spacing: -.03em;
     margin: 14px 0;
@@ -32,4 +31,31 @@
     font: 13px/18px $fm;
     color: #1b1b1b;
   }
+
+  &--color-white {
+    color: #fff;
+
+    #{$headingTitle} {
+      display: inline-block;
+      border-bottom: 1px solid #fff;
+    }
+
+    #{$headingDesc} {
+      color: #fff;
+    }
+  }
+
+  &--color-brown {
+    color: #b58b57;
+
+    #{$headingTitle} {
+      display: inline-block;
+      border-bottom: 1px solid rgba(181, 139, 87, .3);
+    }
+
+    #{$headingDesc} {
+      color: #b58b57;
+    }
+  }
+
 }

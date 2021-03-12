@@ -4,6 +4,10 @@
 
 .product-catalog {
 
+  &--overflow-hide {
+    overflow: hidden;
+  }
+
   &--default-offset {
     padding: 65px 0 90px;
   }
@@ -14,6 +18,10 @@
 
   &--background-red {
     background: #e33151;
+  }
+
+  &--background-black {
+    background: #1b1b1b;
   }
 
   &__wrapper {
