@@ -1,0 +1,17 @@
+mixin listBreadcrumbs(name, spanTag)
+    if spanTag == true
+        li.breadcrumbs__item
+            span.breadcrumbs__current= name
+    else
+        li.breadcrumbs__item
+            a(href="#").breadcrumbs__link= name
+
+
+// Use
+
+//.breadcrumbs
+//    .container
+//        ul.breadcrumbs__list
+//            +listBreadcrumbs("Home")
+//            +listBreadcrumbs("Resources")
+//            +listBreadcrumbs("FAQ", true)

@@ -1,9 +1,6 @@
 footer.footer
     .layout
-        .footer__background
-            .layout
-                .footer__background-image
-                    img(src="src/blocks/footer/assets/img/footer-background.png")
+
         .footer__wrapper
             .footer__content-wrapper
                 .footer__sidebar
@@ -65,6 +62,15 @@ footer.footer
                         img(src="src/blocks/social-menu/assets/img/icon-instagram.svg").social__image
                     a(href="#").social-menu__link
                         img(src="src/blocks/social-menu/assets/img/icon-youtube.svg").social__image
+                .footer__copy.footer__copy--mobile-hide
+                    .footer__copy-text © Puzzle. 644031, Москва, Звездова, 129
+                    .footer__copy-text ООО «Puzzle»
+                    .footer__copy-text ИНН: 7777149200, ОГРН: 1175543027788
+                    a(href="#").footer__copy-link Политика конфиденциальности
+                    br
+                    a(href="#").footer__copy-link Пользовательское соглашение
+
+            .footer__mobile
                 .footer__copy
                     .footer__copy-text © Puzzle. 644031, Москва, Звездова, 129
                     .footer__copy-text ООО «Puzzle»
@@ -72,3 +78,8 @@ footer.footer
                     a(href="#").footer__copy-link Политика конфиденциальности
                     br
                     a(href="#").footer__copy-link Пользовательское соглашение
+
+        .footer__background
+            .layout
+                .footer__background-wrapper
+                    img(src="src/blocks/footer/assets/img/footer-background.png").footer__background-image

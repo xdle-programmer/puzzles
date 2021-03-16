@@ -48,48 +48,23 @@ block content
                         .tabs__toggle-button.tabs__toggle-button--tab-link Коллекция N3
                     .tabs__toggle-items.tabs__toggle-items--el-1
                         .tabs__toggle-item.tabs__toggle-item--active
-
-                            .masonry-grid
-                                .masonry-grid__item
+                            .product-catalog__wrapper
+                                .product-catalog__col
                                     +productItemSlider()
-                                .masonry-grid__item
+                                .product-catalog__col
                                     +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
-                                .masonry-grid__item
-                                    .content-box 3
-                                .masonry-grid__item
-                                    .content-box 4
-                                .masonry-grid__item
-                                    .content-box 5
-                                .masonry-grid__item
-                                    .content-box 6
-                                .masonry-grid__item
-                                    .content-box 7
-                                .masonry-grid__item
-                                    .content-box 8
-                                .masonry-grid__item
-                                    .content-box 9
-                                .masonry-grid__item
-                                    .content-box 10
-                                .masonry-grid__item
-                                    .content-box 11
-
-                            //.product-catalog__wrapper
-                            //    .product-catalog__col
-                            //        +productItemSlider()
-                            //    .product-catalog__col
-                            //        +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
-                            //    .product-catalog__col
-                            //        +productItemSlider()
-                            //    .product-catalog__col
-                            //        +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
-                            //    .product-catalog__col
-                            //        +productItemSlider()
-                            //    .product-catalog__col
-                            //        +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
-                            //    .product-catalog__col
-                            //        +productItemSlider()
-                            //    .product-catalog__col
-                            //        +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+                                .product-catalog__col
+                                    +productItemSlider()
+                                .product-catalog__col
+                                    +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+                                .product-catalog__col
+                                    +productItemSlider()
+                                .product-catalog__col
+                                    +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+                                .product-catalog__col
+                                    +productItemSlider()
+                                .product-catalog__col
+                                    +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
                         .tabs__toggle-item
                             .product-catalog__wrapper
                                 .product-catalog__col
@@ -246,41 +221,6 @@ block content
                 //        .tabs__toggle-item Content 3
 
 
-        .product-catalog.product-catalog--default-offset
-            .layout
-                .heading.heading--center
-                    h2.heading__title.heading__title--border Коллекция DAVICI Детям
-                    p.heading__desc Создана специально для дошкольников и младших школьников, маленьких любознательных и пытливых искателей.
-
-                .collection-slider.collection-slider--full
-                    .collection-slider__init
-                        .collection-slider__item
-                            +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
-                        .collection-slider__item
-                            +productItemSlider()
-                        .collection-slider__item
-                            +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
-                        .collection-slider__item
-                            +productItemSlider()
-                        .collection-slider__item
-                            +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
-                        .collection-slider__item
-                            +productItemSlider()
-                        .collection-slider__item
-                            +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
-                        .collection-slider__item
-                            +productItemSlider()
-                        .collection-slider__item
-                            +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
-                        .collection-slider__item
-                            +productItemSlider()
-
-                    .collection-slider__navigation
-                        button.collection-slider__navigation-button.collection-slider__navigation-button--prev.
-                            <svg id="arrow" viewBox="0 0 8 14"><path d="M6.976.696a.6.6 0 1 1 .848.849l-5.94 5.94a.6.6 0 0 1-.848-.849l5.94-5.94z"></path><path d="M1.036 7.485a.6.6 0 0 1 .849-.849l5.94 5.94a.6.6 0 0 1-.85.848l-5.939-5.94z"></path></svg>
-                        button.collection-slider__navigation-button.collection-slider__navigation-button--next.
-                            <svg id="arrow" viewBox="0 0 8 14"><path d="M6.976.696a.6.6 0 1 1 .848.849l-5.94 5.94a.6.6 0 0 1-.848-.849l5.94-5.94z"></path><path d="M1.036 7.485a.6.6 0 0 1 .849-.849l5.94 5.94a.6.6 0 0 1-.85.848l-5.939-5.94z"></path></svg>
-
         .product-catalog.product-catalog--small-offset.product-catalog--background-black.product-catalog--overflow-hide
             .layout.layout--large
 
@@ -304,6 +244,29 @@ block content
                             +productItem("product-item--style-white", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
                         .collection-slider__item
                             +productItemSlider("product-item--style-white")
+                    .collection-slider__navigation
+                        button.collection-slider__navigation-button.collection-slider__navigation-button--prev.
+                            <svg id="arrow" viewBox="0 0 8 14"><path d="M6.976.696a.6.6 0 1 1 .848.849l-5.94 5.94a.6.6 0 0 1-.848-.849l5.94-5.94z"></path><path d="M1.036 7.485a.6.6 0 0 1 .849-.849l5.94 5.94a.6.6 0 0 1-.85.848l-5.939-5.94z"></path></svg>
+                        button.collection-slider__navigation-button.collection-slider__navigation-button--next.
+                            <svg id="arrow" viewBox="0 0 8 14"><path d="M6.976.696a.6.6 0 1 1 .848.849l-5.94 5.94a.6.6 0 0 1-.848-.849l5.94-5.94z"></path><path d="M1.036 7.485a.6.6 0 0 1 .849-.849l5.94 5.94a.6.6 0 0 1-.85.848l-5.939-5.94z"></path></svg>
+
+                .collection-slider
+                    .collection-slider__init
+                        .collection-slider__item
+                            +productItemSlider("product-item--style-white")
+                        .collection-slider__item
+                            +productItem("product-item--style-white", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+                        .collection-slider__item
+                            +productItemSlider("product-item--style-white")
+                        .collection-slider__item
+                            +productItemSlider("product-item--style-white")
+                        .collection-slider__item
+                            +productItem("product-item--style-white", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+                        .collection-slider__item
+                            +productItemSlider("product-item--style-white")
+                        .collection-slider__item
+                            +productItem("product-item--style-white", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+
                     .collection-slider__navigation
                         button.collection-slider__navigation-button.collection-slider__navigation-button--prev.
                             <svg id="arrow" viewBox="0 0 8 14"><path d="M6.976.696a.6.6 0 1 1 .848.849l-5.94 5.94a.6.6 0 0 1-.848-.849l5.94-5.94z"></path><path d="M1.036 7.485a.6.6 0 0 1 .849-.849l5.94 5.94a.6.6 0 0 1-.85.848l-5.939-5.94z"></path></svg>

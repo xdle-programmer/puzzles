@@ -10,14 +10,32 @@
   padding-top: 43px;
   padding-bottom: 48px;
 
+  @include mobile-big-screen {
+    padding-bottom: 0;
+  }
+
   &__wrapper {
     position: relative;
     display: flex;
     justify-content: space-between;
+    @include mobile-big-screen {
+      flex-direction: column;
+    }
   }
 
   &__content-wrapper {
     display: flex;
+    @include mobile-big-screen {
+      order: 2;
+    }
+  }
+
+  &__information {
+    @include mobile-big-screen {
+      order: 1;
+      text-align: center;
+      margin-bottom: 30px;
+    }
   }
 
   // Background
@@ -31,11 +49,25 @@
     @include table-large-screen {
       display: none;
     }
+    @include mobile-big-screen {
+      display: block;
+      position: relative;
+    }
 
-    &-image {
+    &-wrapper {
       font-size: 0;
       text-align: center;
       padding-left: 8.34%;
+      @include mobile-big-screen {
+        padding-left: 0;
+        padding-top: 14px;
+      }
+    }
+
+    &-image {
+      @include mobile-big-screen {
+        max-width: 100%;
+      }
     }
   }
 
@@ -125,6 +157,9 @@
     justify-content: flex-start;
     align-items: flex-start;
     margin-bottom: 17px;
+    @include mobile-big-screen {
+      align-items: center;
+    }
   }
 
   &__contact-phone {
@@ -187,6 +222,12 @@
     font-family: $fr;
     color: rgba(255, 255, 255, .5);
     margin-top: 33px;
+
+    &--mobile-hide {
+      @include mobile-big-screen {
+        display: none;
+      }
+    }
   }
 
   &__copy-text {
@@ -219,6 +260,14 @@
       @include trn(.15s);
     }
 
+  }
+
+  &__mobile {
+    display: none;
+    @include mobile-big-screen {
+      display: block;
+      order: 3;
+    }
   }
 
 }

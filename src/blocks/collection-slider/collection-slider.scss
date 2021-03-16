@@ -20,7 +20,7 @@ $collectionSliderWrapper: '.collection-slider__wrapper';
 
   &__navigation-button {
     position: absolute;
-    bottom: 115px;
+    bottom: 150px;
     @include flex-row-center();
     width: 60px;
     height: 60px;
@@ -32,8 +32,20 @@ $collectionSliderWrapper: '.collection-slider__wrapper';
     @include brr(50%);
     cursor: pointer;
 
+    &--prev {
+      left: -20px;
+
+      @include table-large-screen {
+        left: 0;
+      }
+    }
+
     &--next {
-      right: 0;
+      right: -20px;
+
+      @include table-large-screen {
+        right: 0;
+      }
 
       svg {
         transform: scale(-1);

@@ -1,0 +1,61 @@
+extends ../templates/main
+
+block variables
+    - var title = 'Puzzle'
+
+block content
+    include ../blocks/breadcrumbs/breadcrumbs
+    main.main
+
+        .breadcrumbs.breadcrumbs--default-offset
+            .layout
+                ul.breadcrumbs__lists
+                    +listBreadcrumbs("Главная")
+                    +listBreadcrumbs("Каталог", true)
+
+        .catalog-main
+            .layout
+                .catalog-filter
+                    form.catalog-filter__form
+                        //.catalog-filter__item
+                        //    label.radio-button
+                        //        input.radio-button__input(type="radio" name="radio" checked="checked" required="")
+                        //        .radio-button__text
+                        //            .radio-button__status
+                        //            p Radio 1
+                        //.catalog-filter__item
+                        //    label.radio-button
+                        //        input.radio-button__input(type="radio" name="radio" checked="checked" required="")
+                        //        .radio-button__text
+                        //            .radio-button__status
+                        //            p Radio 1
+                        .catalog-filter__item
+                            label.checkbox-button
+                                input.checkbox-button__input(type="checkbox" disabled="true" required="")
+                                .checkbox-button__text
+                                    .checkbox-button__status
+                                    p Акция
+                        .catalog-filter__item
+                            label.checkbox-button
+                                input.checkbox-button__input(type="checkbox" checked="checked" required="")
+                                .checkbox-button__text
+                                    .checkbox-button__status
+                                    p Для первой сборки
+                        .catalog-filter__item
+                            label.checkbox-button
+                                input.checkbox-button__input(type="checkbox" disabled="true" required="")
+                                .checkbox-button__text
+                                    .checkbox-button__status
+                                    p Лидер рейтинга
+                        .catalog-filter__item
+                            label.checkbox-button
+                                input.checkbox-button__input(type="checkbox" required="")
+                                .checkbox-button__text
+                                    .checkbox-button__status
+                                    p Новинка
+                        .catalog-filter__item
+                            label.checkbox-button
+                                input.checkbox-button__input(type="checkbox" required="")
+                                .checkbox-button__text
+                                    .checkbox-button__status
+                                    p Скидка недели
