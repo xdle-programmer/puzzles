@@ -6,7 +6,9 @@ let slider = tns({
     slideBy: 'page',
     nav: true,
     mouseDrag: true,
-    speed: 400,
+    autoplay: true,
+    autoplayButtonOutput: false,
+    speed: 500,
     controls: false,
     navPosition: "bottom",
     navContainer: ".slider-main__controls-wrapper"

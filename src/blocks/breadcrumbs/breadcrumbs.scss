@@ -1,0 +1,52 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+.breadcrumbs {
+
+  &--default-offset {
+    padding: 30px 0;
+  }
+
+  &__lists {
+    display: flex;
+  }
+
+  &__item {
+    position: relative;
+
+    &:not(:last-child) {
+      &:after {
+        position: relative;
+        top: 2px;
+        content: '';
+        margin-left: 8px;
+        margin-right: 6px;
+        width: 10px;
+        height: 14px;
+        background-image: url(/images/icons/arrow-breadcrumb.svg);
+        display: inline-block;
+      }
+    }
+  }
+
+  &__link,
+  &__current {
+    @include fr();
+    font-size: 13px;
+    line-height: 18px;
+    color: #6b70eb;
+    @include trn(.25s);
+  }
+
+  &__link {
+    &:hover {
+      color: #df00a1;
+    }
+  }
+
+  &__current {
+    color: #1b1b1b;
+  }
+
+}

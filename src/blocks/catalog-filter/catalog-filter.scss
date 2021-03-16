@@ -1,0 +1,27 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+.catalog-filter {
+  display: flex;
+  width: 210px;
+  max-height: 600px;
+  border-radius: 10px;
+  overflow: hidden;
+
+  &__form {
+    overflow-y: auto;
+    position: relative;
+    padding: 21px 20px 0;
+    box-sizing: border-box;
+    border: 1px solid #6b70eb;
+    border-radius: 10px;
+    background: #fff;
+    width: 100%;
+  }
+
+  &__item {
+    margin-bottom: 15px;
+  }
+
+}
