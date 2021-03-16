@@ -1,4 +1,6 @@
 extends ../templates/main
+include ../blocks/product-catalog/product-catalog
+
 
 block variables
     - var title = 'Puzzle'
@@ -7,6 +9,9 @@ block content
     main.main
 
         .layout
+
+            +productItemTest('1111','2222')
+
 
             .masonry-grid
                 .masonry-grid__item
