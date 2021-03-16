@@ -56,6 +56,15 @@ function toggleTabs(options) {
                 clearInterval(checkDisplay);
             }
         }, 1);
+
+        let eventInit = new Event('itemStateChange');
+
+        console.log($toggleItems[index])
+
+        if ($toggleItems[index].querySelectorAll('.masonry-grid')[0]) {
+            let $masonry = $toggleItems[index].querySelectorAll('.masonry-grid')[0];
+            $masonry.dispatchEvent(eventInit);
+        }
     }
 
     showItem(0);

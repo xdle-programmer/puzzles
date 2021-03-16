@@ -3,6 +3,7 @@
 @import "../../blocks/base/media-queries";
 
 .product-catalog {
+  overflow: hidden;
 
   &--overflow-hide {
     overflow: hidden;
@@ -43,8 +44,8 @@
     justify-content: center;
     margin-top: 30px;
 
-    & .button {
-      margin: 7.5px;
-    }
+    //& .button {
+    //  margin: 7.5px;
+    //}
   }
 }

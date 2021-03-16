@@ -5,70 +5,97 @@ block variables
 
 block content
     main.main
+        //TODO Внимательно проверить по всем классам, чтобы каждый класс лежал в соей папке
+        include ../blocks/slider-main/slider-main
 
-        .layout
+        .product-catalog.product-catalog--default-offset
+            //TODO Заменить классы с непонятными названиями на сексии. Класс section с минимальным набором модификаторов
+            .layout
+                .heading.heading--center
+                    h2.heading__title.heading__title--border Авторские коллекции пазлов
+                    p.heading__desc Создана специально для дошкольников и младших школьников, маленьких любознательных и пытливых искателей.
 
-            .masonry-grid
-                .masonry-grid__item
-                    .content-box 1
-                .masonry-grid__item
-                    .content-box 2
-                .masonry-grid__item
-                    .content-box 3
-                .masonry-grid__item
-                    .content-box 4
-                .masonry-grid__item
-                    .content-box 5
-                .masonry-grid__item
-                    .content-box 6
-                .masonry-grid__item
-                    .content-box 7
-                .masonry-grid__item
-                    .content-box 8
-                .masonry-grid__item
-                    .content-box 9
-                .masonry-grid__item
-                    .content-box 10
-                .masonry-grid__item
-                    .content-box 11
+                .tabs
+                    .tabs__toggle-buttons.tabs__toggle-buttons--el-1.product-catalog__tab-wrapper
+                        .tabs__toggle-button.tabs__toggle-button--tab-link.tabs__toggle-button--active Коллекция N1
+                        .tabs__toggle-button.tabs__toggle-button--tab-link Коллекция N2
+                        .tabs__toggle-button.tabs__toggle-button--tab-link Коллекция N3
+                    .tabs__toggle-items.tabs__toggle-items--el-1
+                        .tabs__toggle-item.tabs__toggle-item--active
+                            .masonry-grid
+                                .masonry-grid__item
+                                    //TODO Сделать одинаковыый миксин, наличие слайдера передавать параметром
+                                    +productItemSlider()
+                                .masonry-grid__item
+                                    +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+                                    //TODO В миксине оставить только один парметр - путь к фото, заголовок и класс модификатор
+                                .masonry-grid__item
+                                    +productItemSlider()
+                                .masonry-grid__item
+                                    +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+                                .masonry-grid__item
+                                    +productItemSlider()
+                                .masonry-grid__item
+                                    +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+                                .masonry-grid__item
+                                    +productItemSlider()
+                                .masonry-grid__item
+                                    +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+                                .masonry-grid__item
+                                    +productItemSlider()
+                                .masonry-grid__item
+                                    +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
 
-                            //.product-catalog__wrapper
-                            //    .product-catalog__col
-                            //        +productItemSlider()
-                            //    .product-catalog__col
-                            //        +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
-                            //    .product-catalog__col
-                            //        +productItemSlider()
-                            //    .product-catalog__col
-                            //        +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
-                            //    .product-catalog__col
-                            //        +productItemSlider()
-                            //    .product-catalog__col
-                            //        +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
-                            //    .product-catalog__col
-                            //        +productItemSlider()
-                            //    .product-catalog__col
-                            //        +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
                         .tabs__toggle-item
-                            .product-catalog__wrapper
-                                .product-catalog__col
+                            .masonry-grid
+                                .masonry-grid__item
+                                    //TODO Сделать одинаковыый миксин, наличие слайдера передавать параметром
+                                    +productItemSlider()
+                                .masonry-grid__item
                                     +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
-                                .product-catalog__col
+                                    //TODO В миксине оставить только один парметр - путь к фото, заголовок и класс модификатор
+                                .masonry-grid__item
+                                    +productItemSlider()
+                                .masonry-grid__item
                                     +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
-                                .product-catalog__col
+                                .masonry-grid__item
+                                    +productItemSlider()
+                                .masonry-grid__item
                                     +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
-                                .product-catalog__col
+                                .masonry-grid__item
+                                    +productItemSlider()
+                                .masonry-grid__item
                                     +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+                                .masonry-grid__item
+                                    +productItemSlider()
+                                .masonry-grid__item
+                                    +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+
                         .tabs__toggle-item
-                            .product-catalog__wrapper
-                                .product-catalog__col
+                            .masonry-grid
+                                .masonry-grid__item
+                                    //TODO Сделать одинаковыый миксин, наличие слайдера передавать параметром
                                     +productItemSlider()
-                                .product-catalog__col
+                                .masonry-grid__item
+                                    +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+                                    //TODO В миксине оставить только один парметр - путь к фото, заголовок и класс модификатор
+                                .masonry-grid__item
                                     +productItemSlider()
-                                .product-catalog__col
+                                .masonry-grid__item
+                                    +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+                                .masonry-grid__item
                                     +productItemSlider()
-                                .product-catalog__col
+                                .masonry-grid__item
+                                    +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+                                .masonry-grid__item
                                     +productItemSlider()
+                                .masonry-grid__item
+                                    +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+                                .masonry-grid__item
+                                    +productItemSlider()
+                                .masonry-grid__item
+                                    +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+
 
                 .product-catalog__buttons
                     a(href="#").button Посмотреть все наборы коллекции
@@ -87,6 +114,7 @@ block content
                         .tabs__toggle-button.tabs__toggle-button--tab-item Коллекция N3
                     .tabs__toggle-items.tabs__toggle-items--el-2
                         .tabs__toggle-item.tabs__toggle-item--active
+                            //TODO Вставить разные превью реальных товаров. Глобально посайту сделать превью 10 разных товаров, а не 2
                             #id1.masonry-grid
                                 .masonry-grid__item
                                     .content-box 1

@@ -169,77 +169,48 @@ function masonryGrid(options) {
 
         setAllItemsPosition();
     });
+
+    $wrapper.addEventListener('itemHeightChange', (event) => {
+        changeItemsQueue.push(event.item);
+    });
+    $wrapper.addEventListener('itemStateChange', (event) => {
+        columnsCount = getItemOptions().currentColumnCount;
+        rowGap = getItemOptions().currentRowGap;
+        columnGap = getItemOptions().currentColumnGap;
+
+        setAllItemsPosition();
+    });
+
 }
 
+window.masonryFunctionsArray = new Map();
 
-window.masonryMainPage0 = new masonryGrid({
-    columnsCount: 4,
-    rowGap: 40,
-    columnGap: 50,
-    responsive: [
-        {
-            maxWidth: 1400,
-            columnsCount: 3,
-            rowGap: 30,
-            columnGap: 40
-        }, {
-            maxWidth: 1000,
-            columnsCount: 2,
-            rowGap: 20,
-            columnGap: 10
-        }]
-});
-window.masonryMainPage1 = new masonryGrid({
-    columnsCount: 4,
-    wrapper: document.getElementById('id1'),
-    rowGap: 40,
-    columnGap: 50,
-    responsive: [
-        {
-            maxWidth: 1400,
-            columnsCount: 3,
-            rowGap: 30,
-            columnGap: 40
-        }, {
-            maxWidth: 1000,
-            columnsCount: 2,
-            rowGap: 20,
-            columnGap: 10
-        }]
-});
-window.masonryMainPage2 = new masonryGrid({
-    columnsCount: 4,
-    wrapper: document.getElementById('id2'),
-    rowGap: 40,
-    columnGap: 50,
-    responsive: [
-        {
-            maxWidth: 1400,
-            columnsCount: 3,
-            rowGap: 30,
-            columnGap: 40
-        }, {
-            maxWidth: 1000,
-            columnsCount: 2,
-            rowGap: 20,
-            columnGap: 10
-        }]
-});
-window.masonryMainPage3 = new masonryGrid({
-    columnsCount: 4,
-    wrapper: document.getElementById('id3'),
-    rowGap: 40,
-    columnGap: 50,
-    responsive: [
-        {
-            maxWidth: 1400,
-            columnsCount: 3,
-            rowGap: 30,
-            columnGap: 40
-        }, {
-            maxWidth: 1000,
-            columnsCount: 2,
-            rowGap: 20,
-            columnGap: 10
-        }]
-});
+const masonryWrappersArray = Array.from(document.querySelectorAll('.masonry-grid'));
+
+for (const $masonryWrapper of masonryWrappersArray) {
+
+    let options = {
+        columnsCount: 4,
+        wrapper: $masonryWrapper,
+        rowGap: 40,
+        columnGap: 50,
+        responsive: [
+            {
+                maxWidth: 1400,
+                columnsCount: 3,
+                rowGap: 30,
+                columnGap: 40
+            }, {
+                maxWidth: 1000,
+                columnsCount: 2,
+                rowGap: 20,
+                columnGap: 10
+            }]
+    };
+
+    if ($masonryWrapper.id !== '') {
+        window.masonryFunctionsArray.set($masonryWrapper.id, new masonryGrid(options));
+    } else {
+        window.masonryFunctionsArray.set(masonryWrappersArray.indexOf($masonryWrapper), new masonryGrid(options));
+    }
+}
