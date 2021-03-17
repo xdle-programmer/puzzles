@@ -1,0 +1,34 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+.section {
+  padding: 65px 0 90px;
+  overflow: hidden;
+
+  &--small-offset {
+    padding: 35px 0;
+  }
+
+  &--background-red {
+    background: #e33151;
+  }
+
+  &--background-black {
+    background: #1b1b1b;
+  }
+
+
+  &__buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+  &__button {
+    &:not(:last-child) {
+      margin-right: 15px;
+    }
+  }
+
+}

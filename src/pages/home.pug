@@ -3,13 +3,23 @@ extends ../templates/main
 block variables
     - var title = 'Puzzle'
 
+    - var productSlide1 = ['src/blocks/product-item/assets/img/product-slide1/product-item1.jpg', 'src/blocks/product-item/assets/img/product-slide1/product-item2.jpg', 'src/blocks/product-item/assets/img/product-slide1/product-item3.jpg', 'src/blocks/product-item/assets/img/product-slide1/product-item4.jpg', 'src/blocks/product-item/assets/img/product-slide1/product-item5.jpg']
+    - var productSlide2 = ['src/blocks/product-item/assets/img/product-slide2/product-item1.jpg', 'src/blocks/product-item/assets/img/product-slide2/product-item2.jpg', 'src/blocks/product-item/assets/img/product-slide2/product-item3.jpg', 'src/blocks/product-item/assets/img/product-slide2/product-item4.jpg', 'src/blocks/product-item/assets/img/product-slide2/product-item5.jpg']
+    - var productSlide3 = ['src/blocks/product-item/assets/img/product-slide3/product-item1.png', 'src/blocks/product-item/assets/img/product-slide3/product-item2.jpg', 'src/blocks/product-item/assets/img/product-slide3/product-item3.jpg', 'src/blocks/product-item/assets/img/product-slide3/product-item4.jpg', 'src/blocks/product-item/assets/img/product-slide3/product-item5.jpg']
+    - var productSlide4 = ['src/blocks/product-item/assets/img/product-slide4/product-item1.jpg', 'src/blocks/product-item/assets/img/product-slide4/product-item2.png', 'src/blocks/product-item/assets/img/product-slide4/product-item3.png', 'src/blocks/product-item/assets/img/product-slide4/product-item4.jpg', 'src/blocks/product-item/assets/img/product-slide4/product-item5.jpg']
+    - var productSlide5 = ['src/blocks/product-item/assets/img/product-slide5/product-item1.png', 'src/blocks/product-item/assets/img/product-slide5/product-item2.png', 'src/blocks/product-item/assets/img/product-slide5/product-item3.png']
+    - var productSlide6 = ['src/blocks/product-item/assets/img/product-slide6/product-item1.jpg', 'src/blocks/product-item/assets/img/product-slide6/product-item2.jpg', 'src/blocks/product-item/assets/img/product-slide6/product-item3.png', 'src/blocks/product-item/assets/img/product-slide6/product-item4.jpg', 'src/blocks/product-item/assets/img/product-slide6/product-item5.jpg']
+    - var productSlide7 = ['src/blocks/product-item/assets/img/product-slide7/product-item1.jpg', 'src/blocks/product-item/assets/img/product-slide7/product-item2.jpg', 'src/blocks/product-item/assets/img/product-slide7/product-item3.png', 'src/blocks/product-item/assets/img/product-slide7/product-item4.jpg', 'src/blocks/product-item/assets/img/product-slide7/product-item5.jpg']
+    - var productSlide8 = ['src/blocks/product-item/assets/img/product-slide8/product-item1.jpg', 'src/blocks/product-item/assets/img/product-slide8/product-item2.jpg', 'src/blocks/product-item/assets/img/product-slide8/product-item3.png', 'src/blocks/product-item/assets/img/product-slide8/product-item4.jpg', 'src/blocks/product-item/assets/img/product-slide8/product-item5.jpg']
+    - var productSlide9 = ['src/blocks/product-item/assets/img/product-slide9/product-item1.jpg', 'src/blocks/product-item/assets/img/product-slide9/product-item2.jpg', 'src/blocks/product-item/assets/img/product-slide9/product-item3.png', 'src/blocks/product-item/assets/img/product-slide9/product-item4.jpg', 'src/blocks/product-item/assets/img/product-slide9/product-item5.jpg']
+    - var productSlide10 = ['src/blocks/product-item/assets/img/product-slide10/product-item1.jpg', 'src/blocks/product-item/assets/img/product-slide10/product-item2.jpg', 'src/blocks/product-item/assets/img/product-slide10/product-item3.jpg', 'src/blocks/product-item/assets/img/product-slide10/product-item4.jpg', 'src/blocks/product-item/assets/img/product-slide10/product-item5.jpg']
+
 block content
     main.main
         //TODO Внимательно проверить по всем классам, чтобы каждый класс лежал в соей папке
         include ../blocks/slider-main/slider-main
 
-        .product-catalog.product-catalog--default-offset
-            //TODO Заменить классы с непонятными названиями на сексии. Класс section с минимальным набором модификаторов
+        .section
             .layout
                 .heading.heading--center
                     h2.heading__title.heading__title--border Авторские коллекции пазлов
@@ -24,85 +34,91 @@ block content
                         .tabs__toggle-item.tabs__toggle-item--active
                             .masonry-grid
                                 .masonry-grid__item
-                                    //TODO Сделать одинаковыый миксин, наличие слайдера передавать параметром
-                                    +productItemSlider()
+                                    +productItem(true, "", productSlide1, "Летучий фрегат. 130 деталей")
                                 .masonry-grid__item
-                                    +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
-                                    //TODO В миксине оставить только один парметр - путь к фото, заголовок и класс модификатор
+                                    +productItem(false, "", "src/blocks/product-item/assets/img/product-item1.jpg", "Коллекция №1")
                                 .masonry-grid__item
-                                    +productItemSlider()
+                                    +productItem(true, "", productSlide2, "Купание разноцветного дракона. 125 деталей")
                                 .masonry-grid__item
-                                    +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+                                    +productItem(true, "", productSlide3, "Обитаемая рыба. 130 деталей")
                                 .masonry-grid__item
-                                    +productItemSlider()
+                                    +productItem(true, "", productSlide4, "Корабль сокровищ. 60 деталей")
                                 .masonry-grid__item
-                                    +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+                                    +productItem(true, "", productSlide5, "От сердца к сердцу. 180 деталей")
                                 .masonry-grid__item
-                                    +productItemSlider()
+                                    +productItem(true, "", productSlide6, "Обитаемая рыба. 130 деталей")
                                 .masonry-grid__item
-                                    +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+                                    +productItem(true, "", productSlide7, "Обитаемая рыба. 130 деталей")
                                 .masonry-grid__item
-                                    +productItemSlider()
+                                    +productItem(true, "", productSlide8, "Обитаемая рыба. 130 деталей")
                                 .masonry-grid__item
-                                    +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+                                    +productItem(true, "", productSlide9, "Обитаемая рыба. 130 деталей")
+                                .masonry-grid__item
+                                    +productItem(true, "", productSlide10, "Обитаемая рыба. 130 деталей")
+                                .masonry-grid__item
+                                    +productItem(true, "", productSlide4, "Корабль сокровищ. 60 деталей")
 
                         .tabs__toggle-item
                             .masonry-grid
                                 .masonry-grid__item
-                                    //TODO Сделать одинаковыый миксин, наличие слайдера передавать параметром
-                                    +productItemSlider()
+                                    +productItem(false, "", "src/blocks/product-item/assets/img/product-item1.jpg", "Коллекция №1")
                                 .masonry-grid__item
-                                    +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
-                                    //TODO В миксине оставить только один парметр - путь к фото, заголовок и класс модификатор
+                                    +productItem(true, "", productSlide1, "Летучий фрегат. 130 деталей")
                                 .masonry-grid__item
-                                    +productItemSlider()
+                                    +productItem(true, "", productSlide3, "Обитаемая рыба. 130 деталей")
                                 .masonry-grid__item
-                                    +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+                                    +productItem(true, "", productSlide4, "Корабль сокровищ. 60 деталей")
                                 .masonry-grid__item
-                                    +productItemSlider()
+                                    +productItem(true, "", productSlide2, "Купание разноцветного дракона. 125 деталей")
                                 .masonry-grid__item
-                                    +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+                                    +productItem(true, "", productSlide5, "От сердца к сердцу. 180 деталей")
                                 .masonry-grid__item
-                                    +productItemSlider()
+                                    +productItem(true, "", productSlide9, "Обитаемая рыба. 130 деталей")
                                 .masonry-grid__item
-                                    +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+                                    +productItem(true, "", productSlide10, "Обитаемая рыба. 130 деталей")
                                 .masonry-grid__item
-                                    +productItemSlider()
+                                    +productItem(true, "", productSlide7, "Обитаемая рыба. 130 деталей")
                                 .masonry-grid__item
-                                    +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+                                    +productItem(true, "", productSlide4, "Корабль сокровищ. 60 деталей")
+                                .masonry-grid__item
+                                    +productItem(true, "", productSlide6, "Обитаемая рыба. 130 деталей")
+                                .masonry-grid__item
+                                    +productItem(true, "", productSlide8, "Обитаемая рыба. 130 деталей")
 
                         .tabs__toggle-item
                             .masonry-grid
                                 .masonry-grid__item
-                                    //TODO Сделать одинаковыый миксин, наличие слайдера передавать параметром
-                                    +productItemSlider()
+                                    +productItem(true, "", productSlide5, "От сердца к сердцу. 180 деталей")
                                 .masonry-grid__item
-                                    +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
-                                    //TODO В миксине оставить только один парметр - путь к фото, заголовок и класс модификатор
+                                    +productItem(true, "", productSlide9, "Обитаемая рыба. 130 деталей")
                                 .masonry-grid__item
-                                    +productItemSlider()
+                                    +productItem(true, "", productSlide10, "Обитаемая рыба. 130 деталей")
                                 .masonry-grid__item
-                                    +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+                                    +productItem(false, "", "src/blocks/product-item/assets/img/product-item1.jpg", "Коллекция №1")
                                 .masonry-grid__item
-                                    +productItemSlider()
+                                    +productItem(true, "", productSlide4, "Корабль сокровищ. 60 деталей")
                                 .masonry-grid__item
-                                    +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+                                    +productItem(true, "", productSlide1, "Летучий фрегат. 130 деталей")
                                 .masonry-grid__item
-                                    +productItemSlider()
+                                    +productItem(true, "", productSlide3, "Обитаемая рыба. 130 деталей")
                                 .masonry-grid__item
-                                    +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+                                    +productItem(true, "", productSlide4, "Корабль сокровищ. 60 деталей")
                                 .masonry-grid__item
-                                    +productItemSlider()
+                                    +productItem(true, "", productSlide6, "Обитаемая рыба. 130 деталей")
                                 .masonry-grid__item
-                                    +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+                                    +productItem(true, "", productSlide2, "Купание разноцветного дракона. 125 деталей")
+                                .masonry-grid__item
+                                    +productItem(true, "", productSlide7, "Обитаемая рыба. 130 деталей")
+                                .masonry-grid__item
+                                    +productItem(true, "", productSlide8, "Обитаемая рыба. 130 деталей")
 
 
-                .product-catalog__buttons
-                    a(href="#").button Посмотреть все наборы коллекции
-                    a(href="#").button В каталог
 
+                .section__buttons
+                    a(href="#").button.button--purple.section__button Посмотреть все наборы коллекции
+                    a(href="#").button.button--purple.section__button В каталог
 
-        .product-catalog.product-catalog--small-offset.product-catalog--background-red
+        .section.section--small-offset.section--background-red
             .layout
                 .heading.heading--color-white.heading--center
                     h2.heading__title Деревянные пазлы DAVICI — лучший подарок
@@ -114,126 +130,99 @@ block content
                         .tabs__toggle-button.tabs__toggle-button--tab-item Коллекция N3
                     .tabs__toggle-items.tabs__toggle-items--el-2
                         .tabs__toggle-item.tabs__toggle-item--active
-                            //TODO Вставить разные превью реальных товаров. Глобально посайту сделать превью 10 разных товаров, а не 2
-                            #id1.masonry-grid
+                            .masonry-grid
                                 .masonry-grid__item
-                                    .content-box 1
+                                    +productItem(false, "product-item--style-white", "src/blocks/product-item/assets/img/product-item1.jpg", "Коллекция №1")
                                 .masonry-grid__item
-                                    .content-box 2
+                                    +productItem(true, "product-item--style-white", productSlide1, "Летучий фрегат. 130 деталей")
                                 .masonry-grid__item
-                                    .content-box 3
+                                    +productItem(true, "product-item--style-white", productSlide3, "Обитаемая рыба. 130 деталей")
                                 .masonry-grid__item
-                                    .content-box 4
+                                    +productItem(true, "product-item--style-white", productSlide4, "Корабль сокровищ. 60 деталей")
                                 .masonry-grid__item
-                                    .content-box 5
+                                    +productItem(true, "product-item--style-white", productSlide2, "Купание разноцветного дракона. 125 деталей")
                                 .masonry-grid__item
-                                    .content-box 6
+                                    +productItem(true, "product-item--style-white", productSlide5, "От сердца к сердцу. 180 деталей")
                                 .masonry-grid__item
-                                    .content-box 7
+                                    +productItem(true, "product-item--style-white", productSlide9, "Обитаемая рыба. 130 деталей")
                                 .masonry-grid__item
-                                    .content-box 8
+                                    +productItem(true, "product-item--style-white", productSlide10, "Обитаемая рыба. 130 деталей")
                                 .masonry-grid__item
-                                    .content-box 9
+                                    +productItem(true, "product-item--style-white", productSlide7, "Обитаемая рыба. 130 деталей")
                                 .masonry-grid__item
-                                    .content-box 10
+                                    +productItem(true, "product-item--style-white", productSlide4, "Корабль сокровищ. 60 деталей")
                                 .masonry-grid__item
-                                    .content-box 11
-                            .product-catalog__wrapper(style='display:none')
-                                .product-catalog__col
-                                    +productItemSlider("product-item--style-white")
-                                .product-catalog__col
-                                    +productItem("product-item--style-white", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
-                                .product-catalog__col
-                                    +productItemSlider("product-item--style-white")
-                                .product-catalog__col
-                                    +productItem("product-item--style-white", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
-                                .product-catalog__col
-                                    +productItemSlider("product-item--style-white")
-                                .product-catalog__col
-                                    +productItem("product-item--style-white", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
-                                .product-catalog__col
-                                    +productItemSlider("product-item--style-white")
-                                .product-catalog__col
-                                    +productItem("product-item--style-white", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+                                    +productItem(true, "product-item--style-white", productSlide6, "Обитаемая рыба. 130 деталей")
+                                .masonry-grid__item
+                                    +productItem(true, "product-item--style-white", productSlide8, "Обитаемая рыба. 130 деталей")
+
                         .tabs__toggle-item
-                            #id2.masonry-grid
+                            .masonry-grid
                                 .masonry-grid__item
-                                    .content-box 2
+                                    +productItem(true, "product-item--style-white", productSlide5, "От сердца к сердцу. 180 деталей")
                                 .masonry-grid__item
-                                    .content-box 2
+                                    +productItem(true, "product-item--style-white", productSlide9, "Обитаемая рыба. 130 деталей")
                                 .masonry-grid__item
-                                    .content-box 3
+                                    +productItem(true, "product-item--style-white", productSlide10, "Обитаемая рыба. 130 деталей")
                                 .masonry-grid__item
-                                    .content-box 4
+                                    +productItem(false, "product-item--style-white", "src/blocks/product-item/assets/img/product-item1.jpg", "Коллекция №1")
                                 .masonry-grid__item
-                                    .content-box 5
+                                    +productItem(true, "product-item--style-white", productSlide4, "Корабль сокровищ. 60 деталей")
                                 .masonry-grid__item
-                                    .content-box 6
+                                    +productItem(true, "product-item--style-white", productSlide1, "Летучий фрегат. 130 деталей")
                                 .masonry-grid__item
-                                    .content-box 7
+                                    +productItem(true, "product-item--style-white", productSlide3, "Обитаемая рыба. 130 деталей")
                                 .masonry-grid__item
-                                    .content-box 8
+                                    +productItem(true, "product-item--style-white", productSlide4, "Корабль сокровищ. 60 деталей")
                                 .masonry-grid__item
-                                    .content-box 9
+                                    +productItem(true, "product-item--style-white", productSlide6, "Обитаемая рыба. 130 деталей")
                                 .masonry-grid__item
-                                    .content-box 10
+                                    +productItem(true, "product-item--style-white", productSlide2, "Купание разноцветного дракона. 125 деталей")
                                 .masonry-grid__item
-                                    .content-box 11
-                            .product-catalog__wrapper(style='display:none')
-                                .product-catalog__col
-                                    +productItem("product-item--style-white", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
-                                .product-catalog__col
-                                    +productItem("product-item--style-white", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
-                                .product-catalog__col
-                                    +productItem("product-item--style-white", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
-                                .product-catalog__col
-                                    +productItem("product-item--style-white", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+                                    +productItem(true, "product-item--style-white", productSlide7, "Обитаемая рыба. 130 деталей")
+                                .masonry-grid__item
+                                    +productItem(true, "product-item--style-white", productSlide8, "Обитаемая рыба. 130 деталей")
                         .tabs__toggle-item
-                            #id3.masonry-grid
+                            .masonry-grid
                                 .masonry-grid__item
-                                    .content-box 3
+                                    +productItem(true, "product-item--style-white", productSlide1, "Летучий фрегат. 130 деталей")
                                 .masonry-grid__item
-                                    .content-box 2
+                                    +productItem(false, "product-item--style-white", "src/blocks/product-item/assets/img/product-item1.jpg", "Коллекция №1")
                                 .masonry-grid__item
-                                    .content-box 3
+                                    +productItem(true, "product-item--style-white", productSlide2, "Купание разноцветного дракона. 125 деталей")
                                 .masonry-grid__item
-                                    .content-box 4
+                                    +productItem(true, "product-item--style-white", productSlide3, "Обитаемая рыба. 130 деталей")
                                 .masonry-grid__item
-                                    .content-box 5
+                                    +productItem(true, "product-item--style-white", productSlide4, "Корабль сокровищ. 60 деталей")
                                 .masonry-grid__item
-                                    .content-box 6
+                                    +productItem(true, "product-item--style-white", productSlide5, "От сердца к сердцу. 180 деталей")
                                 .masonry-grid__item
-                                    .content-box 7
+                                    +productItem(true, "product-item--style-white", productSlide6, "Обитаемая рыба. 130 деталей")
                                 .masonry-grid__item
-                                    .content-box 8
+                                    +productItem(true, "product-item--style-white", productSlide7, "Обитаемая рыба. 130 деталей")
                                 .masonry-grid__item
-                                    .content-box 9
+                                    +productItem(true, "product-item--style-white", productSlide8, "Обитаемая рыба. 130 деталей")
                                 .masonry-grid__item
-                                    .content-box 10
+                                    +productItem(true, "product-item--style-white", productSlide9, "Обитаемая рыба. 130 деталей")
                                 .masonry-grid__item
-                                    .content-box 11
-                            .product-catalog__wrapper(style='display:none')
-                                .product-catalog__col
-                                    +productItemSlider()
-                                .product-catalog__col
-                                    +productItemSlider()
-                                .product-catalog__col
-                                    +productItemSlider()
-                                .product-catalog__col
-                                    +productItemSlider()
-
-                //.tabs
-                //    .tabs__toggle-buttons.tabs__toggle-buttons--el-2
-                //        .tabs__toggle-button.tabs__toggle-button--active Коллекция N1
-                //        .tabs__toggle-button Коллекция N2
-                //        .tabs__toggle-button Коллекция N3
-                //    .tabs__toggle-items.tabs__toggle-items--el-2
-                //        .tabs__toggle-item.tabs__toggle-item--active Content 1
-                //        .tabs__toggle-item Content 2
-                //        .tabs__toggle-item Content 3
+                                    +productItem(true, "product-item--style-white", productSlide10, "Обитаемая рыба. 130 деталей")
+                                .masonry-grid__item
+                                    +productItem(true, "product-item--style-white", productSlide4, "Корабль сокровищ. 60 деталей")
 
 
-        .product-catalog.product-catalog--default-offset
+
+        .section
+            .layout
+                .banner-preview.banner-preview--big
+                    img(src="src/blocks/banner-preview/assets/img/banner-image.jpg").banner-preview__image
+                    +iconSvg('68', '62', '', 'icon__banner-person')
+                    +iconSvg('52', '77', '', 'icon__banner-giraffe')
+                    .banner-preview__content
+                        .banner-preview__desc Эти пазлы особенные — в них каждая деталь уникальна, а вместе они образуют неповторимый узор
+                        .banner-preview__button-container
+                            a(href="#").button.button--white Смотреть видео
+
+        .section
             .layout
                 .heading.heading--center
                     h2.heading__title.heading__title--border Коллекция DAVICI Детям
@@ -242,33 +231,33 @@ block content
                 .collection-slider.collection-slider--full
                     .collection-slider__init
                         .collection-slider__item
-                            +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+                            +productItem(true, "", productSlide1, "Летучий фрегат. 130 деталей")
                         .collection-slider__item
-                            +productItemSlider()
+                            +productItem(false, "", "src/blocks/product-item/assets/img/product-item1.jpg", "Коллекция №1")
                         .collection-slider__item
-                            +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+                            +productItem(true, "", productSlide2, "Купание разноцветного дракона. 125 деталей")
                         .collection-slider__item
-                            +productItemSlider()
+                            +productItem(true, "", productSlide3, "Обитаемая рыба. 130 деталей")
                         .collection-slider__item
-                            +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+                            +productItem(true, "", productSlide4, "Корабль сокровищ. 60 деталей")
                         .collection-slider__item
-                            +productItemSlider()
+                            +productItem(true, "", productSlide5, "От сердца к сердцу. 180 деталей")
                         .collection-slider__item
-                            +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+                            +productItem(true, "", productSlide6, "Обитаемая рыба. 130 деталей")
                         .collection-slider__item
-                            +productItemSlider()
+                            +productItem(true, "", productSlide8, "Обитаемая рыба. 130 деталей")
                         .collection-slider__item
-                            +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+                            +productItem(true, "", productSlide9, "Обитаемая рыба. 130 деталей")
                         .collection-slider__item
-                            +productItemSlider()
+                            +productItem(true, "", productSlide10, "Обитаемая рыба. 130 деталей")
 
                     .collection-slider__navigation
-                        button.collection-slider__navigation-button.collection-slider__navigation-button--prev.
-                            <svg id="arrow" viewBox="0 0 8 14"><path d="M6.976.696a.6.6 0 1 1 .848.849l-5.94 5.94a.6.6 0 0 1-.848-.849l5.94-5.94z"></path><path d="M1.036 7.485a.6.6 0 0 1 .849-.849l5.94 5.94a.6.6 0 0 1-.85.848l-5.939-5.94z"></path></svg>
-                        button.collection-slider__navigation-button.collection-slider__navigation-button--next.
-                            <svg id="arrow" viewBox="0 0 8 14"><path d="M6.976.696a.6.6 0 1 1 .848.849l-5.94 5.94a.6.6 0 0 1-.848-.849l5.94-5.94z"></path><path d="M1.036 7.485a.6.6 0 0 1 .849-.849l5.94 5.94a.6.6 0 0 1-.85.848l-5.939-5.94z"></path></svg>
+                        button.collection-slider__navigation-button.collection-slider__navigation-button--prev
+                            +iconSvg('8', '14', '', 'icon__arrow-slide')
+                        button.collection-slider__navigation-button.collection-slider__navigation-button--next
+                            +iconSvg('8', '14', '', 'icon__arrow-slide')
 
-        .product-catalog.product-catalog--small-offset.product-catalog--background-black.product-catalog--overflow-hide
+        .section.section--small-offset.section--background-black
             .layout.layout--large
 
                 .heading.heading--color-brown.heading--center
@@ -278,26 +267,33 @@ block content
                 .collection-slider.collection-slider--full
                     .collection-slider__init
                         .collection-slider__item
-                            +productItem("product-item--style-white", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+                            +productItem(true, "product-item--style-white", productSlide9, "Обитаемая рыба. 130 деталей")
                         .collection-slider__item
-                            +productItemSlider("product-item--style-white")
+                            +productItem(true, "product-item--style-white", productSlide2, "Купание разноцветного дракона. 125 деталей")
                         .collection-slider__item
-                            +productItem("product-item--style-white", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+                            +productItem(true, "product-item--style-white", productSlide1, "Летучий фрегат. 130 деталей")
                         .collection-slider__item
-                            +productItemSlider("product-item--style-white")
+                            +productItem(true, "product-item--style-white", productSlide3, "Обитаемая рыба. 130 деталей")
                         .collection-slider__item
-                            +productItemSlider("product-item--style-white")
+                            +productItem(false, "product-item--style-white", "src/blocks/product-item/assets/img/product-item1.jpg", "Коллекция №1")
                         .collection-slider__item
-                            +productItem("product-item--style-white", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+                            +productItem(true, "product-item--style-white", productSlide6, "Обитаемая рыба. 130 деталей")
                         .collection-slider__item
-                            +productItemSlider("product-item--style-white")
-                    .collection-slider__navigation
-                        button.collection-slider__navigation-button.collection-slider__navigation-button--prev.
-                            <svg id="arrow" viewBox="0 0 8 14"><path d="M6.976.696a.6.6 0 1 1 .848.849l-5.94 5.94a.6.6 0 0 1-.848-.849l5.94-5.94z"></path><path d="M1.036 7.485a.6.6 0 0 1 .849-.849l5.94 5.94a.6.6 0 0 1-.85.848l-5.939-5.94z"></path></svg>
-                        button.collection-slider__navigation-button.collection-slider__navigation-button--next.
-                            <svg id="arrow" viewBox="0 0 8 14"><path d="M6.976.696a.6.6 0 1 1 .848.849l-5.94 5.94a.6.6 0 0 1-.848-.849l5.94-5.94z"></path><path d="M1.036 7.485a.6.6 0 0 1 .849-.849l5.94 5.94a.6.6 0 0 1-.85.848l-5.939-5.94z"></path></svg>
+                            +productItem(true, "product-item--style-white", productSlide10, "Обитаемая рыба. 130 деталей")
+                        .collection-slider__item
+                            +productItem(true, "product-item--style-white", productSlide4, "Корабль сокровищ. 60 деталей")
+                        .collection-slider__item
+                            +productItem(true, "product-item--style-white", productSlide5, "От сердца к сердцу. 180 деталей")
+                        .collection-slider__item
+                            +productItem(true, "product-item--style-white", productSlide8, "Обитаемая рыба. 130 деталей")
 
-        .product-catalog.product-catalog--default-offset.product-catalog--overflow-hide
+                    .collection-slider__navigation
+                        button.collection-slider__navigation-button.collection-slider__navigation-button--prev
+                            +iconSvg('8', '14', '', 'icon__arrow-slide')
+                        button.collection-slider__navigation-button.collection-slider__navigation-button--next
+                            +iconSvg('8', '14', '', 'icon__arrow-slide')
+
+        .section
             .layout
                 .heading.heading--center
                     h2.heading__title.heading__title--border Коллекция "Знаки Зодиака"
@@ -306,25 +302,30 @@ block content
                 .collection-slider.collection-slider--full
                     .collection-slider__init
                         .collection-slider__item
-                            +productItemSlider()
+                            +productItem(true, "", productSlide1, "Летучий фрегат. 130 деталей")
                         .collection-slider__item
-                            +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+                            +productItem(false, "", "src/blocks/product-item/assets/img/product-item1.jpg", "Коллекция №1")
                         .collection-slider__item
-                            +productItemSlider()
+                            +productItem(true, "", productSlide2, "Купание разноцветного дракона. 125 деталей")
                         .collection-slider__item
-                            +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+                            +productItem(true, "", productSlide3, "Обитаемая рыба. 130 деталей")
                         .collection-slider__item
-                            +productItemSlider()
+                            +productItem(true, "", productSlide4, "Корабль сокровищ. 60 деталей")
                         .collection-slider__item
-                            +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+                            +productItem(true, "", productSlide5, "От сердца к сердцу. 180 деталей")
                         .collection-slider__item
-                            +productItemSlider()
+                            +productItem(true, "", productSlide6, "Обитаемая рыба. 130 деталей")
                         .collection-slider__item
-                            +productItem("", "src/blocks/product-item/assets/img/product-item1.jpg", "Акция", "-20%", true, "Коллекция №25", true)
+                            +productItem(true, "", productSlide8, "Обитаемая рыба. 130 деталей")
+                        .collection-slider__item
+                            +productItem(true, "", productSlide9, "Обитаемая рыба. 130 деталей")
+                        .collection-slider__item
+                            +productItem(true, "", productSlide10, "Обитаемая рыба. 130 деталей")
+
                     .collection-slider__navigation
-                        button.collection-slider__navigation-button.collection-slider__navigation-button--prev.
-                            <svg id="arrow" viewBox="0 0 8 14"><path d="M6.976.696a.6.6 0 1 1 .848.849l-5.94 5.94a.6.6 0 0 1-.848-.849l5.94-5.94z"></path><path d="M1.036 7.485a.6.6 0 0 1 .849-.849l5.94 5.94a.6.6 0 0 1-.85.848l-5.939-5.94z"></path></svg>
-                        button.collection-slider__navigation-button.collection-slider__navigation-button--next.
-                            <svg id="arrow" viewBox="0 0 8 14"><path d="M6.976.696a.6.6 0 1 1 .848.849l-5.94 5.94a.6.6 0 0 1-.848-.849l5.94-5.94z"></path><path d="M1.036 7.485a.6.6 0 0 1 .849-.849l5.94 5.94a.6.6 0 0 1-.85.848l-5.939-5.94z"></path></svg>
+                        button.collection-slider__navigation-button.collection-slider__navigation-button--prev
+                            +iconSvg('8', '14', '', 'icon__arrow-slide')
+                        button.collection-slider__navigation-button.collection-slider__navigation-button--next
+                            +iconSvg('8', '14', '', 'icon__arrow-slide')
 
         include ../blocks/instagram/instagram

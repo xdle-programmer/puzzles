@@ -1,6 +1,7 @@
 $laptop-big-screen: (max-width: 1439px);
 $table-large-screen: (max-width: 1023px);
 $mobile-big-screen: (max-width: 767px);
+$mobile-large-screen: (max-width: 599px);
 $mobile-small-screen: (max-width: 480px);
 
 @mixin laptop-big-screen {
@@ -17,6 +18,12 @@ $mobile-small-screen: (max-width: 480px);
 
 @mixin mobile-big-screen {
   @media #{$mobile-big-screen} {
+    @content
+  }
+}
+
+@mixin mobile-large-screen {
+  @media #{$mobile-large-screen} {
     @content
   }
 }

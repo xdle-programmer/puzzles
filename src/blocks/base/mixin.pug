@@ -5,24 +5,34 @@ mixin item(title, url)
 mixin iconSvg(w, h, wp, id)
     svg(width=w height=h class=id)
         use(xlink:href="/images/icons/sprites.svg#"+id)
-    //svg(width=w height=h viewBox=wp class=id)
 
-// Use icon
-// +iconSvg('14', '14', '0 0 14 14', 'icon-top')
-
-mixin productItem(addClass, image, action, discount, favoriteStatus, title, rating)
+mixin productItem(sliderTrue, addClass, image, title)
     .product-item(class=addClass)
-        a.product-item__image-wrapper(href="#")
-            img.product-item__image(src= image)
-            .product-item__label
-                .product-item__label-item.product-item__label-item--action= action
-                .product-item__label-item.product-item__label-item--discount= discount
-        if favoriteStatus == true
-            a(href="#favorite").product-item__favorite.product-item__favorite--active
-                +iconSvg('22', '22', '0 0 22 22', 'icon-favorite')
+        if sliderTrue == true
+
+            .product-item__slider-wrapper
+                a(href="#").product-item__slider
+
+                    each imageItem in image
+                        .product-item__slider-element
+                            img.product-item__slider-image(src= imageItem)
+
+                .product-item__slider-navigate
+                    .product-item__slider-navitem.product-item__slider-navitem--prev
+                        +iconSvg('8', '14', '', 'icon__arrow-slide')
+                    .product-item__slider-navitem.product-item__slider-navitem--next
+                        +iconSvg('8', '14', '', 'icon__arrow-slide')
+
         else
-            a(href="#favorite").product-item__favorite
-                +iconSvg('22', '22', '0 0 22 22', 'icon-favorite')
+
+            a.product-item__image-wrapper(href="#")
+                img.product-item__image(src= image)
+                .product-item__label
+                    .product-item__label-item.product-item__label-item--action Акция
+                    .product-item__label-item.product-item__label-item--discount -20%
+
+        a(href="#favorite").product-item__favorite //.product-item__favorite--active
+            +iconSvg('22', '22', '0 0 22 22', 'icon-favorite')
         a.product-item__information(href="#")
             .product-item__name= title
             .product-item__price-wrapper
@@ -32,74 +42,7 @@ mixin productItem(addClass, image, action, discount, favoriteStatus, title, rati
                         .product-item__price-currency ₽
                     .product-item__price-old 56 340
                 .product-item__review
-                    if rating == true
-                        .product-item__rating.product-item__rating--active
-                            span.product-item__rating-star
-                                +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
-                            span.product-item__rating-star
-                                +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
-                            span.product-item__rating-star
-                                +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
-                            span.product-item__rating-star
-                                +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
-                            span.product-item__rating-star
-                                +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
-                        .product-item__rating-count 22
-                    else
-                        .product-item__rating
-                            span.product-item__rating-star
-                                +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
-                            span.product-item__rating-star
-                                +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
-                            span.product-item__rating-star
-                                +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
-                            span.product-item__rating-star
-                                +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
-                            span.product-item__rating-star
-                                +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
-                        .product-item__rating-count 0
-
-        .product-item__button
-            a(href="#").button.button--add-card В корзину
-            a(href="#").links.links--buy-click Купить в 1 клик
-
-mixin productItemSlider(addClass)
-    .product-item(class=addClass)
-        .product-item__slider-wrapper
-            a(href="#").product-item__slider
-                .product-item__slider-element
-                    img.product-item__slider-image(src="src/blocks/product-item/assets/img/product-slide1/product-item1.jpg")
-                .product-item__slider-element
-                    img.product-item__slider-image(src="src/blocks/product-item/assets/img/product-slide1/product-item2.jpg")
-                .product-item__slider-element
-                    img.product-item__slider-image(src="src/blocks/product-item/assets/img/product-slide1/product-item3.jpg")
-                .product-item__slider-element
-                    img.product-item__slider-image(src="src/blocks/product-item/assets/img/product-slide1/product-item4.jpg")
-                .product-item__slider-element
-                    img.product-item__slider-image(src="src/blocks/product-item/assets/img/product-slide1/product-item5.jpg")
-            .product-item__slider-navigate
-                //TODO Заменить включение SVG везде на спрайт. Все SVG должны инклудиться одинаково
-                li(data-controls="prev" aria-controls="customize" tabindex="-1").product-item__slider-navitem.product-item__slider-navitem--prev.
-                    <svg id="arrow" viewBox="0 0 8 14"><path d="M6.976.696a.6.6 0 1 1 .848.849l-5.94 5.94a.6.6 0 0 1-.848-.849l5.94-5.94z"></path><path d="M1.036 7.485a.6.6 0 0 1 .849-.849l5.94 5.94a.6.6 0 0 1-.85.848l-5.939-5.94z"></path></svg>
-                li(data-controls="next" aria-controls="customize" tabindex="-1").product-item__slider-navitem.product-item__slider-navitem--next.
-                    <svg id="arrow" viewBox="0 0 8 14"><path d="M6.976.696a.6.6 0 1 1 .848.849l-5.94 5.94a.6.6 0 0 1-.848-.849l5.94-5.94z"></path><path d="M1.036 7.485a.6.6 0 0 1 .849-.849l5.94 5.94a.6.6 0 0 1-.85.848l-5.939-5.94z"></path></svg>
-
-            .product-item__label
-                .product-item__label-item.product-item__label-item--action Акция
-                .product-item__label-item.product-item__label-item--discount -20%
-
-        a(href="#favorite").product-item__favorite
-            +iconSvg('22', '22', '0 0 22 22', 'icon-favorite')
-        a.product-item__information(href="#")
-            .product-item__name Коллекция №1
-            .product-item__price-wrapper
-                .product-item__price
-                    .product-item__price-current
-                        | 45 040
-                        .product-item__price-currency ₽
-                    .product-item__price-old 56 340
-                .product-item__review
-                    .product-item__rating
+                    .product-item__rating.product-item__rating--active
                         span.product-item__rating-star
                             +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
                         span.product-item__rating-star
@@ -110,7 +53,7 @@ mixin productItemSlider(addClass)
                             +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
                         span.product-item__rating-star
                             +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
-                    .product-item__rating-count 0
+                    .product-item__rating-count 22
 
         .product-item__button
             a(href="#").button.button--add-card В корзину

@@ -7,6 +7,10 @@
 
   &--default-offset {
     padding: 90px 0 196px;
+
+    @include mobile-large-screen {
+      padding: 70px 0;
+    }
   }
 
   &__logo {
@@ -53,6 +57,10 @@
       @include mobile-big-screen {
         margin: 0 1px 1px 0;
         width: calc((100% / 12 * 4) - 1px);
+      }
+
+      @include mobile-large-screen {
+        width: calc(50% - 1px);
       }
 
       &:before {

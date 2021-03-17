@@ -2,6 +2,11 @@
 @import "../../blocks/base/variables";
 @import "../../blocks/base/media-queries";
 
+button {
+  border: 0;
+  outline: 0;
+}
+
 .button {
   display: inline-flex;
   align-items: center;
@@ -11,20 +16,36 @@
   color: #fff;
   text-align: center;
   font: 13px/18px $fm;
-  background: #6b70eb;
   border-radius: 5px;
   letter-spacing: -.03em;
   cursor: pointer;
+  outline: 0;
   @include trn(.2s);
 
-  &:hover {
-    background: #484dcd;
+
+
+  &--purple {
+    background: #6b70eb;
+    &:hover {
+      background: #484dcd;
+    }
   }
 
   &--add-card {
     min-height: 26px;
     padding: 4px 17px;;
   }
+
+  &--white {
+    background: 0 0;
+    border: 1px solid rgba(255,255,255,.5);
+    color: #fff;
+
+    &:hover {
+      border: 1px solid #FFFFFF;
+    }
+  }
+
 }
 
 .links {
