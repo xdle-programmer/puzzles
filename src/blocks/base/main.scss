@@ -52,6 +52,10 @@ body {
   }
 }
 
+button {
+  cursor: pointer;
+}
+
 a {
   text-decoration: none;
 }
@@ -60,7 +64,9 @@ ul {
   list-style: none;
 }
 
-//svg {
-//  @include trn(.2s);
-//}
+h3, .h3 {
+  font-family: $fm;
+  @include font-size(16px, 24px, 768px, 1024px);
+  @include line-height(22px, 34px, 768px, 1024px);
+}
 

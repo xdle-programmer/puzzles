@@ -1,0 +1,67 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+.pagination {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 350px;
+  margin: 0 auto;
+
+  &__counters {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: rgba(232,232,232,.7);
+    border-radius: 20px;
+    padding: 0 5px;
+  }
+
+
+  &__next,
+  &__prev,
+  &__counter-link,
+  &__counter-current {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 13px;
+    font-family: $fr;
+    text-decoration: none;
+    @include trn(.25s);
+
+    @include mobile-large-screen {
+      min-width: 24px;
+      height: 24px;
+      font-size: 10px;
+    }
+  }
+
+  &__next {
+    svg {
+      transform: scale(-1);
+    }
+  }
+
+  &__next,
+  &__prev,
+  &__counter-link {
+    color: #666;
+    margin: 5px;
+    &:hover {
+      background: #c4c4c4;
+    }
+  }
+
+  &__counter-current {
+    background: #1b1b1b;
+    color: #fff;
+  }
+
+}
+

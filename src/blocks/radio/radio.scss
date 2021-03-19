@@ -38,10 +38,10 @@ $checkBoxItemStatus: '.checkbox-item__status';
 
   &__status {
     position: relative;
-    width: 20px;
-    min-width: 20px;
-    height: 20px;
-    margin-right: 10px;
+    width: 16px;
+    min-width: 16px;
+    height: 16px;
+    margin-right: 8px;
     cursor: pointer;
 
     &:before,
@@ -55,18 +55,18 @@ $checkBoxItemStatus: '.checkbox-item__status';
     &:before {
       top: 0;
       left: 0;
-      width: 20px;
-      height: 20px;
-      border: 1px solid #D2D6E6;
-      background-color: #DEE1EF;
+      width: 16px;
+      height: 16px;
+      border: 1px solid #484dcd;
+      background-color: #fff;
     }
 
     &:after {
-      top: 5px;
-      left: 5px;
-      width: 10px;
-      height: 10px;
-      background: #4637A5;
+      top: 4px;
+      left: 4px;
+      width: 8px;
+      height: 8px;
+      background: #484dcd;
       opacity: 0;
     }
   }
@@ -75,10 +75,11 @@ $checkBoxItemStatus: '.checkbox-item__status';
     display: flex;
     align-items: center;
     position: relative;
-    @include fr();
-    font-size: 16px;
-    line-height: 24px;
-    color: #153257;
+    font-family: $fr;
+    font-size: 13px;
+    line-height: 18px;
+    color: #000;
+    @include trn(.2s);
     cursor: pointer;
     user-select: none;
   }
@@ -172,7 +173,6 @@ $checkBoxItemStatus: '.checkbox-item__status';
 
   &__text {
     display: flex;
-    align-items: center;
     font-family: $fr;
     font-size: 13px;
     line-height: 18px;
@@ -185,6 +185,7 @@ $checkBoxItemStatus: '.checkbox-item__status';
     border: 1px solid #484dcd;
     border-radius: 3px;
     width: 16px;
+    min-width: 16px;
     height: 16px;
     margin-right: 10px;
     @include trn(.1s);

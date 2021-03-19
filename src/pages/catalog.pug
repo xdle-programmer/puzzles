@@ -7,66 +7,71 @@ block content
     include ../blocks/breadcrumbs/breadcrumbs
     main.main
 
-        .section
-            .layout
-                .banner-preview.banner-preview--big
-                    img(src="src/blocks/banner-preview/assets/img/banner-image.jpg").banner-preview__image
-                    +iconSvg('68', '62', '', 'icon__banner-person')
-                    +iconSvg('52', '77', '', 'icon__banner-giraffe')
-                    .banner-preview__content
-                        .banner-preview__desc Эти пазлы особенные — в них каждая деталь уникальна, а вместе они образуют неповторимый узор
-                        .banner-preview__button-container
-                            a(href="#").button.button--white Смотреть видео
-
         .breadcrumbs.breadcrumbs--default-offset
             .layout
                 ul.breadcrumbs__lists
                     +listBreadcrumbs("Главная")
                     +listBreadcrumbs("Каталог", true)
 
-        .catalog-main
+        //.section
+        //    .layout
+        //        include ../blocks/banner-preview/banner-preview
+
+        .catalog
             .layout
-                .catalog-filter
-                    form.catalog-filter__form
-                        //.catalog-filter__item
-                        //    label.radio-button
-                        //        input.radio-button__input(type="radio" name="radio" checked="checked" required="")
-                        //        .radio-button__text
-                        //            .radio-button__status
-                        //            p Radio 1
-                        //.catalog-filter__item
-                        //    label.radio-button
-                        //        input.radio-button__input(type="radio" name="radio" checked="checked" required="")
-                        //        .radio-button__text
-                        //            .radio-button__status
-                        //            p Radio 1
-                        .catalog-filter__item
-                            label.checkbox-button
-                                input.checkbox-button__input(type="checkbox" disabled="true" required="")
-                                .checkbox-button__text
-                                    .checkbox-button__status
-                                    p Акция
-                        .catalog-filter__item
-                            label.checkbox-button
-                                input.checkbox-button__input(type="checkbox" checked="checked" required="")
-                                .checkbox-button__text
-                                    .checkbox-button__status
-                                    p Для первой сборки
-                        .catalog-filter__item
-                            label.checkbox-button
-                                input.checkbox-button__input(type="checkbox" disabled="true" required="")
-                                .checkbox-button__text
-                                    .checkbox-button__status
-                                    p Лидер рейтинга
-                        .catalog-filter__item
-                            label.checkbox-button
-                                input.checkbox-button__input(type="checkbox" required="")
-                                .checkbox-button__text
-                                    .checkbox-button__status
-                                    p Новинка
-                        .catalog-filter__item
-                            label.checkbox-button
-                                input.checkbox-button__input(type="checkbox" required="")
-                                .checkbox-button__text
-                                    .checkbox-button__status
-                                    p Скидка недели
+                include ../blocks/filter/filter
+
+                .catalog__wrapper
+                    .catalog__item
+                        +productItem(true, "", productSlide1, "Летучий фрегат. 130 деталей")
+                    .catalog__item
+                        +productItem(false, "", "src/blocks/product-item/assets/img/product-item1.jpg", "Коллекция №1")
+                    .catalog__item
+                        +productItem(true, "", productSlide2, "Купание разноцветного дракона. 125 деталей")
+                    .catalog__item
+                        +productItem(true, "", productSlide3, "Обитаемая рыба. 130 деталей")
+                    .catalog__item
+                        +productItem(true, "", productSlide4, "Корабль сокровищ. 60 деталей")
+                    .catalog__item
+                        +productItem(true, "", productSlide5, "От сердца к сердцу. 180 деталей")
+                    .catalog__item
+                        +productItem(true, "", productSlide6, "Обитаемая рыба. 130 деталей")
+                    .catalog__item
+                        +productItem(true, "", productSlide8, "Обитаемая рыба. 130 деталей")
+                    .catalog__item
+                        +productItem(true, "", productSlide9, "Обитаемая рыба. 130 деталей")
+                    .catalog__item
+                        +productItem(true, "", productSlide10, "Обитаемая рыба. 130 деталей")
+                    .catalog__item
+                        +productItem(false, "", "src/blocks/product-item/assets/img/product-item1.jpg", "Коллекция №1")
+                    .catalog__item
+                        +productItem(true, "", productSlide2, "Купание разноцветного дракона. 125 деталей")
+                    .catalog__item
+                        +productItem(true, "", productSlide1, "Летучий фрегат. 130 деталей")
+                    .catalog__item
+                        +productItem(true, "", productSlide3, "Обитаемая рыба. 130 деталей")
+                    .catalog__item
+                        +productItem(true, "", productSlide4, "Корабль сокровищ. 60 деталей")
+                    .catalog__item
+                        +productItem(true, "", productSlide8, "Обитаемая рыба. 130 деталей")
+                    .catalog__item
+                        +productItem(true, "", productSlide9, "Обитаемая рыба. 130 деталей")
+                    .catalog__item
+                        +productItem(true, "", productSlide5, "От сердца к сердцу. 180 деталей")
+                    .catalog__item
+                        +productItem(true, "", productSlide10, "Обитаемая рыба. 130 деталей")
+                    .catalog__item
+                        +productItem(true, "", productSlide6, "Обитаемая рыба. 130 деталей")
+
+        .section.section--offset-none
+            .layout
+                include ../blocks/pagination/pagination
+
+        .section.section--offset-top
+            .layout
+                include ../blocks/catalog-banner/catalog-banner
+
+        .text-content
+            h3 Художественные деревянные пазлы DAVICI — это искусство и история в ваших руках.
+            p Каждый набор уникален и неповторим. Это всегда искусная и тонкая работа. Единственное в своем роде произведение, каждый набор DAVICI раскрывает целый мир фантазий и игру воображения, создает теплый досуг семейного вечера, уютное и завораживающее занятие в свободные часы.
+            p Художественные пазлы DAVICI сохранят истории нескольких поколений: их можно коллекционировать и передавать по наследству. DAVICI создают тёплые семейные традиции. Деревянные пазлы украшают индивидуальный досуг гармоничной медитацией в игре, а в восторге совместной сборки открывают новый уровень отношений. DAVICI — игры, обеспечивающие позитивные эмоции и отличное настроение.

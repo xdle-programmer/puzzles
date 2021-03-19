@@ -6,6 +6,34 @@ mixin iconSvg(w, h, wp, id)
     svg(width=w height=h class=id)
         use(xlink:href="/images/icons/sprites.svg#"+id)
 
+mixin img(image, addClass, altImg)
+    if altImg == ""
+        img(src=image alt="Title Image" class=addClass)
+    else
+        img(src=image alt=altImg class=addClass)
+
+
+mixin radioInput(checked, text)
+    label.radio-button
+        if checked == true
+            input.radio-button__input(type="radio" name="radio" checked="checked")
+        else
+            input.radio-button__input(type="radio" name="radio")
+        span.radio-button__text
+            span.radio-button__status
+            span=text
+
+mixin checkInput(checked, text)
+    label.checkbox-button
+        if checked == true
+            input.checkbox-button__input(type="checkbox" checked="checked" required="")
+        else
+            input.checkbox-button__input(type="checkbox" required="")
+        span.checkbox-button__text
+            span.checkbox-button__status
+            span=text
+
+
 mixin productItem(sliderTrue, addClass, image, title)
     .product-item(class=addClass)
         if sliderTrue == true
@@ -58,3 +86,17 @@ mixin productItem(sliderTrue, addClass, image, title)
         .product-item__button
             a(href="#").button.button--add-card В корзину
             a(href="#").links.links--buy-click Купить в 1 клик
+
+
+// Images product
+
+- var productSlide1 = ['src/blocks/product-item/assets/img/product-slide1/product-item1.jpg', 'src/blocks/product-item/assets/img/product-slide1/product-item2.jpg', 'src/blocks/product-item/assets/img/product-slide1/product-item3.jpg', 'src/blocks/product-item/assets/img/product-slide1/product-item4.jpg', 'src/blocks/product-item/assets/img/product-slide1/product-item5.jpg']
+- var productSlide2 = ['src/blocks/product-item/assets/img/product-slide2/product-item1.jpg', 'src/blocks/product-item/assets/img/product-slide2/product-item2.jpg', 'src/blocks/product-item/assets/img/product-slide2/product-item3.jpg', 'src/blocks/product-item/assets/img/product-slide2/product-item4.jpg', 'src/blocks/product-item/assets/img/product-slide2/product-item5.jpg']
+- var productSlide3 = ['src/blocks/product-item/assets/img/product-slide3/product-item1.png', 'src/blocks/product-item/assets/img/product-slide3/product-item2.jpg', 'src/blocks/product-item/assets/img/product-slide3/product-item3.jpg', 'src/blocks/product-item/assets/img/product-slide3/product-item4.jpg', 'src/blocks/product-item/assets/img/product-slide3/product-item5.jpg']
+- var productSlide4 = ['src/blocks/product-item/assets/img/product-slide4/product-item1.jpg', 'src/blocks/product-item/assets/img/product-slide4/product-item2.png', 'src/blocks/product-item/assets/img/product-slide4/product-item3.png', 'src/blocks/product-item/assets/img/product-slide4/product-item4.jpg', 'src/blocks/product-item/assets/img/product-slide4/product-item5.jpg']
+- var productSlide5 = ['src/blocks/product-item/assets/img/product-slide5/product-item1.png', 'src/blocks/product-item/assets/img/product-slide5/product-item2.png', 'src/blocks/product-item/assets/img/product-slide5/product-item3.png']
+- var productSlide6 = ['src/blocks/product-item/assets/img/product-slide6/product-item1.jpg', 'src/blocks/product-item/assets/img/product-slide6/product-item2.jpg', 'src/blocks/product-item/assets/img/product-slide6/product-item3.png', 'src/blocks/product-item/assets/img/product-slide6/product-item4.jpg', 'src/blocks/product-item/assets/img/product-slide6/product-item5.jpg']
+- var productSlide7 = ['src/blocks/product-item/assets/img/product-slide7/product-item1.jpg', 'src/blocks/product-item/assets/img/product-slide7/product-item2.jpg', 'src/blocks/product-item/assets/img/product-slide7/product-item3.png', 'src/blocks/product-item/assets/img/product-slide7/product-item4.jpg', 'src/blocks/product-item/assets/img/product-slide7/product-item5.jpg']
+- var productSlide8 = ['src/blocks/product-item/assets/img/product-slide8/product-item1.jpg', 'src/blocks/product-item/assets/img/product-slide8/product-item2.jpg', 'src/blocks/product-item/assets/img/product-slide8/product-item3.png', 'src/blocks/product-item/assets/img/product-slide8/product-item4.jpg', 'src/blocks/product-item/assets/img/product-slide8/product-item5.jpg']
+- var productSlide9 = ['src/blocks/product-item/assets/img/product-slide9/product-item1.jpg', 'src/blocks/product-item/assets/img/product-slide9/product-item2.jpg', 'src/blocks/product-item/assets/img/product-slide9/product-item3.png', 'src/blocks/product-item/assets/img/product-slide9/product-item4.jpg', 'src/blocks/product-item/assets/img/product-slide9/product-item5.jpg']
+- var productSlide10 = ['src/blocks/product-item/assets/img/product-slide10/product-item1.jpg', 'src/blocks/product-item/assets/img/product-slide10/product-item2.jpg', 'src/blocks/product-item/assets/img/product-slide10/product-item3.jpg', 'src/blocks/product-item/assets/img/product-slide10/product-item4.jpg', 'src/blocks/product-item/assets/img/product-slide10/product-item5.jpg']

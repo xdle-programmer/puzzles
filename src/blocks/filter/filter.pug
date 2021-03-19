@@ -1,0 +1,73 @@
+.filter__wrapper
+
+    button.filter-button
+        | Фильтр
+        +iconSvg('22', '25', '', 'icon__filter')
+        i.filter-button__arrow
+
+    .filter
+        form.filter__form
+            .filter__item
+                .filter__toggle-box.filter__toggle-box--active
+                    .filter__toggle-title
+                        | Все коллекции
+                        i.filter__toggle-arrow
+                    //.filter__toggle-content.filter__toggle-content--active
+                    .filter__toggle-content
+                        .filter__item
+                            +checkInput(true, "Акция")
+                        .filter__item
+                            +checkInput(false, "Для первой сборки")
+                        .filter__item
+                            +checkInput(false, "Лидер рейтинга")
+                        .filter__item
+                            +checkInput(false, "Новинка")
+                        .filter__item
+                            +checkInput(false, "Скидка недели")
+                        .filter__item
+                            +checkInput(false, "Новинка")
+                        .filter__item
+                            +checkInput(false, "Скидка недели")
+
+            .filter__item
+                .filter__toggle-box
+                    .filter__toggle-title
+                        | Все коллекции
+                        i.filter__toggle-arrow
+                    .filter__toggle-content(style="display: none;")
+                        .filter__item
+                            +checkInput(true, "Акция")
+                        .filter__item
+                            +checkInput(false, "Для первой сборки")
+                        .filter__item
+                            +checkInput(false, "Лидер рейтинга")
+                        .filter__item
+                            +checkInput(false, "Новинка")
+                        .filter__item
+                            +checkInput(false, "Скидка недели")
+                        .filter__item
+                            +checkInput(false, "Новинка")
+                        .filter__item
+                            +checkInput(false, "Скидка недели")
+
+            .filter__item
+                .filter__item-title Количество деталей
+                .range-slider__quantity-wrapper
+                    .range-slider__quantity.range-slider__quantity--min
+                    span.range-slider__separator
+                    .range-slider__quantity.range-slider__quantity--max
+                .range-slider
+            .filter__item
+                +checkInput(true, "Акция")
+            .filter__item
+                +checkInput(false, "Для первой сборки")
+            .filter__item
+                +checkInput(false, "Лидер рейтинга")
+            .filter__item
+                +checkInput(false, "Новинка")
+            .filter__item
+                +checkInput(false, "Скидка недели")
+            .filter__item
+                +checkInput(false, "Новинка")
+            .filter__item
+                +checkInput(false, "Скидка недели")

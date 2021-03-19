@@ -1,0 +1,203 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+$filterItem: ".filter__item";
+
+$filterButtonArrow: ".filter-button__arrow";
+
+.filter-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 11px 19px;
+  border: 1px solid #484dcd;
+  border-radius: 30px;
+  color: #484dcd;
+  opacity: .8;
+  font-size: 15px;
+  line-height: 1.4;
+  font-family: $fm;
+  text-decoration: none;
+  @include trn(.25s);
+
+  &--active {
+    #{$filterButtonArrow} {
+      transform: rotate( -45deg) translate(0px, 0px) scale(-1);
+    }
+  }
+
+  .icon__filter {
+    margin-left: 13px;
+    margin-right: 10px;
+    @include trn(.25s);
+  }
+
+  &__arrow {
+    width: 8px;
+    height: 8px;
+    @include trn(.25s);
+    display: inline-block;
+    transform: rotate( -45deg) translate(1px,-2px) scale(1);
+    border-color: rgba(0,0,0,0) rgba(0,0,0,0) #6b70eb #6b70eb;
+    border-style: solid;
+    border-width: 1px;
+    @include trn(.25s);
+  }
+}
+
+.filter {
+  position: absolute;
+  top: calc(100% + 10px);
+  display: flex;
+  width: 210px;
+  max-height: 600px;
+  border-radius: 10px;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 500;
+  @include tt(0, 25px);
+  @include trn(.2s);
+
+  &--active {
+    opacity: 1;
+    visibility: visible;
+    @include tt(0, 0);
+  }
+
+  &__wrapper {
+    position: relative;
+    margin-bottom: 30px;
+  }
+
+  &__form {
+    overflow-y: auto;
+    position: relative;
+    padding: 21px 20px 0;
+    border: 1px solid #6b70eb;
+    border-radius: 10px;
+    background: #fff;
+    width: 100%;
+
+    &::-webkit-scrollbar {
+      width: 4px;
+      height: 4px;
+      cursor: default
+    }
+
+    @include mobile-big-screen {
+      &::-webkit-scrollbar {
+        width: 2px;
+        height: 2px;
+      }
+    }
+
+    &::-webkit-scrollbar-button {
+      width: 0;
+      height: 0;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #6b70eb;
+      border: 0;
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: #989bf1;
+    }
+
+    &::-webkit-scrollbar-thumb:active {
+      background: #3e45e5;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: rgba(107, 112, 235, .3);
+      border: 0;
+      border-radius: 2px;
+    }
+
+    &::-webkit-scrollbar-track-piece {
+      background: rgba(107, 112, 235, .3);
+    }
+
+    &::-webkit-scrollbar-track:hover {
+      background: rgba(152, 155, 241, .3);
+    }
+
+    &::-webkit-scrollbar-track:active {
+      background: rgba(62, 69, 229, .3);
+    }
+
+    &::-webkit-scrollbar-corner {
+      background: 0 0;
+    }
+  }
+
+
+
+  &__item {
+    margin-bottom: 15px;
+    line-height: 14px;
+  }
+
+  &__item-title {
+    color: #1b1b1b;
+    font-family: $fm;
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 500;
+    letter-spacing: -.03em;
+    margin-bottom: 11px;
+  }
+
+  // Toggle box
+
+  &__toggle-box {
+    border: 1px solid #e5e5e5;
+    @include brr(10px);
+
+    &--active {
+      .filter__toggle-arrow {
+        transform: rotate(-45deg) translate(-8px,3px) scale(-1);
+      }
+    }
+  }
+
+  &__toggle-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    color: #1b1b1b;
+    font: 13px/18px $fm;
+    letter-spacing: -.03em;
+    padding: 9px 8px 8px;
+    //border: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  &__toggle-arrow {
+    width: 8px;
+    height: 8px;
+    transition: transform .3s ease;
+    display: inline-block;
+    transform: rotate(-45deg) translate(-3px, 1px) scale(1);
+    border: 1px solid #6b70eb;
+    border-top-color: transparent;
+    border-right-color: transparent;
+  }
+
+  &__toggle-content {
+    //border: 1px solid #c4c4c4;
+    //border-radius: 0 0 10px 10px;
+    padding: 9px 8px 8px;
+
+    & #{$filterItem}:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+
+}

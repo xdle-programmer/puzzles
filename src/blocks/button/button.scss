@@ -33,7 +33,11 @@ button {
 
   &--add-card {
     min-height: 26px;
-    padding: 4px 17px;;
+    padding: 4px 17px;
+    background: #6b70eb;
+    &:hover {
+      background: #484dcd;
+    }
   }
 
   &--white {

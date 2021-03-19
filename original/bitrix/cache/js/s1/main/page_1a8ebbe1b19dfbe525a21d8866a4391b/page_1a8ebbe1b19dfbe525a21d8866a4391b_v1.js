@@ -1,5 +1,5 @@
 
-; /* Start:"a:4:{s:4:"full";s:99:"/local/templates/.default/components/bitrix/catalog.smart.filter/.default/script.js?159981002522538";s:6:"source";s:83:"/local/templates/.default/components/bitrix/catalog.smart.filter/.default/script.js";s:3:"min";s:0:"";s:3:"map";s:0:"";}"*/
+; /* Start:"a:4:{s:4:"full";s:99:"/local/templates/.default/components/bitrix/header-catalog.smart.filter/.default/script.js?159981002522538";s:6:"source";s:83:"/local/templates/.default/components/bitrix/header-catalog.smart.filter/.default/script.js";s:3:"min";s:0:"";s:3:"map";s:0:"";}"*/
 function JCSmartFilter(ajaxURL, viewMode, params, componentId)
 {
 	this.ajaxURL = ajaxURL;
@@ -892,4 +892,4 @@ BX.Iblock.SmartFilter = (function()
 	return SmartFilter;
 })();
 /* End */
-;; /* /local/templates/.default/components/bitrix/catalog.smart.filter/.default/script.js?159981002522538*/
+;; /* /local/templates/.default/components/bitrix/header-catalog.smart.filter/.default/script.js?159981002522538*/

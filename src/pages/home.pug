@@ -3,20 +3,9 @@ extends ../templates/main
 block variables
     - var title = 'Puzzle'
 
-    - var productSlide1 = ['src/blocks/product-item/assets/img/product-slide1/product-item1.jpg', 'src/blocks/product-item/assets/img/product-slide1/product-item2.jpg', 'src/blocks/product-item/assets/img/product-slide1/product-item3.jpg', 'src/blocks/product-item/assets/img/product-slide1/product-item4.jpg', 'src/blocks/product-item/assets/img/product-slide1/product-item5.jpg']
-    - var productSlide2 = ['src/blocks/product-item/assets/img/product-slide2/product-item1.jpg', 'src/blocks/product-item/assets/img/product-slide2/product-item2.jpg', 'src/blocks/product-item/assets/img/product-slide2/product-item3.jpg', 'src/blocks/product-item/assets/img/product-slide2/product-item4.jpg', 'src/blocks/product-item/assets/img/product-slide2/product-item5.jpg']
-    - var productSlide3 = ['src/blocks/product-item/assets/img/product-slide3/product-item1.png', 'src/blocks/product-item/assets/img/product-slide3/product-item2.jpg', 'src/blocks/product-item/assets/img/product-slide3/product-item3.jpg', 'src/blocks/product-item/assets/img/product-slide3/product-item4.jpg', 'src/blocks/product-item/assets/img/product-slide3/product-item5.jpg']
-    - var productSlide4 = ['src/blocks/product-item/assets/img/product-slide4/product-item1.jpg', 'src/blocks/product-item/assets/img/product-slide4/product-item2.png', 'src/blocks/product-item/assets/img/product-slide4/product-item3.png', 'src/blocks/product-item/assets/img/product-slide4/product-item4.jpg', 'src/blocks/product-item/assets/img/product-slide4/product-item5.jpg']
-    - var productSlide5 = ['src/blocks/product-item/assets/img/product-slide5/product-item1.png', 'src/blocks/product-item/assets/img/product-slide5/product-item2.png', 'src/blocks/product-item/assets/img/product-slide5/product-item3.png']
-    - var productSlide6 = ['src/blocks/product-item/assets/img/product-slide6/product-item1.jpg', 'src/blocks/product-item/assets/img/product-slide6/product-item2.jpg', 'src/blocks/product-item/assets/img/product-slide6/product-item3.png', 'src/blocks/product-item/assets/img/product-slide6/product-item4.jpg', 'src/blocks/product-item/assets/img/product-slide6/product-item5.jpg']
-    - var productSlide7 = ['src/blocks/product-item/assets/img/product-slide7/product-item1.jpg', 'src/blocks/product-item/assets/img/product-slide7/product-item2.jpg', 'src/blocks/product-item/assets/img/product-slide7/product-item3.png', 'src/blocks/product-item/assets/img/product-slide7/product-item4.jpg', 'src/blocks/product-item/assets/img/product-slide7/product-item5.jpg']
-    - var productSlide8 = ['src/blocks/product-item/assets/img/product-slide8/product-item1.jpg', 'src/blocks/product-item/assets/img/product-slide8/product-item2.jpg', 'src/blocks/product-item/assets/img/product-slide8/product-item3.png', 'src/blocks/product-item/assets/img/product-slide8/product-item4.jpg', 'src/blocks/product-item/assets/img/product-slide8/product-item5.jpg']
-    - var productSlide9 = ['src/blocks/product-item/assets/img/product-slide9/product-item1.jpg', 'src/blocks/product-item/assets/img/product-slide9/product-item2.jpg', 'src/blocks/product-item/assets/img/product-slide9/product-item3.png', 'src/blocks/product-item/assets/img/product-slide9/product-item4.jpg', 'src/blocks/product-item/assets/img/product-slide9/product-item5.jpg']
-    - var productSlide10 = ['src/blocks/product-item/assets/img/product-slide10/product-item1.jpg', 'src/blocks/product-item/assets/img/product-slide10/product-item2.jpg', 'src/blocks/product-item/assets/img/product-slide10/product-item3.jpg', 'src/blocks/product-item/assets/img/product-slide10/product-item4.jpg', 'src/blocks/product-item/assets/img/product-slide10/product-item5.jpg']
-
 block content
     main.main
-        //TODO Внимательно проверить по всем классам, чтобы каждый класс лежал в соей папке
+
         include ../blocks/slider-main/slider-main
 
         .section
@@ -213,14 +202,7 @@ block content
 
         .section
             .layout
-                .banner-preview.banner-preview--big
-                    img(src="src/blocks/banner-preview/assets/img/banner-image.jpg").banner-preview__image
-                    +iconSvg('68', '62', '', 'icon__banner-person')
-                    +iconSvg('52', '77', '', 'icon__banner-giraffe')
-                    .banner-preview__content
-                        .banner-preview__desc Эти пазлы особенные — в них каждая деталь уникальна, а вместе они образуют неповторимый узор
-                        .banner-preview__button-container
-                            a(href="#").button.button--white Смотреть видео
+                include ../blocks/banner-preview/banner-preview
 
         .section
             .layout
