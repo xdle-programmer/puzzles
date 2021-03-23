@@ -1,0 +1,46 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+.banner {
+  max-width: 810px;
+  min-height: 280px;
+  margin: 0 auto;
+  padding: 40px 20px 36px;
+  //background: center/cover;
+  background-position: center !important;
+  background-size: cover !important;
+  border-radius: 10px;
+
+  &__content {
+    max-width: 495px;
+    text-align: center;
+  }
+
+  &__title {
+    color: #e8a473;
+    font-family: $fm;
+    font-size: 21px;
+    line-height: 29px;
+    letter-spacing: -.03em;
+    margin: 16px 0;
+    text-align: left;
+  }
+
+  &__link {
+    transition: color .3s ease;
+    display: inline-block;
+    margin-top: 17px;
+    color: #999;
+    font-family: $fm;
+    font-size: 13px;
+    line-height: 18px;
+    letter-spacing: -.03em;
+    text-decoration: none;
+
+    &:hover {
+      color: #FFFFFF;
+    }
+  }
+
+}

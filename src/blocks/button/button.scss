@@ -22,7 +22,69 @@ button {
   outline: 0;
   @include trn(.2s);
 
+  &--brown-border {
+    padding: 13px 36px;
+    font-family: $fm;
+    font-size: 15px;
+    line-height: 21px;
+    letter-spacing: -.03em;
+    border: 1px solid rgba(232,164,115,.5);
+    color: #fff;
 
+    &:hover {
+      border-color: #e8a473;
+    }
+  }
+
+  &--gray {
+    padding: 11px 44px;
+    background: #f0f0f0;
+    color: #6b70eb;
+
+    &:hover {
+      background: #6b70eb;
+      color: #fff;
+    }
+  }
+
+  &--blue {
+    background: #6b70eb;
+
+  }
+
+  &--blue-large {
+    padding: 15px 21px;
+    font-size: 17px;
+    line-height: 20px;
+    font-family: $fm;
+    background: #6b70eb;
+    &:hover {
+      background: #484dcd;
+    }
+  }
+
+  &--blue-big {
+    font-size: 20px;
+    line-height: 24px;
+    font-family: $fm;
+    background: #6b70eb;
+    padding: 17px 21px;
+    &:hover {
+      background: #484dcd;
+    }
+  }
+
+  &--border-blue {
+    font-size: 15px;
+    line-height: 18px;
+    padding: 19px 21px;
+    border: 2px solid rgba(107,112,235,.5);
+    color: #6b70eb;
+    background: transparent;
+    &:hover {
+      border-color: #484dcd;
+    }
+  }
 
   &--purple {
     background: #6b70eb;
@@ -47,6 +109,27 @@ button {
 
     &:hover {
       border: 1px solid #FFFFFF;
+    }
+  }
+
+}
+
+.link {
+  font-family: $fm;
+  font-size: 13px;
+  line-height: 14px;
+  letter-spacing: -.03em;
+  transition: color .3s ease;
+  text-decoration: none;
+  color: #6b70eb;
+
+  &:hover {
+    color: #484dcd;
+  }
+
+  &--pink-hover {
+    &:hover {
+      color: #df00a1;
     }
   }
 

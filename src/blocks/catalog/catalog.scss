@@ -9,6 +9,15 @@
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 30px;
     margin-bottom: 60px;
+
+    &--no-offset {
+      margin-bottom: 0;
+    }
+  }
+
+  &__buttons {
+    margin-top: 40px;
+    text-align: center;
   }
 
 }

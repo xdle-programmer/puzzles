@@ -94,10 +94,10 @@ function toggleTabs(options) {
 
 }
 
-window.firstTabs = new toggleTabs();
-
-window.secondTabs = new toggleTabs({
-    $toggleButtonsWrapper: document.querySelector('.tabs__toggle-buttons--el-2'),
-    toggleItemsWrapperClass: 'tabs__toggle-items--el-2'
-});
+// window.firstTabs = new toggleTabs();
+//
+// window.secondTabs = new toggleTabs({
+//     $toggleButtonsWrapper: document.querySelector('.tabs__toggle-buttons--el-2'),
+//     toggleItemsWrapperClass: 'tabs__toggle-items--el-2'
+// });
 

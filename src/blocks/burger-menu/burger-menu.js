@@ -9,17 +9,5 @@ function mobileMenu() {
         $burgerButton.classList.toggle(burgerButtonActive);
         $wrapperMenu.classList.toggle(wrapperMenuActive)
     });
-
-    // burgerButton.on('click', function(){
-    //     $(this).toggleClass(burgerButtonActive);
-    //     wrapperMenu.toggleClass(wrapperMenuActive);
-    // });
-    //
-    // $(window).on('resize scroll', function(){
-    //     burgerButton.removeClass(burgerButtonActive);
-    //     wrapperMenu.removeClass(wrapperMenuActive);
-    // });
-
-
 }
 mobileMenu();

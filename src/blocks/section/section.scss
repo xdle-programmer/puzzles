@@ -19,6 +19,11 @@
     padding-bottom: 0;
   }
 
+  &--offset-bottom {
+    padding-top: 0;
+    padding-bottom: 90px;
+  }
+
   &--background-red {
     background: #e33151;
   }

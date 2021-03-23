@@ -1,0 +1,100 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+.testimonials {
+  padding-top: 29px;
+  border-top: 1px solid #e5e5e5;
+
+  &__title {
+    font-size: 30px;
+    line-height: 42px;
+    font-family: $fm;
+    letter-spacing: -.03em;
+    margin-bottom: 30px;
+  }
+
+  &__wrapper {
+    display: flex;
+  }
+
+  &__main {
+    max-width: 810px;
+  }
+
+  &__item {
+      padding-bottom: 29px;
+    &:not(:first-child) {
+      padding-top: 30px;
+      border-top: 1px solid #e5e5e5;
+    }
+  }
+
+  &__name {
+    font-family: $fm;
+    font-size: 15px;
+    line-height: 1.4;
+    letter-spacing: -.03em;
+    color: #1b1b1b;
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+  }
+
+  &__date {
+    font-size: 13px;
+    line-height: 18px;
+    letter-spacing: -.03em;
+    color: #c4c4c4;
+  }
+
+  &__rating {
+    margin-left: 18px;
+
+    svg {
+      fill: #ffc200;
+    }
+  }
+
+  &__desc {
+    margin-top: 11px;
+    font-size: 13px;
+    line-height: 18px;
+    letter-spacing: -.03em;
+    color: #1b1b1b;
+  }
+
+  &__feedback {
+    max-width: 250px;
+    margin-left: auto;
+  }
+
+  &__feedback-title {
+    margin: 0 auto;
+    max-width: 250px;
+    text-align: center;
+    font-family: $fm;
+    font-size: 17px;
+    line-height: 24px;
+    letter-spacing: -.03em;
+  }
+
+  &__feedback-rating {
+    text-align: center;
+    margin-top: 13px;
+    svg {
+      width: 44px;
+      height: 44px;
+      fill: #ffc200;
+    }
+  }
+
+  &__button-feedback {
+    margin-top: 23px;
+    width: 100%;
+  }
+
+}

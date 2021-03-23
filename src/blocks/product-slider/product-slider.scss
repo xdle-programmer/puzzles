@@ -1,0 +1,25 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+.product-slider {
+
+
+  &__thumbnails {
+
+  }
+
+  &__thumbnail-item {
+    position: relative;
+    width: 84px;
+    height: 84px;
+  }
+  &__thumbnail-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: contain;
+  }
+}
