@@ -9,11 +9,13 @@
 
   }
 
+
   &__thumbnail-item {
     position: relative;
     width: 84px;
     height: 84px;
   }
+
   &__thumbnail-image {
     position: absolute;
     width: 100%;
@@ -21,5 +23,23 @@
     top: 0;
     left: 0;
     object-fit: contain;
+  }
+
+
+  &__thumbnails-arrows {
+  }
+
+  &__thumbnails-arrow {
+
+    width: 100px;
+    height: 100px;
+
+    &--prev {
+      background: red;
+    }
+
+    &--next {
+      background: green;
+    }
   }
 }

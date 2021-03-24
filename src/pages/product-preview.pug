@@ -21,22 +21,35 @@ block content
                 .product-preview
                     .product-preview__slider
                         .product-preview__main
-                            .product-slider
-                                .product-slider__item
-                                    +img("src/blocks/product-item/assets/img/product-slide10/product-item1.jpg", "product-slider__image", "")
-                                .product-slider__item
-                                    +img("src/blocks/product-item/assets/img/product-slide10/product-item2.jpg", "product-slider__image", "")
-                                .product-slider__item
-                                    +img("src/blocks/product-item/assets/img/product-slide10/product-item3.jpg", "product-slider__image", "")
-                                .product-slider__item
-                                    +img("src/blocks/product-item/assets/img/product-slide10/product-item4.jpg", "product-slider__image", "")
-                                product-slider__item
-                                    +img("src/blocks/product-item/assets/img/product-slide10/product-item5.jpg", "product-slider__image", "")
+                            +img("src/blocks/product-item/assets/img/product-slide10/product-item1.jpg", "product-slider__image", "")
+                            //.product-slider
+                            //    .product-slider__item
+                            //
+                            //    .product-slider__item
+                            //        +img("src/blocks/product-item/assets/img/product-slide10/product-item2.jpg", "product-slider__image", "")
+                            //    .product-slider__item
+                            //        +img("src/blocks/product-item/assets/img/product-slide10/product-item3.jpg", "product-slider__image", "")
+                            //    .product-slider__item
+                            //        +img("src/blocks/product-item/assets/img/product-slide10/product-item4.jpg", "product-slider__image", "")
+                            //    product-slider__item
+                            //        +img("src/blocks/product-item/assets/img/product-slide10/product-item5.jpg", "product-slider__image", "")
 
-                        .product-slider__thumbnails-arrow
-                            button(aria-controls="customize" data-controls="prev") prev
-                            button(aria-controls="customize" data-controls="next") next
+                        .product-slider__thumbnails-arrows
+                            .product-slider__thumbnails-arrow.product-slider__thumbnails-arrow--prev
+                            .product-slider__thumbnails-arrow.product-slider__thumbnails-arrow--next
+                            //button(aria-controls="customize" data-controls="prev") prev
+                            //button(aria-controls="customize" data-controls="next") next
                         .product-slider__thumbnails
+                            .product-slider__thumbnail-item
+                                +img("src/blocks/product-item/assets/img/product-slide10/product-item1.jpg", "product-slider__thumbnail-image", "")
+                            .product-slider__thumbnail-item
+                                +img("src/blocks/product-item/assets/img/product-slide10/product-item2.jpg", "product-slider__thumbnail-image", "")
+                            .product-slider__thumbnail-item
+                                +img("src/blocks/product-item/assets/img/product-slide10/product-item3.jpg", "product-slider__thumbnail-image", "")
+                            .product-slider__thumbnail-item
+                                +img("src/blocks/product-item/assets/img/product-slide10/product-item4.jpg", "product-slider__thumbnail-image", "")
+                            .product-slider__thumbnail-item
+                                +img("src/blocks/product-item/assets/img/product-slide10/product-item5.jpg", "product-slider__thumbnail-image", "")
                             .product-slider__thumbnail-item
                                 +img("src/blocks/product-item/assets/img/product-slide10/product-item1.jpg", "product-slider__thumbnail-image", "")
                             .product-slider__thumbnail-item
