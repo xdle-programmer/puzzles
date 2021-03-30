@@ -10,6 +10,12 @@
     grid-gap: 30px;
     margin-bottom: 60px;
 
+    @media (max-width: 854px) {
+      margin: 0 -15px;
+      padding: 0 15px;
+      overflow-x: auto;
+    }
+
     &--no-offset {
       margin-bottom: 0;
     }

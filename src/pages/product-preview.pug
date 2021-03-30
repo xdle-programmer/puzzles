@@ -18,94 +18,7 @@ block content
         .section.section--offset-none
             .layout
 
-                .product-preview
-                    .product-preview__slider
-                        .product-preview__main
-                            .product-slider
-                                .product-slider__item
-                                    +img("src/blocks/product-item/assets/img/product-slide10/product-item1.jpg", "product-slider__image", "")
-                                .product-slider__item
-                                    +img("src/blocks/product-item/assets/img/product-slide10/product-item2.jpg", "product-slider__image", "")
-                                .product-slider__item
-                                    +img("src/blocks/product-item/assets/img/product-slide10/product-item3.jpg", "product-slider__image", "")
-                                .product-slider__item
-                                    +img("src/blocks/product-item/assets/img/product-slide10/product-item4.jpg", "product-slider__image", "")
-                                product-slider__item
-                                    +img("src/blocks/product-item/assets/img/product-slide10/product-item5.jpg", "product-slider__image", "")
-
-                        .product-slider__thumbnails-arrow
-                            button(aria-controls="customize" data-controls="prev") prev
-                            button(aria-controls="customize" data-controls="next") next
-                        .product-slider__thumbnails
-                            .product-slider__thumbnail-item
-                                +img("src/blocks/product-item/assets/img/product-slide10/product-item1.jpg", "product-slider__thumbnail-image", "")
-                            .product-slider__thumbnail-item
-                                +img("src/blocks/product-item/assets/img/product-slide10/product-item2.jpg", "product-slider__thumbnail-image", "")
-                            .product-slider__thumbnail-item
-                                +img("src/blocks/product-item/assets/img/product-slide10/product-item3.jpg", "product-slider__thumbnail-image", "")
-                            .product-slider__thumbnail-item
-                                +img("src/blocks/product-item/assets/img/product-slide10/product-item4.jpg", "product-slider__thumbnail-image", "")
-                            .product-slider__thumbnail-item
-                                +img("src/blocks/product-item/assets/img/product-slide10/product-item5.jpg", "product-slider__thumbnail-image", "")
-
-
-                    .product-preview__detail
-                        a(href="#").link.link--pink-hover.product-preview__category Коллекция DAVICI Детям
-                        h1.product-preview__name Корабль сокровищ
-                        .product-preview__row
-                            .product-preview__rating
-                                .rating
-                                    span.rating__item.product-preview__rating-star
-                                        +iconSvg('14', '13', '', 'rating__item-star')
-                                    span.rating__item.product-preview__rating-star
-                                        +iconSvg('14', '13', '', 'rating__item-star')
-                                    span.rating__item.product-preview__rating-star
-                                        +iconSvg('14', '13', '', 'rating__item-star')
-                                    span.rating__item.product-preview__rating-star
-                                        +iconSvg('14', '13', '', 'rating__item-star')
-                                    span.rating__item.product-preview__rating-star
-                                        +iconSvg('14', '13', '', 'rating__item-star')
-                                a(href="#").link.product-preview__review 2 отзыва
-
-                            a(href="#favorite").link.product-preview__favorite
-                                +iconSvg('22', '22', '0 0 22 22', 'icon-favorite')
-                                | В избранное
-
-                        .product-preview__parametrs
-                            .product-preview__parametr-item
-                                .product-preview__parametr-name Автор
-                                .product-preview__parametr-value Денис Серков
-                            .product-preview__parametr-item
-                                .product-preview__parametr-name Уровень сложности
-                                .product-preview__parametr-value Лёгкий уровень
-                            .product-preview__parametr-item
-                                .product-preview__parametr-name Время сборки
-                                .product-preview__parametr-value 1-3 часа
-                            .product-preview__parametr-item
-                                .product-preview__parametr-name Количество деталей
-                                .product-preview__parametr-value 60
-                            .product-preview__parametr-item
-                                .product-preview__parametr-name Размер собранной картины
-                                .product-preview__parametr-value 204х154
-                            .product-preview__parametr-item
-                                .product-preview__parametr-name Артикул
-                                .product-preview__parametr-value 7-71 - 05 - 060
-                            .product-preview__parametr-item
-                                .product-preview__parametr-name Форма картины
-                                .product-preview__parametr-value Прямоугольный
-
-                        .product-preview__desc Наша бабушка агент: Через целый континент Провезла она товар Сквозь моря и сотню стран.
-                        .product-preview__price
-                            | 1 600
-                            span.product-preview__currency ₽
-                        .product-preview__button-wrapper
-                            a(href="#").button.button--blue-big.product-preview__button-add В корзину
-                            a(href="#").button.button--border-blue.product-preview__button-buy Купить в 1 клик
-
-                        .product-preview__delivery-wrapper
-                            p.product-preview__delivery
-                                +iconSvg('27', '27', '', 'icon__box')
-                                | Доставка в #[span.product-preview__delivery-city Омск] — от 2 дней
+                include ../blocks/product-preview/product-preview
 
                 .text-content
                     p Наша бабушка агент: #[br]
@@ -185,67 +98,8 @@ block content
 
         .section.section--offset-bottom
             .layout
-                .banner(style="background: url(src/blocks/banner/assets/img/banner.jpg)")
-                    .banner__content
-                        .banner__title Соберите всю Коллекцию #[br] и получите Гранд-набор «Коллекционер» в подарок
-                        .banner__button-wrapper
-                            a(href="#").button.button--brown-border Подробнее
-                        a(href="#").banner__link Подробнее о наборе «Коллекционер»
-
+                include ../blocks/banner/banner
 
         .section.section--offset-bottom
             .layout
-                .testimonials
-                    .testimonials__title Отзывы
-                    .testimonials__wrapper
-                        .testimonials__main
-                            .testimonials__item
-                                .testimonials__name Екатерина
-                                .testimonials__info
-                                    .testimonials__date 19 Февраля 2021
-                                    .rating.testimonials__rating
-                                        span.rating__item
-                                            +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
-                                        span.rating__item
-                                            +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
-                                        span.rating__item
-                                            +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
-                                        span.rating__item
-                                            +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
-                                        span.rating__item
-                                            +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
-                                .testimonials__desc
-                                    p Пазл изумительный! Дочка 7 лет собрала с удовольствием и без труда, а вот дочь 4 года старается изо всех сил!) Спасибо производителю за качество, внимание к деталям и за подарок внутри! Уже заказали ещё 4 штуки. Будем собирать коллекцию!
-
-                            .testimonials__item
-                                .testimonials__name Екатерина
-                                .testimonials__info
-                                    .testimonials__date 19 Февраля 2021
-                                    .rating.testimonials__rating
-                                        span.rating__item
-                                            +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
-                                        span.rating__item
-                                            +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
-                                        span.rating__item
-                                            +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
-                                        span.rating__item
-                                            +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
-                                        span.rating__item
-                                            +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
-                                .testimonials__desc
-                                    p Пазл изумительный! Дочка 7 лет собрала с удовольствием и без труда, а вот дочь 4 года старается изо всех сил!) Спасибо производителю за качество, внимание к деталям и за подарок внутри! Уже заказали ещё 4 штуки. Будем собирать коллекцию!
-
-                        .testimonials__feedback
-                            .testimonials__feedback-title Собрали набор? #[br] Оставьте свою оценку, для нас это важно
-                            .testimonials__feedback-rating.rating
-                                span.rating__item
-                                    +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
-                                span.rating__item
-                                    +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
-                                span.rating__item
-                                    +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
-                                span.rating__item
-                                    +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
-                                span.rating__item
-                                    +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
-                            a(href="#").button.button--blue-large.testimonials__button-feedback Написать отзыв
+                include ../blocks/testimonials/testimonials

@@ -16,6 +16,7 @@ $priceOld: '.product-item__price-old';
 .product-item {
   position: relative;
   max-width: 285px;
+  min-width: 200px;
   margin: 0 auto;
 
   &--style-white {
@@ -245,6 +246,7 @@ $priceOld: '.product-item__price-old';
 
   &__price {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     width: 100%;
     font: 15px/21px $fsb;
@@ -254,6 +256,7 @@ $priceOld: '.product-item__price-old';
 
   &__price-current {
     display: flex;
+    flex-wrap: wrap;
     font: 15px/21px $fsb;
     letter-spacing: -.03em;
   }

@@ -6,6 +6,10 @@ mixin iconSvg(w, h, wp, id)
     svg(width=w height=h class=id)
         use(xlink:href="/images/icons/sprites.svg#"+id)
 
+mixin mixinSvg(w, h, idIcon, className)
+    svg(width=w height=h class=className)
+        use(xlink:href="/images/icons/sprites.svg#"+idIcon)
+
 mixin img(image, addClass, altImg)
     if altImg == ""
         img(src=image alt="Title Image" class=addClass)

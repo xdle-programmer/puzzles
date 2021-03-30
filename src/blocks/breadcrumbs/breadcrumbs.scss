@@ -10,13 +10,14 @@
 
   &__lists {
     display: flex;
+    flex-wrap: wrap;
   }
 
   &__item {
     position: relative;
 
-    &:not(:last-child) {
-      &:after {
+    &:not(:first-child) {
+      &:before {
         position: relative;
         top: 2px;
         content: '';

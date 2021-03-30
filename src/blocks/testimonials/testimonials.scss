@@ -6,6 +6,11 @@
   padding-top: 29px;
   border-top: 1px solid #e5e5e5;
 
+  @include mobile-big-screen {
+    padding-top: 0;
+    border-top: 0;
+  }
+
   &__title {
     font-size: 30px;
     line-height: 42px;
@@ -16,10 +21,20 @@
 
   &__wrapper {
     display: flex;
+
+    @include mobile-big-screen {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
   }
 
   &__main {
     max-width: 810px;
+    @include mobile-big-screen {
+      border-top: 1px solid #e5e5e5;
+      margin-top: 40px;
+      padding-top: 30px;
+    }
   }
 
   &__item {
@@ -68,8 +83,15 @@
   }
 
   &__feedback {
-    max-width: 250px;
+    min-width: 280px;
+    padding-left: 30px;
     margin-left: auto;
+
+    @include mobile-big-screen {
+      min-width: 250px;
+      padding-left: 0;
+      margin: 0 auto;
+    }
   }
 
   &__feedback-title {
