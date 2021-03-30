@@ -22,23 +22,23 @@ $filterButtonArrow: ".filter-button__arrow";
 
   &--active {
     #{$filterButtonArrow} {
-      transform: rotate( -45deg) translate(0px, 0px) scale(-1);
+      transform: rotate(-45deg) translate(0px, 0px) scale(-1);
     }
   }
 
-  .icon__filter {
-    margin-left: 13px;
-    margin-right: 10px;
-    @include trn(.25s);
-  }
+  //.icon__filter {
+  //  margin-left: 13px;
+  //  margin-right: 10px;
+  //  @include trn(.25s);
+  //}
 
   &__arrow {
     width: 8px;
     height: 8px;
     @include trn(.25s);
     display: inline-block;
-    transform: rotate( -45deg) translate(1px,-2px) scale(1);
-    border-color: rgba(0,0,0,0) rgba(0,0,0,0) #6b70eb #6b70eb;
+    transform: rotate(-45deg) translate(1px, -2px) scale(1);
+    border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #6b70eb #6b70eb;
     border-style: solid;
     border-width: 1px;
     @include trn(.25s);
@@ -135,7 +135,6 @@ $filterButtonArrow: ".filter-button__arrow";
   }
 
 
-
   &__item {
     margin-bottom: 15px;
     line-height: 14px;
@@ -156,18 +155,14 @@ $filterButtonArrow: ".filter-button__arrow";
   &__toggle-box {
     border: 1px solid #e5e5e5;
     @include brr(10px);
-
-    &--active {
-      .filter__toggle-arrow {
-        transform: rotate(-45deg) translate(-8px,3px) scale(-1);
-      }
-    }
   }
 
+  $active-box: '.filter__toggle-box--active';
+  $effect-box: '.filter__toggle-box--effect';
+
   &__toggle-title {
-    display: flex;
+    @include flex-row-center;
     justify-content: space-between;
-    align-items: flex-start;
     color: #1b1b1b;
     font: 13px/18px $fm;
     letter-spacing: -.03em;
@@ -180,24 +175,62 @@ $filterButtonArrow: ".filter-button__arrow";
 
   &__toggle-arrow {
     width: 8px;
-    height: 8px;
+    height: 4px;
     transition: transform .3s ease;
     display: inline-block;
-    transform: rotate(-45deg) translate(-3px, 1px) scale(1);
-    border: 1px solid #6b70eb;
-    border-top-color: transparent;
-    border-right-color: transparent;
+    transform-origin: center;
+    position: relative;
+    margin-right: 3px;
+
+    &:after {
+      @include after-absolute;
+      width: 8px;
+      height: 8px;
+      border: 1px solid #6b70eb;
+      border-top-color: transparent;
+      border-right-color: transparent;
+      left: 0;
+      top: -4px;
+      transform: rotate(-45deg);
+    }
+
+    #{$active-box} & {
+      transform: rotate(-180deg);
+    }
   }
 
   &__toggle-content {
     //border: 1px solid #c4c4c4;
     //border-radius: 0 0 10px 10px;
-    padding: 9px 8px 8px;
+    transform-origin: top;
+    opacity: 0;
+    visibility: hidden;
+    //display: none;
+    height: 0;
+    overflow: hidden;
+    transition: .2s all ease-out;
+    display: block;
 
     & #{$filterItem}:last-child {
       margin-bottom: 0;
     }
+
+    #{$active-box} & {
+      display: block;
+    }
+
+    #{$effect-box} & {
+      //transform: scaleY(1);
+      opacity: 1;
+      visibility: visible;
+      height: 254px;
+      overflow: hidden;
+
+    }
   }
 
+  &__toggle-content-inner {
+    padding: 10px;
+  }
 
 }
