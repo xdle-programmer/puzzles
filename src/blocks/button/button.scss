@@ -115,6 +115,7 @@ button {
 }
 
 .link {
+  position: relative;
   font-family: $fm;
   font-size: 13px;
   line-height: 14px;
@@ -130,6 +131,16 @@ button {
   &--pink-hover {
     &:hover {
       color: #df00a1;
+    }
+  }
+
+  &--border {
+    text-decoration: none;
+    color: #6b70eb;
+    border-bottom: 1px solid #6b70eb;
+    @include trn(.2s);
+    &:hover {
+      border-bottom: 1px solid transparent;
     }
   }
 

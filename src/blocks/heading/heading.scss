@@ -16,6 +16,10 @@ $headingDesc: '.heading__desc';
     text-align: right;
   }
 
+  &__flex-wrapper {
+
+  }
+
   #{$headingTitle} {
     font: 30px/42px $fm;
     letter-spacing: -.03em;

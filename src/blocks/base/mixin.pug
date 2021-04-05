@@ -10,11 +10,11 @@ mixin mixinSvg(w, h, idIcon, className)
     svg(width=w height=h class=className)
         use(xlink:href="/images/icons/sprites.svg#"+idIcon)
 
-mixin img(image, addClass, altImg)
+mixin img(src, addClass, altImg)
     if altImg == ""
-        img(src=image alt="Title Image" class=addClass)
+        img(src=src alt="Title Image" class=addClass)
     else
-        img(src=image alt=altImg class=addClass)
+        img(src=src alt=altImg class=addClass)
 
 
 mixin radioInput(checked, text)
@@ -37,6 +37,10 @@ mixin checkInput(checked, text)
             span.checkbox-button__status
             span=text
 
+mixin productParametr(name, desc)
+    .product-preview__parametr-item
+        .product-preview__parametr-name= name
+        .product-preview__parametr-value= desc
 
 mixin productItem(sliderTrue, addClass, image, title)
     .product-item(class=addClass)

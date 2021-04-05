@@ -83,6 +83,19 @@
     width: 84px;
     height: 84px;
     cursor: pointer;
+
+    &--play {
+      &:after {
+        position: absolute;
+        @include absolute-center();
+        content: '';
+        width: 0;
+        height: 0;
+        border-top: 17px solid transparent;
+        border-left: 30px solid #FFFFFF;
+        border-bottom: 17px solid transparent;
+      }
+    }
   }
 
   &__thumbnail-image {
@@ -92,6 +105,15 @@
     top: 0;
     left: 0;
     object-fit: contain;
+  }
+
+  &__description {
+    margin-top: 20px;
+    font-size: 13px;
+    line-height: 18px;
+    text-align: center;
+    letter-spacing: -.025em;
+    color: #666;
   }
 
   // Details

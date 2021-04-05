@@ -1,0 +1,71 @@
+extends ../templates/main
+
+block variables
+    - var title = 'XDLE'
+
+include ../blocks/quantity/quantity
+
+block content
+
+    main.main
+        .section.section--offset-bottom.cart
+            .layout
+                .heading.cart__heading
+                    h2.heading__title Корзина
+                    a(href="#").link.cart__clear Очистить корзину
+                .cart__wrapper
+                    .cart__info
+                        .cart__items
+                            .cart__item
+                                a(href="#").cart__image-wrapper
+                                    +img('src/blocks/product-item/assets/img/product-slide1/product-item1.jpg', 'cart__image', 'Cart Image')
+                                a(href="#").cart__name Летучий фрегат
+                                .cart__quantity
+                                    +quantity("2")
+                                .cart__price 3 600 #[span.cart__price-symbol ₽]
+                                button.cart__remove
+                                    +mixinSvg("20px", "24px", "icon-cart", "cart__icon-cart cart__remove-icon")
+                            .cart__item
+                                a(href="#").cart__image-wrapper
+                                    +img('src/blocks/product-item/assets/img/product-slide6/product-item1.jpg', 'cart__image', 'Cart Image')
+                                a(href="#").cart__name Летучий фрегат
+                                .cart__quantity
+                                    +quantity("5")
+                                .cart__price 3 600 #[span.cart__price-symbol ₽]
+                                button.cart__remove
+                                    +mixinSvg("20px", "24px", "icon-cart", "cart__icon-cart cart__remove-icon")
+                        .cart__desc
+                            p В ваш заказ добавлен подарок! #[a(href="#").link.link--pink-hover Подробнее]
+                            p #[a(href="#").link.link--pink-hover Бесплатная доставка] действует на заказ от 4000 руб. при оплате онлайн на сайте. Не распространяется на курьерскую доставку.
+
+                    .cart__sidebar-wrapper
+                        .cart__sidebar
+                            .cart__discount
+                                .cart__discount-name Сумма без скидки
+                                .cart__discount-value 4 600#[span.cart__price-symbol ₽]
+                            form.cart__form
+                                .cart__form-promo
+                                    input.cart__form-input(placeholder="Промокод")
+                                    button.cart__form-button Применить
+                                .cart__you-have У вас есть промокод или #[a(href="#").link--border сертификат]? Скорее используйте его!
+                                .cart__total
+                                    .cart__total-name Итого:
+                                    .cart__total-price 4 600#[span.cart__price-symbol ₽]
+                                button.button.button--blue-big.cart__order Оформить заказ
+
+
+
+
+        .section.section--offset-bottom
+            .layout
+                .heading.heading--center
+                    h2.heading__title С этим товаром покупают
+                .catalog__wrapper.catalog__wrapper--no-offset
+                    .catalog__item
+                        +productItem(true, "", productSlide1, "Летучий фрегат. 130 деталей")
+                    .catalog__item
+                        +productItem(false, "", "src/blocks/product-item/assets/img/product-item1.jpg", "Коллекция №1")
+                    .catalog__item
+                        +productItem(true, "", productSlide2, "Купание разноцветного дракона. 125 деталей")
+                    .catalog__item
+                        +productItem(true, "", productSlide3, "Обитаемая рыба. 130 деталей")

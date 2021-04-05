@@ -1,0 +1,263 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+$cartName: ".cart__name";
+
+.cart {
+
+  &__heading {
+    width: calc(((100% + 30px) / 12 * 8) - 30px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0 !important;
+  }
+
+  &__clear {
+    margin-top: 8px;
+    text-decoration: none;
+    color: #6b70eb;
+    @include fm();
+    font-size: 15px;
+    line-height: 1.4;
+    letter-spacing: -.03em;
+    outline: 0;
+  }
+
+  &__wrapper {
+    display: flex;
+
+    @include table-large-screen {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__info {
+    width: calc((100% + 30px) / 12 * 8 - 30px);
+    @include table-large-screen {
+      width: 100%;
+    }
+  }
+
+  &__items {
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    width: 100%;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include fm();
+    font-size: 15px;
+    line-height: 1.4;
+    padding: 17px 20px;
+    min-height: 198px;
+    letter-spacing: -.03em;
+    overflow: hidden;
+
+    &:not(:first-child) {
+      border-top: 1px solid #e5e5e5;
+    }
+  }
+
+  &__image-wrapper {
+    position: relative;
+    display: inline-block;
+    max-width: 160px;
+    width: 23%;
+    height: 196px;
+    @include trn(.2s);
+
+    &:hover + #{$cartName} {
+      color: #6b70eb;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    max-width: 100%;
+    max-height: 100%;
+    top: 0;
+    left: 0;
+    @include absolute-center();
+  }
+
+  &__name {
+    color: #1b1b1b;
+    padding-left: 30px;
+    @include trn(.2s);
+    width: 36%;
+
+    @include laptop-large-screen {
+      width: 28%;
+      padding-left: 15px;
+    }
+
+    &:hover {
+      color: #6b70eb;
+    }
+  }
+
+  &__quantity {
+    width: 17%;
+    padding: 0 15px;
+
+    @include laptop-large-screen {
+      width: 20%;
+    }
+  }
+
+  &__price {
+    width: 17%;
+    padding: 0 5px;
+    color: #1b1b1b;
+    font-size: 17px;
+    line-height: 24px;
+    @include fsb();
+  }
+
+  &__remove {
+    padding: 0 5px;
+    background-color: transparent;
+
+    &-icon {
+      fill: #c4c4c4;
+      @include trn(.25s);
+    }
+
+    &:hover &-icon {
+      fill: #6b70eb;
+    }
+  }
+
+  &__desc {
+    font-family: $fr;
+    font-size: 15px;
+    line-height: 24px;
+    letter-spacing: -.03em;
+    color: #4f4c66;
+
+    a {
+      font-size: 15px;
+    }
+
+    p {
+      margin-top: 30px;
+    }
+  }
+
+  // Sidebar
+
+  &__sidebar-wrapper {
+    position: relative;
+    max-width: 390px;
+    margin-left: 30px;
+
+    @include table-large-screen {
+      width: 100%;
+      max-width: 390px;
+      margin: 60px auto 0;
+    }
+  }
+
+  &__sidebar {
+    display: block !important;
+    position: sticky;
+    top: 0;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    padding: 29px 20px 20px 19px;
+    width: 100%;
+    font-size: 13px;
+    line-height: 18px;
+    @include fm();
+  }
+
+  &__discount {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    line-height: 18px;
+    @include fr();
+    letter-spacing: -.03em;
+    color: #666;
+  }
+
+  &__form-promo {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 16px;
+  }
+
+  &__form-input {
+    border: 1px solid #e5e5e5;
+    outline: 0;
+    background: #fff;
+    font-size: 13px;
+    line-height: 18px;
+    @include fm();
+    letter-spacing: -.03em;
+    color: #1b1b1b;
+    width: 50%;
+    height: 40px;
+    padding: 10px;
+    border-radius: 5px 0 0 5px;
+    @include placeholder {
+      color: #c4c4c4;
+    }
+  }
+
+  &__form-button {
+    position: relative;
+    width: 50%;
+    border-radius: 0 5px 5px 0;
+    flex-shrink: 0;
+    background: #f0f0f0;
+    color: #6b70eb;
+    font-size: 13px;
+    line-height: 18px;
+    @include fm();
+    @include trn(.2s);
+
+    &:hover {
+      background: #6b70eb;
+      color: #fff;
+    }
+  }
+
+  &__you-have {
+    width: 100%;
+    margin: 20px 10px;
+    letter-spacing: -.03em;
+    color: #1b1b1b;
+  }
+
+  &__total {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-size: 15px;
+    line-height: 21px;
+    @include fm();
+  }
+
+  &__total-name {
+  }
+
+  &__total-price {
+    @include fsb();
+    font-size: 30px;
+    line-height: 1;
+    letter-spacing: -.03em;
+  }
+
+  &__order {
+    width: 100%;
+    margin-top: 27px;
+  }
+
+}

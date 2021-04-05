@@ -5,11 +5,6 @@
             img(src="src/blocks/product-item/assets/img/product-slide10/product-item1.jpg" alt="Product")#product-preview__main-image.product-preview__image
 
         .product-preview__thumbnails-wrapper
-            //.product-preview__thumbnails-arrows
-            //    button.product-preview__thumbnails-arrow.product-preview__thumbnails-arrow--prev
-            //        +mixinSvg('8', '14', 'icon__arrow-slide', 'product-preview__arrow-icon')
-            //    button.product-preview__thumbnails-arrow.product-preview__thumbnails-arrow--next
-            //        +mixinSvg('8', '14', 'icon__arrow-slide', 'product-preview__arrow-icon')
 
             button.product-preview__thumbnails-arrow.product-preview__thumbnails-arrow--prev
                 +mixinSvg('8', '14', 'icon__arrow-slide', 'product-preview__arrow-icon')
@@ -24,7 +19,7 @@
                         img(src="src/blocks/product-item/assets/img/product-slide10/product-item3.jpg" data-preview="src/blocks/product-item/assets/img/product-slide10/product-item3.jpg" alt="Product").product-preview__thumbnail-image
                     .product-preview__thumbnail-item
                         img(src="src/blocks/product-item/assets/img/product-slide10/product-item2.jpg" data-preview="src/blocks/product-item/assets/img/product-slide10/product-item2.jpg" alt="Product").product-preview__thumbnail-image
-                    .product-preview__thumbnail-item
+                    .product-preview__thumbnail-item.product-preview__thumbnail-item--play
                         img(src="src/blocks/product-item/assets/img/product-slide10/product-item4.jpg" data-preview="src/blocks/product-item/assets/img/product-slide10/product-item4.jpg" alt="Product").product-preview__thumbnail-image
                     .product-preview__thumbnail-item
                         img(src="src/blocks/product-item/assets/img/product-slide10/product-item5.jpg" data-preview="src/blocks/product-item/assets/img/product-slide10/product-item5.jpg" alt="Product").product-preview__thumbnail-image
@@ -43,6 +38,10 @@
 
             button.product-preview__thumbnails-arrow.product-preview__thumbnails-arrow--next
                 +mixinSvg('8', '14', 'icon__arrow-slide', 'product-preview__arrow-icon')
+
+        .product-preview__description
+            p Художник Денис Серков.
+            a(href="#").link.link--pink-hover Скачать оригинал картины для сборки
 
     .product-preview__detail
         a(href="#").link.link--pink-hover.product-preview__category Коллекция DAVICI Детям
@@ -67,27 +66,13 @@
                 span.product-preview__favorite-text В избранное
 
         .product-preview__parametrs
-            .product-preview__parametr-item
-                .product-preview__parametr-name Автор
-                .product-preview__parametr-value Денис Серков
-            .product-preview__parametr-item
-                .product-preview__parametr-name Уровень сложности
-                .product-preview__parametr-value Лёгкий уровень
-            .product-preview__parametr-item
-                .product-preview__parametr-name Время сборки
-                .product-preview__parametr-value 1-3 часа
-            .product-preview__parametr-item
-                .product-preview__parametr-name Количество деталей
-                .product-preview__parametr-value 60
-            .product-preview__parametr-item
-                .product-preview__parametr-name Размер собранной картины
-                .product-preview__parametr-value 204х154
-            .product-preview__parametr-item
-                .product-preview__parametr-name Артикул
-                .product-preview__parametr-value 7-71 - 05 - 060
-            .product-preview__parametr-item
-                .product-preview__parametr-name Форма картины
-                .product-preview__parametr-value Прямоугольный
+            +productParametr('Автор', 'Денис Серков')
+            +productParametr('Уровень сложности', 'Лёгкий уровень')
+            +productParametr('Время сборки', '1-3 часа')
+            +productParametr('Количество деталей', '60')
+            +productParametr('Размер собранной картины', '204х154')
+            +productParametr('Артикул', '7-71 - 05 - 060')
+            +productParametr('Форма картины', 'Прямоугольный')
 
         .product-preview__desc Наша бабушка агент: Через целый континент Провезла она товар Сквозь моря и сотню стран.
         .product-preview__price
