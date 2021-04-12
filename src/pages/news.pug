@@ -1,0 +1,37 @@
+extends ../templates/main
+
+block variables
+    - var title = 'XDLE'
+
+include ../blocks/breadcrumbs/breadcrumbs
+include ../blocks/filter-news/filter-news
+
+block content
+
+    main.main.news
+        .section.section--offset-bottom.profile
+            .layout
+                .breadcrumbs.breadcrumbs--default-offset
+                    ul.breadcrumbs__lists
+                        +listBreadcrumbs("Главная")
+                        +listBreadcrumbs("Новости и акции", true)
+
+                .heading.heading--no-offset
+                    h2.heading__title.heading__title--ofsset-bottom Новости и акции
+
+                +filterNews([{name: "Все", class: "filter-news__link--active"}, {name: "Акции"}, {name: "Новости"}])
+
+                .news__wrapper
+                    .news__item
+                        a(href="#").news__post
+                            .news__image-wrapper
+                                img(src="src/blocks/news/assets/img/news1.jpg").news__image-wrapper
+                    .news__item
+                        a(href="#").news__post
+                            .news__image-wrapper
+                                img(src="src/blocks/news/assets/img/news1.jpg").news__image-wrapper
+
+
+        .section.section--offset-none
+            .layout
+                include ../blocks/pagination/pagination

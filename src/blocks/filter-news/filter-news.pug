@@ -1,0 +1,7 @@
+mixin filterNews(textName)
+    .filter-news
+        each item in textName
+            if item.class !== ""
+                a(href="#" class=item.class).filter-news__link= item.name
+            else
+                a(href="#").filter-news__link= item.name

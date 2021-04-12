@@ -1,0 +1,41 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+
+.filter-news {
+  display: flex;
+
+  &__link {
+    display: flex;
+    align-items: center;
+    padding: 5px 15px 7px;
+    text-decoration: none;
+    @include fm();
+    font-size: 13px;
+    line-height: 18px;
+    letter-spacing: -.03em;
+    color: #666;
+    background: #f0f0f0;
+    @include trn(.2s);
+    
+    &--active {
+      background: #000;
+      color: #FFFFFF;
+    }
+    
+    &:hover {
+      background: rgba(27,27,27,.5);
+      color: #FFFFFF;
+    }
+    &:first-child {
+      border-radius: 15px 0 0 15px;
+    }
+    &:last-child {
+      border-radius: 0 15px 15px 0;
+    }
+    &:not(:first-child) {
+      margin-left: 2px;
+    }
+  }
+}

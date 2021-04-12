@@ -57,6 +57,11 @@ button {
   cursor: pointer;
 }
 
+b {
+  @include fsb();
+  font-weight: normal;
+}
+
 a {
   text-decoration: none;
 }

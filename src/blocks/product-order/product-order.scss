@@ -1,0 +1,64 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+$orderProduct: ".product-order";
+
+.product-order {
+  max-width: 120px;
+  display: block;
+
+  &:not(:first-child) {
+    margin-left: 15px;
+  }
+
+  &__image-wrapper {
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    @include trn(.2s);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0);
+
+    #{$orderProduct}:hover & {
+      box-shadow: 0 4px 4px rgba(0, 0, 0, .2);
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    max-height: 100%;
+  }
+
+  &__name {
+    margin-top: 11px;
+    @include fm();
+    font-size: 11px;
+    line-height: 15px;
+    letter-spacing: -.03em;
+    color: #1b1b1b;
+    @include trn(.2s);
+
+    #{$orderProduct}:hover & {
+      color: #6b70eb;
+    }
+  }
+
+  &__price {
+    @include fsb();
+    font-size: 15px;
+    line-height: 21px;
+    letter-spacing: -.03em;
+    color: #000;
+  }
+
+  &__quantity {
+    margin-top: 5px;
+    @include fm();
+    font-size: 11px;
+    line-height: 15px;
+    letter-spacing: -.03em;
+    color: #999;
+  }
+
+}

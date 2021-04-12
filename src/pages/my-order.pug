@@ -1,0 +1,52 @@
+extends ../templates/main
+
+block variables
+    - var title = 'XDLE'
+
+include ../blocks/input/input
+include ../blocks/product-order/product-order
+
+include ../blocks/quantity/quantity
+
+block content
+
+    main.main
+        .section.section--offset-bottom.profile
+            .layout
+                .profile__wrapper
+                    .profile__sidebar
+                        .profile__user-name Sergey
+                        .profile__list
+                            a(href="#").profile__link Личная информация
+                            a(href="#").profile__link.profile__link--active Мои заказы
+                            a(href="#").profile__link Выйти
+
+                    .my-order
+                        .my-order__wrapper
+                            .heading
+                                h3.heading__title.heading__title--inside Мои заказы
+                            .my-order__item
+                                .my-order__table
+                                    .my-order__table-head
+                                        .my-order__table-num
+                                            .my-order__table-label Номер заказа:
+                                            | N 21319
+                                        .my-order__table-date
+                                            .my-order__table-label Дата:
+                                            | 12.04.2021 01:28:29
+                                        .my-order__table-status
+                                            .my-order__table-label Статус:
+                                            | Принят, ожидается оплата
+                                        .my-order__table-button
+                                            button.button.button--gray Отменить заказ
+                                    .my-order__table-body
+                                        +productOrder("src/blocks/product-item/assets/img/product-slide1/product-item1.jpg", "Летучий фрегат")
+                                        +productOrder("src/blocks/product-item/assets/img/product-slide1/product-item1.jpg", "Летучий фрегат")
+                                .my-order__total-info
+                                    .my-order__total
+                                        | Стоимость
+                                        .my-order__total-price 4 740 ₽
+                                    .my-order__total-content
+                                        .my-order__total-text Оплата при получении
+                                        .my-order__total-text Курьер «СДЭК» доставка до двери #[b 440₽]
+                                        .my-order__total-text Адрес доставки: Омск, 52 prospect B.Khmelnitskogo-prospect B.Khmelnitskogo

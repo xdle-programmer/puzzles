@@ -22,6 +22,22 @@ button {
   outline: 0;
   @include trn(.2s);
 
+  &:disabled {
+    padding: 11px 44px;
+    background: #f0f0f0;
+    color: #c4c4c4;
+    &:hover {
+      background: #f0f0f0;
+      color: #c4c4c4;
+    }
+  }
+
+  &--big {
+    font-size: 20px;
+    padding: 19px 56px;
+    letter-spacing: -.03em;
+  }
+
   &--brown-border {
     padding: 13px 36px;
     font-family: $fm;
@@ -49,7 +65,13 @@ button {
 
   &--blue {
     background: #6b70eb;
-
+  }
+  
+  &--green {
+    background: #0b0;
+    &:hover {
+      background: #080;
+    }
   }
 
   &--blue-large {

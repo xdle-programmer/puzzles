@@ -8,6 +8,10 @@ $headingDesc: '.heading__desc';
 .heading {
   margin-bottom: 30px;
 
+  &--no-offset {
+    margin-bottom: 0;
+  }
+
   &--center {
     text-align: center;
   }
@@ -25,10 +29,20 @@ $headingDesc: '.heading__desc';
     letter-spacing: -.03em;
     margin: 14px 0;
 
+    &--ofsset-bottom {
+      margin-top: 0;
+      margin-bottom: 14px;
+    }
+
     &--border {
       display: inline-block;
       border-bottom: 1px solid #c4c4c4;
     }
+
+    &--inside {
+      font: 24px/34px $fm;
+    }
+
   }
 
   &__desc {

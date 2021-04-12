@@ -1,0 +1,110 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+.profile {
+
+  &__wrapper {
+    padding-top: 40px;
+    display: flex;
+
+    @include table-large-screen {
+      display: block;
+    }
+  }
+
+  &__sidebar {
+    width: 25%;
+    @include table-large-screen {
+      width: 100%;
+      margin-bottom: 5px;
+    }
+  }
+
+  &__user-name {
+    @include fm();
+    font-size: 17px;
+    line-height: 19px;
+    letter-spacing: -.03em;
+    color: #1b1b1b;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 27px;
+
+    @include table-large-screen {
+      flex-direction: row;
+    }
+
+    @include mobile-big-screen {
+      flex-direction: column;
+    }
+
+  }
+
+  &__link {
+    @include fm();
+    font-size: 15px;
+    line-height: 17px;
+    text-decoration: none;
+    color: #6b70eb;
+    @include trn(.2s);
+
+    &:hover {
+      color: #df00a1;
+    }
+
+    &:not(:first-child) {
+      margin-top: 15px;
+
+      @include table-large-screen {
+        margin-top: 0;
+        margin-left: 25px;
+      }
+
+      @include mobile-big-screen {
+        margin-top: 15px;
+        margin-left: 0;
+      }
+
+    }
+
+    &--active {
+      color: #df00a1;
+      pointer-events: none;
+    }
+  }
+
+  &__main {
+    width: 75%;
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    grid-gap: 30px;
+
+    @include table-large-screen {
+      width: 100%;
+    }
+
+    @include mobile-big-screen {
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 0px;
+    }
+
+  }
+
+  &__item {
+    max-width: 258px;
+    margin-bottom: 30px;
+
+    @include mobile-big-screen {
+      max-width: 100%;
+    }
+
+    * {
+      width: 100%;
+    }
+  }
+
+}

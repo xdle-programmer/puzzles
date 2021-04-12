@@ -1,0 +1,141 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+.order {
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 20px;
+
+    @include table-large-screen {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    grid-gap: 30px;
+
+    @include mobile-large-screen {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  &__col-50 {
+  }
+
+  &__col {
+    position: relative;
+    width: 50%;
+    @include table-large-screen {
+      width: 100%;
+    }
+  }
+
+  &__info-pay {
+    margin-top: 20px;
+  }
+
+  &__pay,
+  &__delivery {
+    margin-top: 60px;
+  }
+
+  &__submit {
+    margin-top: 65px;
+  }
+
+  &__privacy {
+    margin-top: 30px;
+    font-family: $fr;
+    font-size: 13px;
+    line-height: 1.2;
+    letter-spacing: -.03em;
+    color: #666;
+  }
+
+  &__item {
+    margin-bottom: 30px;
+  }
+
+  // Sidebar
+
+  &__info-sidebar {
+    max-width: 390px;
+    margin-left: auto;
+
+    @include table-large-screen {
+      max-width: 100%;
+      margin-left: 0;
+    }
+  }
+
+  &__sidebar-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    margin-bottom: 18px;
+  }
+
+  &__total {
+    padding: 29px 20px 20px 19px;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    font: 13px/18px $fr;
+    letter-spacing: -.03em;
+    color: #666;
+
+    &--mobile {
+      display: none;
+      margin-top: 30px;
+
+      @include table-large-screen {
+        display: block;
+      }
+    }
+
+    &--mobile-hide {
+      @include table-large-screen {
+        display: none;
+      }
+    }
+  }
+
+  &__total-item {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__total-price {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 20px;
+    font: 15px/1.2 $fm;
+    letter-spacing: -.03em;
+    color: #000;
+  }
+
+  &__total-price-value {
+    font-family: $fsb;
+    letter-spacing: -.03em;
+    font-size: 30px;
+    line-height: 1;
+  }
+
+  // Product
+
+  &__product-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+
+}

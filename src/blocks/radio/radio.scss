@@ -207,6 +207,92 @@ $checkBoxItemStatus: '.checkbox-item__status';
   }
 }
 
+// Radio Default
+
+$radioDefaultText: ".radio-default__text";
+$radioDefaultStatus: ".radio-default__status";
+
+.radio-default {
+  position: relative;
+  display: flex;
+  cursor: pointer;
+  user-select: none;
+
+  &__input {
+    display: none;
+    z-index: -1;
+    opacity: 0;
+
+    &:disabled + #{$radioDefaultText} #{$radioDefaultStatus},
+    &:disabled + #{$radioDefaultText} p {
+      color: #000;
+      opacity: .5;
+    }
+
+    &:checked + #{$radioDefaultText} #{$radioDefaultStatus}:before {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    &:checked + #{$radioDefaultText} #{$radioDefaultStatus} {
+      border: 2px solid #6b70eb;
+    }
+
+  }
+
+  &__text {
+    position: relative;
+    padding-top: 4px;
+    padding-left: 40px;
+    color: #999;
+    font-family: $fm;
+    font-size: 15px;
+    line-height: 1.4;
+    letter-spacing: -.03em;
+    @include trn(.2s);
+  }
+
+  &__text-name {
+    color: #1b1b1b;
+  }
+
+  &__text-content {
+    &:before {
+      content: "\2014 ";
+      margin: 0 4px;
+    }
+  }
+
+  &__status {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    width: 30px;
+    min-width: 30px;
+    height: 30px;
+    border: 2px solid #e5e5e5;
+    margin-right: 10px;
+    @include trn(.1s);
+
+    &:before {
+      content: '';
+      position: absolute;
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      transition: transform .3s ease;
+      border-radius: 50%;
+      background: #6b70eb;
+      left: 8px;
+      top: 8px;
+      transform: scale(.5);
+      @include trn(.2s);
+      opacity: 0;
+    }
+  }
+}
+
 // CheckBox Items
 
 .checkbox-item {

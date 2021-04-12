@@ -37,6 +37,29 @@ mixin checkInput(checked, text)
             span.checkbox-button__status
             span=text
 
+mixin checkInputDefault(checked, name, text)
+    label.checkbox-default
+        if checked == true
+            input.checkbox-default__input(type="checkbox" checked="checked" required="")
+        else
+            input.checkbox-default__input(type="checkbox" required="")
+        span.checkbox-default__text
+            span.checkbox-default__status
+            span.checkbox-default__text-name= name
+            span.checkbox-default__text-content=text
+
+mixin radioInputDefault(checked, radioName, name)
+    label.radio-default
+        if checked == true
+            input.radio-default__input(type="radio" name=radioName checked="checked" required="")
+        else
+            input.radio-default__input(type="radio" name=radioName required="")
+        span.radio-default__text
+            span.radio-default__status
+            span.radio-default__text-name= name
+            span.radio-default__text-content
+                block
+
 mixin productParametr(name, desc)
     .product-preview__parametr-item
         .product-preview__parametr-name= name

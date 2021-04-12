@@ -21,7 +21,7 @@
 
   &--offset-bottom {
     padding-top: 0;
-    @include offset(padding-bottom, 30px, 90x, 540px, 1024px);
+    @include offset(padding-bottom, 30px, 90px, 540px, 1024px);
   }
 
   &--background-red {
@@ -31,7 +31,6 @@
   &--background-black {
     background: #1b1b1b;
   }
-
 
   &__buttons {
     display: flex;

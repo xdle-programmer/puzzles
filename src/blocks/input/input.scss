@@ -1,0 +1,28 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+
+.input {
+  height: 60px;
+}
+
+.textarea {
+  min-height: 150px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #e5e5e5;
+  outline: 0;
+  background: #fff;
+  @include fm();
+  font-size: 15px;
+  line-height: 21px;
+  letter-spacing: -.03em;
+  border-radius: 5px;
+  resize: none;
+  color: #1b1b1b;
+}

@@ -1,0 +1,110 @@
+extends ../templates/main
+
+block variables
+    - var title = 'XDLE'
+
+include ../blocks/input/input
+include ../blocks/product-order/product-order
+
+include ../blocks/quantity/quantity
+
+block content
+
+    main.main
+        .section.section--offset-bottom.order
+            .layout
+                .order__wrapper
+                    .order__col
+                        .order__info-pay
+                            .order__recipient
+                                .heading
+                                    h3.heading__title.heading__title--inside Получатель
+                                .order__item
+                                    .order__row
+                                        .order__col-50
+                                            +input("text", "placeholder", "", "First Name")
+                                        .order__col-50
+                                            +input("text", "placeholder", "", "Last Name")
+                                        .order__col-50
+                                            +input("text", "placeholder", "", "First Name")
+                                        .order__col-50
+                                            +input("text", "placeholder", "", "Last Name")
+
+                            .order__pay
+                                .heading
+                                    h3.heading__title.heading__title--inside Способ оплаты
+                                .order__item
+                                    +radioInputDefault(false, "radioName1", "Оплата при получении")
+                                        | Оплатите заказ в пункте выдачи или курьеру при получении
+                                .order__item
+                                    +radioInputDefault(true, "radioName1", "Тинькофф Банк")
+                                        | Оплата картой любого банка без комиссии.
+                                .order__item
+                                    +radioInputDefault(false, "radioName1", "Яндекс.Касса")
+                                        | (банковские карты, Яндекс.Деньги, QIWI-кошелек) Оплата картой любого банка без комиссии.
+                                .order__item
+                                    +radioInputDefault(false, "radioName1", "Сбербанк")
+                                        | Оплата картой любого банка без комиссии.
+
+                            .order__delivery
+                                .heading
+                                    h3.heading__title.heading__title--inside Адрес доставки
+                                .order__item
+                                    p input
+                                .order__item
+                                    +radioInputDefault(true, "radioName2", "Пункт выдачи «СДЭК»", "Отправка заказов осуществляется с понедельника по пятницу.")
+                                        | 9-11 дней, 320 ₽ <br> Отправка заказов осуществляется с понедельника по пятницу.
+                                .order__item
+                                    +radioInputDefault(false, "radioName2", "Курьер «СДЭК» доставка до двери")
+                                        | 9-11 дней, 440 ₽ <br> Отправка заказов осуществляется с понедельника по пятницу.
+                                .order__item
+                                    +radioInputDefault(false, "radioName2", "DPD - Доставка до двери")
+                                        | дн. 12 (DPD OPTIMUM), 490 ₽ <br> Отправка заказов осуществляется с понедельника по пятницу.
+                                .order__item
+                                    +radioInputDefault(false, "radioName2", "DPD - Доставка до пункта выдачи")
+                                        | дн. 12 (DPD OPTIMUM), 355 ₽ <br> Отправка заказов осуществляется с понедельника по пятницу.
+
+                            .order__comment
+                                .order__item
+                                    .order__row
+                                        .order__col-50
+                                            +input("text", "placeholder", "", "First Name")
+                                        .order__col-50
+                                            +input("text", "placeholder", "", "Last Name")
+                                .order__item
+                                    +textarea("text", "placeholder", "", "Last Name", "")
+
+                            .order__total.order__total--mobile
+                                .order__total-item
+                                    p.order__total-name Доставка
+                                    p.order__total-value Бесплатно
+                                .order__total-item
+                                    p.order__total-name Сумма без скидки
+                                    p.order__total-value 4 300 ₽
+                                .order__total-price
+                                    .order__total-price-name Сумма к оплате:
+                                    .order__total-price-value 4 300 ₽
+
+                            .order__submit
+                                button.button.button--big.button--green Оформить заказ
+                            .order__privacy Нажимая кнопку, вы соглашаетесь с #[a(href="#").link.link--border Политикой конфиденциальности]
+
+                    .order__col
+                        .order__info-sidebar
+                            .heading.order__sidebar-head
+                                h3.heading__title.heading__title--inside Ваш заказ
+                                a(href="#").button.button--gray Редактировать
+                            .order__product-list
+                                +productOrder("src/blocks/product-item/assets/img/product-slide1/product-item1.jpg", "Летучий фрегат")
+                                +productOrder("src/blocks/product-item/assets/img/product-slide1/product-item1.jpg", "Летучий фрегат")
+
+                            .order__total.order__total--mobile-hide
+                                .order__total-item
+                                    p.order__total-name Доставка
+                                    p.order__total-value Бесплатно
+                                .order__total-item
+                                    p.order__total-name Сумма без скидки
+                                    p.order__total-value 4 300 ₽
+                                .order__total-price
+                                    .order__total-price-name Сумма к оплате:
+                                    .order__total-price-value 4 300 ₽

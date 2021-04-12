@@ -1,0 +1,99 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+.my-order {
+  width: 100%;
+
+  &__table {
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+  }
+
+  &__table-head {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 59px;
+    padding: 5px 10px 5px 20px;
+    border-bottom: 1px solid #e5e5e5;
+    @include fm();
+    font-size: 13px;
+    line-height: 14px;
+    letter-spacing: -.03em;
+    color: #1b1b1b;
+  }
+
+  &__table-label {
+    display: none;
+    margin: 10px 0 5px;
+    @include mobile-big-screen {
+      display: block;
+    }
+  }
+
+  &__table-num,
+  &__table-date,
+  &__table-status {
+    margin-right: 35px;
+    @include mobile-big-screen {
+      width: 50%;
+      margin-right: 0;
+      padding-right: 30px;
+    }
+  }
+
+  &__table-button {
+    margin-left: auto;
+    @include mobile-big-screen {
+      width: 100%;
+      margin: 10px 0;
+    }
+  }
+
+  &__table-body {
+    display: flex;
+    align-items: flex-end;
+    padding: 20px 20px 18px;
+  }
+
+  &__total-info {
+    margin: 30px 0 60px;
+    text-align: right;
+    @include mobile-large-screen {
+      text-align: left;
+    }
+  }
+
+  &__total {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    @include fm();
+    font-size: 24px;
+    line-height: 36px;
+    text-transform: uppercase;
+    @include mobile-large-screen {
+      font-size: 20px;
+      line-height: 30px;
+      justify-content: flex-start;
+    }
+  }
+
+  &__total-price {
+    margin-left: 20px;
+  }
+
+  &__total-text {
+    @include fr();
+    font-size: 15px;
+    line-height: 21px;
+    color: #1b1b1b;
+
+    &:not(:first-child) {
+      margin-top: 10px;
+    }
+  }
+
+}
