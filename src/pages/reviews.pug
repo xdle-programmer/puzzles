@@ -1,0 +1,67 @@
+extends ../templates/main
+
+block variables
+    - var title = 'XDLE'
+
+include ../blocks/breadcrumbs/breadcrumbs
+include ../blocks/reviews/reviews
+include ../blocks/input/input
+
+block content
+
+    main.main
+        .section.section--offset-bottom.reviews
+            .layout
+                .breadcrumbs.breadcrumbs--default-offset
+                    ul.breadcrumbs__lists
+                        +listBreadcrumbs("Главная")
+                        +listBreadcrumbs("Отзывы", true)
+
+                .heading.reviews__heading
+                    h1.reviews__title Отзывы
+
+                .reviews__wrapper
+                    .reviews__add-head.reviews__add-head--mobile
+                        .reviews__add-title Собрали набор?#[br] Оставьте свою оценку, для нас это важно!
+                        button.button.button--white Отправить отзыв
+                    .reviews__main
+                        +reviews("Мария", "Чудесные пазлы. С душой. Оформление и содержание на высочайшем уровне. Замечательный подарок на праздник.")
+                            +reviewsOutput("Администратор интернет-магазина", "Благодарю вас за оставленный отзыв!")
+                        +reviews("Max", "Изумительный пазл, увлеченно собирали как ребенок, так и мы - родители. Красочный, приятно пахнет деревом, окунаешься в безмятежное детство! Спасибо создателям!")
+                            +reviewsOutput("Администратор интернет-магазина", "Благодарю вас за оставленный отзыв!")
+                        +reviews("Svetlana", "Изумительный пазл, увлеченно собирали как ребенок, так и мы - родители. Красочный, приятно пахнет деревом, окунаешься в безмятежное детство! Спасибо создателям!")
+                            +reviewsOutput("Администратор интернет-магазина", "Благодарю вас за оставленный отзыв!")
+                        +reviews("Alex", "Изумительный пазл, увлеченно собирали как ребенок, так и мы - родители. Красочный, приятно пахнет деревом, окунаешься в безмятежное детство! Спасибо создателям!")
+                        +reviews("John", "Изумительный пазл, увлеченно собирали как ребенок, так и мы - родители. Красочный, приятно пахнет деревом, окунаешься в безмятежное детство! Спасибо создателям!")
+                        .reviews__pagination
+                            include ../blocks/pagination/pagination
+                    .reviews__add
+                        .reviews__add-head
+                            .reviews__add-title Собрали набор?#[br] Оставьте свою оценку, для нас это важно!
+                            .rating.rating--hover
+                                span.rating__item
+                                    +mixinSvg('14', '13', 'rating__item-star', 'rating__star--big')
+                                span.rating__item
+                                    +mixinSvg('14', '13', 'rating__item-star', 'rating__star--big')
+                                span.rating__item
+                                    +mixinSvg('14', '13', 'rating__item-star', 'rating__star--big')
+                                span.rating__item
+                                    +mixinSvg('14', '13', 'rating__item-star', 'rating__star--big')
+                                span.rating__item
+                                    +mixinSvg('14', '13', 'rating__item-star', 'rating__star--big')
+                        .reviews__add-body
+                            form.reviews__add-form
+                                .reviews__add-item
+                                    +input("text", "Name", "", "")
+                                .reviews__add-item
+                                    +input("text", "E-mail", "", "")
+                                .reviews__add-item
+                                    +input("text", "Ссылка на соц сеть", "", "")
+                                .reviews__add-item
+                                    +textarea("text", "Текст отзыва", "", "", "")
+                                .reviews__add-item
+                                    a(href="#").reviews__file-load.link Прикрепить фото
+                                .reviews__add-item.reviews__add-item--button
+                                    button.button.button--blue-large.reviews__button-submin Отправить отзыв
+                                .reviews__privacy
+                                    p Нажимая кнопку, вы соглашаетесь с  #[a(href="#").link.link--border Политикой конфиденциальности]

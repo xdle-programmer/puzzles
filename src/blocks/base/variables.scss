@@ -158,3 +158,43 @@ $font-lock-max: 1000px !default;
 }
 
 
+// ==============================
+// Custom Mixin Size
+// ==============================
+
+//  default font scale bounding
+$font-lock-min: 400px !default;
+$font-lock-max: 1000px !default;
+
+@mixin offset(
+  $offset,
+  $min,
+  $max: null,
+  $lock-min: $font-lock-min,
+  $lock-max: $font-lock-max
+) {
+
+  & { #{$offset}: $min; }
+  @if $max {
+    @media (min-width: $lock-min) {
+      & {
+        #{$offset}: calc(
+                #{$min} +
+                #{num($max) - num($min)} *
+                (100vw - #{$lock-min}) /
+                #{num($lock-max) - num($lock-min)}
+        );
+      }
+    }
+    @media (min-width: $lock-max){
+      & { #{$offset}: $max; }
+    }
+  }
+}
+
+//  strip units helper function
+@function num($input) {
+  @return $input/($input * 0 + 1);
+}
+
+

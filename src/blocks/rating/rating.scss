@@ -2,11 +2,49 @@
 @import "../../blocks/base/variables";
 @import "../../blocks/base/media-queries";
 
-.rating {
-  &__item {
+$ratingItem: ".rating__item";
+$starBig: ".rating__star--big";
 
+.rating {
+
+  &--hover {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+
+    #{$ratingItem} {
+      padding: 0 4px;
+    }
+
+    & #{$ratingItem}:hover svg,
+    & #{$ratingItem}:hover ~ #{$ratingItem} svg{
+      fill: #ffe799;
+      stroke: #ffe799;
+    }
   }
+
+  &__star--big {
+    width: 43px;
+    height: 43px;
+    padding: 2px;
+    stroke-width: 1;
+    stroke: #fff;
+    fill: transparent;
+    @include trn(.25s);
+  }
+
+  &__item {
+    cursor: pointer;
+  }
+
+  &__item--active {
+    svg {
+      fill: #ffc200;
+    }
+  }
+
   &__item-star {
     fill: #c4c4c4;
   }
+
 }

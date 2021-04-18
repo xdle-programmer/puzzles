@@ -2,8 +2,127 @@
 @import "../../blocks/base/variables";
 @import "../../blocks/base/media-queries";
 
-.news {
-  &__wrapper {
+$newsName: ".news__name";
+$newsContentName: ".news__content-name";
 
+.news {
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 60px 30px;
+    margin-top: 30px;
+
+    @include table-large-screen {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include mobile-big-screen {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mobile-small-screen {
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 40px 20px;
+    }
   }
+
+  &__item {
+    position: relative;
+    display: flex;
+    width: 100%;
+    min-height: 280px;
+    border-radius: 10px;
+    overflow: hidden;
+
+    &:hover #{$newsName} {
+      color: #6b70eb;
+    }
+  }
+
+  &__info {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px 21px 19px 20px;
+  }
+
+  &__name {
+    margin-top: 5px;
+    font: 21px $fsb;
+    letter-spacing: -.03em;
+    color: #FFFFFF;
+    @include trn(.2s);
+  }
+
+  &__date {
+    font: 13px/18px $fm;
+    letter-spacing: -.03em;
+    color: #FFFFFF;
+  }
+
+  &__image {
+    position: absolute;
+    @include absolute-fill();
+    object-fit: cover;
+  }
+
+  &__post {
+    position: relative;
+
+    &:hover #{$newsContentName} {
+      color: #6b70eb;
+    }
+  }
+
+  &__image-wrapper {
+    position: relative;
+    font-size: 0;
+    overflow: hidden;
+    border-radius: 10px 10px 0 0;
+    &:before {
+      content: '';
+      display: inline-block;
+      width: 100%;
+      padding-top: 63.15789%;
+    }
+  }
+
+  &__image-small {
+    position: absolute;
+    @include absolute-fill();
+    object-fit: cover;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background: #fff;
+    flex-grow: 1;
+    padding: 15px 21px 19px 20px;
+  }
+
+  &__content-date {
+    font: 13px/18px $fm;
+    letter-spacing: -.03em;
+    color: #999;
+  }
+
+  &__content-name {
+    margin-top: 5px;
+    font: 15px/1.4 $fm;
+    letter-spacing: -.03em;
+    color: #1b1b1b;
+    @include trn(.25s);
+  }
+
+  &__pagination-wrapper {
+    @include offset(margin-top, 24px, 60px, 768px, 1024px);
+    @include offset(margin-bottom, 24px, 60px, 768px, 1024px);
+  }
+
 }

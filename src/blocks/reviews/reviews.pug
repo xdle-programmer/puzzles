@@ -1,0 +1,33 @@
+mixin reviews(name, desc)
+    .reviews__item
+        .reviews__author-name= name
+        .reviews__info
+            .reviews__info-date 8 Апреля 2021
+            .reviews__info-rating
+                .rating
+                    span.rating__item.rating__item--active
+                        +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
+                    span.rating__item.rating__item--active
+                        +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
+                    span.rating__item.rating__item--active
+                        +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
+                    span.rating__item.rating__item--active
+                        +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
+                    span.rating__item.rating__item--active
+                        +iconSvg('14', '13', '0 0 14 13', 'rating__item-star')
+        .reviews__content= desc
+        .reviews__content-show Читать дальше
+        .reviews__gallery
+            .reviews__gallery-item
+                +img("src/blocks/news/assets/img/news3.jpg", "reviews__gallery-image")
+            .reviews__gallery-item
+                +img("src/blocks/news/assets/img/news3.jpg", "reviews__gallery-image")
+
+        block
+
+mixin reviewsOutput(name, desc)
+    .reviews__item
+        .reviews__author-name= name
+        .reviews__info
+            .reviews__info-date 8 Апреля 2021
+        .reviews__content= desc

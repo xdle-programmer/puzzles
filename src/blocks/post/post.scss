@@ -1,0 +1,42 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+.post {
+  color: #1b1b1b;
+  h3 {
+    font-family: $fm;
+    font-size: 24px;
+    line-height: 34px;
+    font-weight: normal;
+    @include mobile-large-screen {
+      font-size: 20px;
+      line-height: 30px;
+    }
+  }
+  p {
+    font-family: $fr;
+    font-size: 17px;
+    line-height: 24px;
+    letter-spacing: -.03em;
+    margin: 30px 0 20px;
+    @include mobile-large-screen {
+      font-size: 14px;
+      line-height: 22px;
+      letter-spacing: -.03em;
+      margin: 16px 0 16px;
+    }
+  }
+  a {
+    color: #6b70eb;
+    @include trn(.2s);
+    &:hover {
+      color: #df00a1;
+    }
+  }
+  img {
+    display: block;
+    max-width: 100%;
+    margin: 30px 0 45px;
+  }
+}

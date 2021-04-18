@@ -60,6 +60,21 @@ mixin radioInputDefault(checked, radioName, name)
             span.radio-default__text-content
                 block
 
+mixin newsPostFull(src, name, date)
+    a(href="#" ).news__item
+        img(src=src).news__image
+        .news__info
+            .news__name= name
+            .news__date= date
+
+mixin newsPost(src, name, date)
+    a(href="#").news__post
+        .news__image-wrapper
+            img(src=src).news__image-small
+        .news__content
+            .news__content-date= date
+            .news__content-name= name
+
 mixin productParametr(name, desc)
     .product-preview__parametr-item
         .product-preview__parametr-name= name

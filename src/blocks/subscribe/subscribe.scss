@@ -1,0 +1,64 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+.subscribe {
+  position: relative;
+  background: #fff;
+  padding: 60px 0 30px;
+  max-width: 480px;
+  margin: 0 auto;
+  @include mobile-big-screen {
+    padding-top: 125px;
+    overflow: hidden;
+  }
+  &__title {
+    position: relative;
+    text-align: center;
+  }
+  &__desc {
+    font: 15px/1.4 $fm;
+    letter-spacing: -.03em;
+    color: #1b1b1b;
+  }
+  &__icon {
+    position: absolute;
+    left: -100px;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 1;
+    transform: scale(1.871) rotateY(180deg);
+    fill: #ffc200;
+    @include mobile-big-screen {
+      left: 50%;
+      margin-left: -36px;
+      bottom: 64px;
+    }
+  }
+  &__form {
+    margin: 20px 45px 0;
+    display: flex;
+  }
+
+  &__input {
+    font-size: 12px;
+    font-family: $fm;
+    letter-spacing: -.03em;
+    height: 40px;
+    padding: 10px;
+    border-radius: 5px 0 0 5px;
+    border: 1px solid #e5e5e5;
+    outline: 0;
+    background: #fff;
+    color: #1b1b1b;
+  }
+  &__button {
+    width: 100%;
+    border-radius: 0 5px 5px 0;
+    color: #999;
+    background: #f0f0f0;
+    padding-top: 11px;
+    padding-bottom: 11px;
+  }
+
+}

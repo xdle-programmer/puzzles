@@ -1,0 +1,198 @@
+@import "../../libs/scss/mixins";
+@import "../../blocks/base/variables";
+@import "../../blocks/base/media-queries";
+
+$reviewsItem: ".reviews__item";
+
+.reviews {
+  &__heading {
+    padding: 30px 0;
+    @include table-large-screen {
+      padding: 0;
+    }
+  }
+
+  &__title {
+    @include fsb();
+    @include offset(font-size, 24px, 48px, 480px, 991px);
+    @include offset(line-height, 26px, 53px, 480px, 991px);
+    letter-spacing: -.03em;
+    color: #1b1b1b;
+  }
+
+  &__item {
+    padding-bottom: 40px;
+
+    &:not(:first-child) {
+      border-top: 1px solid #e5e5e5;
+      padding-top: 30px;
+    }
+
+    & #{$reviewsItem} {
+      position: relative;
+      padding: 22px 0 0 50px;
+      margin-top: 30px;
+      border-top: 1px solid #e5e5e5;
+
+      &:before {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        left: 17px;
+        top: 12px;
+        border: 1px solid;
+        border-color: transparent transparent #e5e5e5 #e5e5e5;
+      }
+    }
+  }
+
+  &__author-name {
+    @include fm();
+    font-size: 17px;
+    line-height: 24px;
+    letter-spacing: -.03em;
+    color: #1b1b1b;
+    @include mobile-big-screen {
+      font-size: 15px;
+      line-height: 1.4;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+
+    @include table-large-screen {
+      flex-direction: column;
+    }
+  }
+
+  &__info {
+    display: flex;
+    margin-top: 5px;
+  }
+
+  &__info-date {
+    font-size: 13px;
+    line-height: 18px;
+    letter-spacing: -.03em;
+    color: #c4c4c4;
+  }
+
+  &__info-rating {
+    margin-left: 13px;
+  }
+
+  &__content {
+    @include fr();
+    @include offset(font-size, 13px, 17px, 480px, 991px);
+    @include offset(line-height, 18px, 24px, 480px, 991px);
+    letter-spacing: -.03em;
+    color: #1b1b1b;
+    margin-top: 15px;
+  }
+
+  &__content-show {
+    font-size: 13px;
+    line-height: 18px;
+    letter-spacing: -.03em;
+    color: #6b70eb;
+    cursor: pointer;
+    display: none;
+    @include mobile-small-screen {
+      display: block;
+    }
+  }
+
+  &__gallery {
+    display: flex;
+    margin-top: 22px;
+  }
+
+  &__gallery-item {
+    position: relative;
+    width: 80px;
+    height: 80px;
+
+    &:not(:first-child) {
+      margin-left: 10px;
+    }
+  }
+
+  &__gallery-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  // Form add review
+
+  &__add {
+    min-width: 420px;
+    padding-left: 30px;
+
+    @include table-large-screen {
+      display: none;
+    }
+  }
+
+  &__add-head {
+    border-radius: 10px 10px 0 0;
+    padding: 20px 20px 26px;
+    text-align: center;
+    background: #3e1d9c;
+
+    &--mobile {
+      border-radius: 10px;
+      display: none;
+
+      @include table-large-screen {
+        display: block;
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  &__add-title {
+    @include fm();
+    font-size: 17px;
+    line-height: 24px;
+    letter-spacing: -.03em;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+
+  &__add-body {
+    border-radius: 0 0 10px 10px;
+    padding: 20px;
+    border: 1px solid #e5e5e5;
+  }
+
+  &__add-item {
+    margin-bottom: 20px;
+    &--button {
+      margin-top: 40px;
+    }
+  }
+
+  &__privacy {
+    @include fr();
+    font-size: 13px;
+    line-height: 1.2;
+    letter-spacing: -.03em;
+    color: #666;
+    margin-top: 20px;
+  }
+
+  &__button-submin {
+    width: 100%;
+  }
+
+  &__file-load {
+
+  }
+
+}

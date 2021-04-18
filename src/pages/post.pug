@@ -1,0 +1,33 @@
+extends ../templates/main
+
+block variables
+    - var title = 'XDLE'
+
+include ../blocks/breadcrumbs/breadcrumbs
+include ../blocks/filter-news/filter-news
+
+block content
+
+    main.main.news
+        .section.section--offset-bottom.post
+            .layout
+                .breadcrumbs.breadcrumbs--default-offset
+                    ul.breadcrumbs__lists
+                        +listBreadcrumbs("Главная")
+                        +listBreadcrumbs("Новости и акции")
+                        +listBreadcrumbs("Новинки лимитированной коллекции", true)
+
+                .post__wrapper
+                    h3 Новинки лимитированной коллекции!
+                    p «Любви все возрасты покорны»
+                    p Эта простая истина стала главной идеей пазла. Загадка набора: обнаружить сходные с контурами картины детали внутри пазла, расставив их в композицию, вы увидите продолжение истории любви.
+                    p Сегодня мы представляем два новых набора DAVICI «Любовь шепчет» и «От сердца к сердцу».
+                    p Название: #[a(href="#") «От сердца к сердцу»]
+                    p Автор картины: Ласло Кодай
+                    p Кол-во деталей: 180
+                    p Стоимость: 2900 руб.
+                    +img('src/blocks/post/assets/img/post.jpg', "", "")
+                    p Название: «Любовь шепчет»
+                    p Автор картины: Мариана Калачева
+                    p Кол-во деталей: 160
+                    p Стоимость: 2600 руб.
